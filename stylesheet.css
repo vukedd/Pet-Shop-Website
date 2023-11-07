@@ -1,0 +1,46 @@
+.nav-link {
+    color: black;
+    font-size: 110%;
+}
+
+
+
+.nav-link:hover {
+    color: black;
+}
+
+.navbar-brand {
+    color: white;
+    padding-top: 0.1%;
+    padding-left: 1%;
+    font-size: 150%;
+
+}
+
+.navbar-brand:hover {
+    color: white;
+}
+
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+  
+.dropdown>.dropdown-toggle:active {
+    pointer-events: none;
+}
+
+#dropdownMenuButton {
+    color: black;
+    font-size: 105%;
+}
+
+#dropdownMenuButton:hover {
+    color: black;
+}
+
+#search {
+    margin-right:20% ;
+}
+
+
