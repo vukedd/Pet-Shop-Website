@@ -3,8 +3,6 @@
     font-size: 110%;
 }
 
-
-
 .nav-link:hover {
     color: black;
 }
@@ -43,4 +41,8 @@
     margin-right:20% ;
 }
 
-
+#nav1 {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
