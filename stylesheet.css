@@ -9,8 +9,9 @@ body {
 
 #sbar {
     border-radius: 20px;
-    width: 500px;
+    width: 29em;
     color: black;
+    margin-top: 5px;
 }
 
 .levo {
@@ -19,8 +20,7 @@ body {
 }
 
 #login {
-    font-size: 150%;
-    padding: 20%;
+    font-size: 145%;
 }
 
 .nav-link:hover {
@@ -50,7 +50,8 @@ body {
 
 #dropdownMenuButton {
     color: black;
-    font-size: 105%;
+    font-size: 110%;
+    margin: 0, 2%, 0, 2%;
 }
 
 #dropdownMenuButton:hover {
@@ -58,7 +59,7 @@ body {
 }
 
 #search {
-    margin-right:20% ;
+    margin-right: 20%;
 }
 
 #nav1 {
@@ -108,6 +109,12 @@ body {
     padding: 4%;
 }
 
+.card-body1 {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 6%;
+}
+
 .card-body:hover {
     text-decoration: none;
 }
@@ -131,11 +138,13 @@ body {
 #cartbut {
     display: flex;
     float: right;
-    padding-bottom: 4%;
+    width: 58px;
+    padding-bottom: 3.8%;
 }
 
 #sv {
     padding: 3%;
+    width: 40%;
 }
 
 .logofoot1 {
