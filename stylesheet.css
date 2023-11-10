@@ -1,6 +1,26 @@
+body {
+    background-color: rgb(233, 236, 239);
+}
+
 .nav-link {
     color: black;
     font-size: 110%;
+}
+
+#sbar {
+    border-radius: 20px;
+    width: 500px;
+    color: black;
+}
+
+.levo {
+    display: flex;
+    justify-content: end;
+}
+
+#login {
+    font-size: 150%;
+    padding: 20%;
 }
 
 .nav-link:hover {
@@ -45,4 +65,85 @@
     position: sticky;
     top: 0;
     z-index: 100;
+}
+
+#butt {
+    font-size: 120%;
+    display: flex;
+    justify-content: end;
+}
+
+#kolica {
+    font-size: 120%;
+}
+
+#Present {
+    text-align: center;
+    margin-top: 2%;
+    border-bottom: 1px dotted rgb(233, 236, 239);
+}
+
+.lead {
+    font-size: 150%;
+}
+
+.skupkartice {
+    background-color: rgb(233, 236, 239);
+    padding: 1%;
+}
+
+#pnaslov {
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: 2%;
+}
+
+.kartice {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5%;
+}
+
+.card-body {
+    padding: 4%;
+}
+
+.card-body:hover {
+    text-decoration: none;
+}
+
+.card {
+    padding-top: 1%;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.card:hover {
+    transform: scale(1.01);
+    text-decoration: none;
+}
+
+.card-text {
+    color: gray;
+    text-decoration: none;
+}
+
+#cartbut {
+    display: flex;
+    float: right;
+    padding-bottom: 4%;
+}
+
+#sv {
+    padding: 3%;
+}
+
+.logofoot1 {
+    color: black;
+}
+
+.logofoot1:hover {
+    text-decoration: none;
+    color: rgb(255, 0, 0);
+    transition: 1s;
 }
