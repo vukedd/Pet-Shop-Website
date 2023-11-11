@@ -92,8 +92,6 @@ body {
     margin-left: 10%;
     margin-right: 10%;
     background-color: rgb(233, 236, 239);
-    padding: 0.5%;
-    border-bottom: 1px solid gray;
 }
 
 #pnaslov {
@@ -105,7 +103,7 @@ body {
 .kartice {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 5%;
+    margin-bottom: 4%;
 }
 
 .card-body {
@@ -115,7 +113,7 @@ body {
 .card-body1 {
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 6%;
+    margin-bottom: 5%;
 }
 
 .card-body:hover {
@@ -142,12 +140,16 @@ body {
     display: flex;
     float: right;
     width: 58px;
-    padding-bottom: 3.8%;
+    padding-bottom: 4%;
+    padding-top: 0;
+    font-size: 130%;
+    padding-right: 17%;
 }
 
 #sv {
-    padding: 3%;
+    padding: 1%;
     width: 40%;
+    margin-right: 7%;
 }
 
 .logofoot1 {
@@ -160,5 +162,16 @@ body {
     transition: 1s;
 }
 
-.container1 {
+#vrhbut {
+    display: flex;
+    justify-content: end;
+    margin-right: 5%;   
+    color: black;
+    font-size: 100%;
+}
+
+#vrhbut:hover {
+    color: red;
+    transition: 1s;
+    text-decoration: none;
 }
