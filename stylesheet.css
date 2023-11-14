@@ -7,11 +7,22 @@ body {
     font-size: 110%;
 }
 
+.spojiih {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
 #sbar {
     border-radius: 20px;
     width: 29em;
     color: black;
     margin-top: 5px;
+}
+
+#navbarSupportedContent {
+    position: sticky;
+    top:0;
 }
 
 .levo {
@@ -20,7 +31,7 @@ body {
 }
 
 #login {
-    font-size: 145%;
+    font-size: 105%;
 }
 
 .nav-link:hover {
@@ -62,10 +73,10 @@ body {
     margin-right: 20%;
 }
 
-#nav1 {
-    position: sticky;
-    top: 0;
-    z-index: 100;
+
+#onama {
+    text-decoration: none;
+    color: black;
 }
 
 #butt {
@@ -173,4 +184,29 @@ body {
     color: red;
     transition: 1s;
     text-decoration: none;
+}
+
+.proizvod {
+    display: inline-block;
+    margin: 7%;
+    margin-top: 7%;
+    margin-right: 2%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+}
+
+.slika {
+    padding-bottom: 5%;
+}
+
+.tekst {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin-top: 5%;
+    margin-right: 20%;
+    padding-bottom: 2%;
+    height: 20%;
+    padding-bottom: 20%     ;
 }
