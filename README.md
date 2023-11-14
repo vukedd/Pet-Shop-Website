@@ -4,7 +4,8 @@
 ### Vukašin Đuričić SR/08 2023
 
 
-###
+### 
 
 
-### Tehnologije : Bootstrap 5.3
+### Tehnologije :
+ - Bootstrap 5.3
