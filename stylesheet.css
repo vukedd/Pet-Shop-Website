@@ -210,3 +210,37 @@ body {
     height: 20%;
     padding-bottom: 20%     ;
 }
+
+.modal-header {
+    background-color: red;
+    color: white;
+}
+
+.login {
+    margin-left: 23%;
+}
+
+#lgbut {
+    margin-top: 5%;
+    margin-bottom: 10%;
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    border: 0px;
+    padding: 1% 2% 1% 2%;
+}
+
+#lgbut:hover {
+    background-color: rgb(155, 0, 0);
+    transition: 0.2s;
+    border: 0px;
+}
+
+
+#reglink {
+    margin-left: 15%;
+}
+
+.close {
+    color:black;
+}
