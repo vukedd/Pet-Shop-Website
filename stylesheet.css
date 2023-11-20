@@ -188,7 +188,7 @@ body {
 
 .proizvod {
     display: inline-block;
-    margin: 7%;
+    margin: 7% 7% 3% 7%;
     margin-top: 7%;
     margin-right: 2%;
     flex-wrap: wrap;
@@ -244,3 +244,36 @@ body {
 .close {
     color:black;
 }
+
+#cartbut1 {
+    margin-top: 2%;
+    width: 80%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-radius: 20px;
+}
+
+.kupi {
+    margin-top: 5%;
+}
+
+#kolicina {
+    width: 10%;
+    width: 20%;
+    border-radius: 10px;
+    font-size: 120%;
+    padding-left: 1%;
+    margin-bottom: 3%;
+    text-align: center;
+}
+
+.infop {
+    padding: 0;
+    text-align: start;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    margin-right: 5%;
+    border-top: .5px solid rgb(178, 178, 178);
+    padding-top: 1%;
+}
+
