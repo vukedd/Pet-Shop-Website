@@ -108,7 +108,7 @@ body {
 #pnaslov {
     text-align: center;
     margin-bottom: 5%;
-    margin-top: 2%;
+    margin-top: 5%;
 }
 
 .kartice {
@@ -117,13 +117,21 @@ body {
     margin-bottom: 4%;
 }
 
+.card-title {
+    color: black;
+}
+
+.card-title:hover {
+    color: black;
+}
+
 .card-body {
     padding: 4%;
 }
 
 .card-body1 {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     margin-bottom: 5%;
 }
 
@@ -139,11 +147,14 @@ body {
 
 .card:hover {
     transform: scale(1.01);
+}
+
+.text-muted {
+    color: gray;
     text-decoration: none;
 }
 
-.card-text {
-    color: gray;
+#proizvodi:hover {
     text-decoration: none;
 }
 
@@ -151,7 +162,6 @@ body {
     padding-bottom: 4%;
     padding-top: 0;
     font-size: 130%;
-    margin-right: 15%;
     padding-left: 20%;
     padding-right: 20%;
 }
@@ -188,16 +198,17 @@ body {
 
 .proizvod {
     display: inline-block;
-    margin: 7% 7% 3% 7%;
+    margin: 7% 7% 0% 7%;
     margin-top: 7%;
     margin-right: 2%;
-    flex-wrap: wrap;
     display: flex;
-    justify-content: space-around;
+    justify-content: start;
 }
 
 .slika {
     padding-bottom: 5%;
+    float: left;
+    padding-right: 10%;
 }
 
 .tekst {
@@ -254,7 +265,7 @@ body {
 }
 
 .kupi {
-    margin-top: 5%;
+    margin-top: 10%;
 }
 
 #kolicina {
@@ -273,7 +284,42 @@ body {
     margin-left: 5%;
     margin-bottom: 2%;
     margin-right: 5%;
-    border-top: .5px solid rgb(178, 178, 178);
-    padding-top: 1%;
+    padding-top: 2%;
+    border-top: .5px rgba(185, 185, 185, 0.513) solid;
 }
 
+#cbody {
+    padding-top: 2%;
+    background-color: rgba(255, 255, 255, 0.549);
+    border: none;
+    margin-bottom: 2%;
+    border-radius: 5%;
+}
+
+#cbody:hover {
+    color:none;
+    transition:none;
+    transform: none;
+}
+
+.josproizvoda {
+    display: flex;
+    justify-content: start;
+    padding-left: 2%;
+    background-color: rgba(229, 229, 229, 0.585);
+    border-radius: 30px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#cardp {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 4%;
+    width: 80%;
+    height: 80%;
+}
+
+#preporuka {
+    margin-left: 2%;
+}
