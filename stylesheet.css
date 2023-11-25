@@ -92,6 +92,7 @@ body {
 #Present {
     text-align: center;
     margin-top: 2%;
+    margin-bottom: 10%;
     border-bottom: 1px dotted rgb(233, 236, 239);
 }
 
@@ -126,7 +127,8 @@ body {
 }
 
 .card-body {
-    padding: 4%;
+    padding: 6%;
+
 }
 
 .card-body1 {
@@ -146,7 +148,7 @@ body {
 }
 
 .card:hover {
-    transform: scale(1.01);
+    transform: scale(1.01)
 }
 
 .text-muted {
@@ -160,10 +162,18 @@ body {
 
 #cartbut {
     padding-bottom: 4%;
-    padding-top: 0;
-    font-size: 130%;
+    padding-top: 3%;
+    font-size: 100%;
     padding-left: 20%;
     padding-right: 20%;
+    background-color: white;
+    border: 1px solid black;
+}
+
+#cartbut:hover {
+    border: 1px solid red;
+    color: red;
+    transition: .5s;
 }
 
 #sv {
@@ -194,32 +204,6 @@ body {
     color: red;
     transition: 1s;
     text-decoration: none;
-}
-
-.proizvod {
-    display: inline-block;
-    margin: 7% 7% 0% 7%;
-    margin-top: 7%;
-    margin-right: 2%;
-    display: flex;
-    justify-content: start;
-}
-
-.slika {
-    padding-bottom: 5%;
-    float: left;
-    padding-right: 10%;
-}
-
-.tekst {
-    display: flex;
-    flex-direction: column;
-    float: left;
-    margin-top: 5%;
-    margin-right: 20%;
-    padding-bottom: 2%;
-    height: 20%;
-    padding-bottom: 20%     ;
 }
 
 .modal-header {
@@ -262,20 +246,6 @@ body {
     padding-top: 2%;
     padding-bottom: 2%;
     border-radius: 20px;
-}
-
-.kupi {
-    margin-top: 10%;
-}
-
-#kolicina {
-    width: 10%;
-    width: 20%;
-    border-radius: 10px;
-    font-size: 120%;
-    padding-left: 1%;
-    margin-bottom: 3%;
-    text-align: center;
 }
 
 .infop {
