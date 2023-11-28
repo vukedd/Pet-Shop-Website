@@ -1,0 +1,660 @@
+body {
+    background-color: rgb(233, 236, 239);
+}
+
+.nav-link {
+    color: black;
+    font-size: 110%;
+}
+
+.spojiih {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#sbar {
+    border-radius: 20px;
+    width: 29em;
+    color: black;
+    margin-top: 5px;
+}
+
+#navbarSupportedContent {
+    position: sticky;
+    top:0;
+}
+
+.levo {
+    display: flex;
+    justify-content: end;
+}
+
+#login {
+    font-size: 105%;
+}
+
+.nav-link:hover {
+    color: black;
+}
+
+.navbar-brand {
+    color: white;
+    padding-top: 0.1%;
+    padding-left: 1%;
+    font-size: 150%;
+
+}
+
+.navbar-brand:hover {
+    color: white;
+}
+
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+  
+.dropdown>.dropdown-toggle:active {
+    pointer-events: none;
+}
+
+#dropdownMenuButton {
+    color: black;
+    font-size: 110%;
+    margin: 0, 2%, 0, 2%;
+}
+
+#dropdownMenuButton:hover {
+    color: black;
+}
+
+#search {
+    margin-right: 20%;
+}
+
+
+#onama {
+    text-decoration: none;
+    color: black;
+}
+
+#butt {
+    font-size: 120%;
+    display: flex;
+    justify-content: end;
+}
+
+#buttt {
+    font-size: 130%;
+}
+
+#kolica {
+    font-size: 120%;
+}
+
+#Present {
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 10%;
+    border-bottom: 1px dotted rgb(233, 236, 239);
+}
+
+.lead {
+    font-size: 150%;
+}
+
+
+#pnaslov {
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.kartice {
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: rgb(233, 236, 239);
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 4%;
+}
+
+.card-title {
+    color: black;
+}
+
+.card-title:hover {
+    color: black;
+}
+
+.card-body {
+    padding: 5%;
+
+}
+
+.card-body1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.card-body:hover {
+    text-decoration: none;
+}
+
+.card {
+    padding-top: 1%;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.card:hover {
+    transform: scale(1.01)
+}
+
+.text-muted {
+    color: gray;
+    text-decoration: none;
+}
+
+#productpage {
+    display: flex;
+    justify-content: space-around;
+    min-width: 50%;
+    font-size: 20px;
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: 9%;
+    margin-bottom: 5%;
+}
+
+.daprobamnesto {
+    margin-left: 5%;
+}
+
+#maker {
+    font-size: 12px;
+    border-bottom: .5px solid gray;
+    padding-bottom: .2%;
+    width: fit-content;
+}
+
+#slika {
+    border-radius: 20px;
+}
+
+#kupi {
+    position: relative;
+    left: 0;
+    margin-top: 2%;
+    margin-left: .5%;
+    line-height: 1;
+    font-size: 20px;
+    margin-bottom: 2%;
+}
+
+#kolicina {
+    text-align: center;
+    width: 15%;
+    height: 10%;
+    border-radius: 10px;
+    margin-bottom: 2%;
+}
+
+#kolicinahead {
+    font-size: 15px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.zinfo {
+    border-bottom: 1px solid rgb(196,196,196);
+}
+
+.test {
+    margin: auto;
+}
+
+.cena {
+    padding-top: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#rsd {
+    padding-top: 0;
+}
+
+#kg {
+padding-top: 1.5%
+}
+
+.productatc {
+    color: white;
+    height: 20%;
+    padding: 2%;
+    padding-bottom: 2%;
+    width: 45%;
+    border: 1px solid black;
+    border-radius: 7px;
+    background-color: black;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.productatc:hover {
+    background-color: white;
+    border: 1px solid red;
+    color: red;
+    transition: .4s;
+}
+
+#producthead {
+    text-decoration: underline;
+    width: 120%;
+    margin-right: 20%;
+}
+
+#proizvodi:hover {
+    text-decoration: none;
+}
+
+#cartbut {
+    bottom: 0;
+    font-size: 80%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    background-color: white;
+    border: 1px solid black;
+    bottom: 0;
+}
+
+#cartbut:hover {
+    border: 1px solid red;
+    color: red;
+    transition: .5s;
+}
+
+.indexcena {
+    text-align: center;
+}
+
+#sv {
+    padding: 1%;
+    width: 40%;
+    margin-right: 7%;
+}
+
+.logofoot1 {
+    color: black;
+}
+
+.logofoot1:hover {
+    text-decoration: none;
+    color: rgb(255, 0, 0);
+    transition: 1s;
+}
+
+#vrhbut {
+    display: flex;
+    justify-content: end;
+    margin-right: 5%;   
+    color: black;
+    font-size: 100%;
+    padding: 0;
+}
+
+#vrhbut:hover {
+    color: red;
+    transition: 1s;
+    text-decoration: none;
+}
+
+.modal-header {
+    background-color: red;
+    color: white;
+}
+
+.login {
+    margin-left: 23%;
+}
+
+#lgbut {
+    margin-top: 5%;
+    margin-bottom: 10%;
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    border: 0px;
+    padding: 1% 2% 1% 2%;
+}
+
+#lgbut:hover {
+    background-color: rgb(155, 0, 0);
+    transition: 0.2s;
+    border: 0px;
+}
+
+
+#reglink {
+    margin-left: 15%;
+}
+
+.close {
+    color:black;
+}
+
+#cartbut1 {
+    margin-top: 2%;
+    width: 80%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-radius: 20px;
+}
+
+.path {
+    margin-top: 1%;
+    margin-bottom: 3%;
+    margin-left: 4%;
+    font-size: 120%;
+}
+
+#hzp {
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#hzp:hover {
+    color:red;
+}
+
+#viseop:hover {
+    background-color: white;
+    color: black;
+    transition: .5s;
+}
+
+.infop {
+    padding: 0;
+    text-align: start;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    margin-right: 5%;
+    padding-top: 2%;
+    border-top: .5px rgba(185, 185, 185, 0.513) solid;
+}
+
+#cbody {
+    padding-top: 2%;
+    background-color: rgba(255, 255, 255, 0.549);
+    border: none;
+    margin-bottom: 2%;
+    border-radius: 5%;
+}
+
+#cbody:hover {
+    color:none;
+    transition:none;
+    transform: none;
+}
+
+.josproizvoda {
+    display: flex;
+    justify-content: start;
+    padding-left: 2%;
+    background-color: rgba(229, 229, 229, 0.585);
+    border-radius: 30px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+
+#cardp {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 4%;
+    width: 80%;
+    min-height: 100%;
+}
+
+#preporuka {
+    margin-left: 2%;
+}
+
+.korpahead {
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 1%;
+}
+
+#onamahead {
+    margin-left: 3%;
+    margin-top: 2%;
+    margin-bottom:4%;
+}
+
+.onamapage {
+    font-size: 20px;
+    margin-left: 3%;
+    margin-top: 2%;
+    line-height: 1.5;
+}
+
+#onamapic {
+    display: flex;
+    float: left;
+    width: 40%;
+    margin-right: 1%;
+}
+
+.cart {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.korpa {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    height: 50%;
+    border: 0px;
+    border-radius: 20px;
+    padding: 2%;    
+}
+
+.naslovi {
+    background-color: red;
+    color: white;
+    border: .5px solid red;
+}
+
+#slikakorpa {
+    float: left;
+    margin: 1%;
+}
+
+#cccena {
+    padding-right: 2%;
+}
+
+.nasloviat {
+    padding: 1%;
+}
+
+#productkorpa {
+    float: left;
+    text-align: start;
+}
+
+#ukloni {
+    color:red;
+    text-decoration: none;
+}
+
+#ukloni:hover {
+    color:black;
+    text-decoration: none;
+    transition: .5s;
+}
+
+#productkolicina {
+    text-align: center;
+    width: 40%
+}
+
+.korpaproizvodi {
+    background-color: rgb(229, 229, 229);
+}
+
+#cena111 {
+    padding-right: 2%;
+}
+
+.total {
+    margin-bottom: 1%;
+    display: flex;
+    justify-content: end;
+    margin-right: 5%;
+}
+
+.totalcina {
+    border: 0;
+    border-top: 2px solid red;
+    margin-right: 5.2%;
+}
+
+.ukupnored {
+    padding: 2%;
+}
+
+#ukupno {
+    color: black;
+    padding: 10%;
+    margin-right: 50%;
+    width: 100%;
+    width: max-content;
+}
+
+.totaltotal {
+    border-top: .5px solid rgb(177, 177, 177);
+}
+
+.gotovo {
+    float: top;
+    display: flex;
+    justify-content: end;
+    margin-right: 10%;
+    width:100%;
+    margin-bottom: 4%;
+}
+
+#dosta {
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    height: 5%;
+    width: 250px;
+    font-size: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border: none;
+    margin-right: 8%;
+}
+
+#dosta:hover {
+    background-color: black;
+    transition: .5s;
+
+}
+
+#korisnicinaslov {
+    margin-top: 2%;
+}
+
+.korisnicitab {
+    margin-top: 2%;
+    margin-bottom: 4%;
+}
+
+#headkorisnicirow {
+    background-color: red;
+    border: red;
+}
+
+#headkorisnici:hover {
+    background-color: white;
+    color: black;
+}
+
+#headkorisicni {
+    text-align: center;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    border-spacing: 1%;
+}
+
+#headkorisicni:hover {
+    background-color: white;
+    color: black;
+    border: white;
+}
+
+#korisnicirow {
+    background-color: white;
+}
+
+#usernamelink {
+    color: red;
+}
+
+.profilhead {
+    background-color: red;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 2%;
+}
+
+#pfp {
+    border-radius: 100px;
+    margin-top: 3%;
+    margin-bottom: 2%;
+}
+
+#usernamehead {
+    color: white;
+}
+
+.profilbody {
+    background: linear-gradient(rgb(255, 255, 255),#e9ecef);
+    height: 20%;
+}
+
+#bodyhead {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#infopfp {
+    margin-left: 10%;
+    margin-right: 25%;
+    margin-bottom: 5%;
+    width: 80%;
+    font-size: 20px;
+    text-align: center;
+}
+
+.info1 {
+    padding-bottom: 5%;
+}
