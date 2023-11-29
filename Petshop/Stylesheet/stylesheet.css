@@ -73,6 +73,15 @@ body {
     margin-right: 20%;
 }
 
+#carouselExampleIndicators {
+    max-height: 470px;
+    min-height: 100px;
+}
+
+#slikacar {
+    max-height: 470px;
+    min-height: 100px;
+}
 
 #onama {
     text-decoration: none;
@@ -107,8 +116,8 @@ body {
 
 #pnaslov {
     text-align: center;
-    margin-bottom: 5%;
-    margin-top: 5%;
+    margin-bottom: 3%;
+    margin-top: 3%;
 }
 
 .kartice {
@@ -570,6 +579,9 @@ padding-top: 1.5%
     margin-right: 8%;
 }
 
+#Korisnici {
+}
+
 #dosta:hover {
     background-color: black;
     transition: .5s;
@@ -590,19 +602,30 @@ padding-top: 1.5%
     border: red;
 }
 
-#headkorisnici:hover {
+#headkorisicni1 {
+    text-align: center;
+    width: fit-content;
+}
+
+#headkorisicni1:hover {
     background-color: white;
     color: black;
 }
 
-#headkorisicni {
+.headkorisnici:hover {
+    background-color: white;
+    color: black;
+}
+
+.headkorisicni {
     text-align: center;
     padding-bottom: 1%;
     padding-top: 1%;
     border-spacing: 1%;
 }
 
-#headkorisicni:hover {
+
+.headkorisicni:hover {
     background-color: white;
     color: black;
     border: white;
