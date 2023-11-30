@@ -98,6 +98,8 @@ body {
     font-size: 130%;
 }
 
+
+
 #kolica {
     font-size: 120%;
 }
@@ -264,8 +266,9 @@ padding-top: 1.5%
 
 #producthead {
     text-decoration: underline;
-    width: 120%;
+    width: 118.5%;
     margin-right: 20%;
+    font-size: 150%;
 }
 
 #proizvodi:hover {
@@ -447,6 +450,11 @@ padding-top: 1.5%
     margin-bottom:4%;
 }
 
+.mapa {
+    margin-bottom: 2%;
+    margin-top: 1%;
+}
+
 .onamapage {
     font-size: 20px;
     margin-left: 3%;
@@ -458,6 +466,7 @@ padding-top: 1.5%
     display: flex;
     float: left;
     width: 40%;
+    min-width: 200px;
     margin-right: 1%;
 }
 
@@ -579,8 +588,6 @@ padding-top: 1.5%
     margin-right: 8%;
 }
 
-#Korisnici {
-}
 
 #dosta:hover {
     background-color: black;
@@ -588,8 +595,36 @@ padding-top: 1.5%
 
 }
 
+.naslovdugme {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    margin-right: 3%;
+}
+
+#addproduct {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+#addproduct:hover {
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    transition: .3s;
+}
+
+
 #korisnicinaslov {
-    margin-top: 2%;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform : translate(50%, 0);
 }
 
 .korisnicitab {
@@ -680,4 +715,30 @@ padding-top: 1.5%
 
 .info1 {
     padding-bottom: 5%;
+}
+
+.karticeutisci1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.karticaocena {
+    display: flex;
+    justify-content: start;
+}
+
+#pfpocena {
+    border-radius: 100px;
+}
+
+#usernameocena {
+    padding-top: 8px;
+    padding-left: 5px;
+}
+
+.utisci {
+    padding: 2%;
+    background-color: gray;
+    width: 400px;
+    border-radius: 20px;
 }
