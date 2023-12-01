@@ -32,9 +32,9 @@
       </div>
       <div class="modal-body">
         <form class="login">
-          <label for="#id">Email:</label>
+          <label for="#id">Username:</label>
           <br>
-          <input type="email" id="email">
+          <input type="text" id="email">
           <br>
           <label for="#password">Password:</label>
           <br>
@@ -42,7 +42,53 @@
           <br>
           <button type="submit" id="lgbut">Prijavi se</button>
         </form>
-        <p id="reglink">Još nemaš nalog? <a href="#">Napravi ga ovde!</a></p>
+        <p id="reglink">Još nemaš nalog? <a href="#" data-toggle="modal"
+          data-target="#exampleModalCenter1" data-dismiss="modal">Napravi ga ovde!</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="exampleModalCenter1" tabindex="1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true" style="z-index: 999999;">
+  <div class="modal-dialog modal-dialog-centered" role="document" id="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Registruj se</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="login1">
+          <label for="#id">Ime:</label>
+          <br>
+          <input type="text" id="email">
+          <br>
+          <label for="#prez">Prezime: </label>
+          <br>
+          <input type="text" for="prez">
+          <br>
+          <label for="#un">Username:</label>
+          <br>
+          <input type="text" id="un">
+          <br>
+          <label for="#password">Password:</label>
+          <br>
+          <input type="password" id="password">
+          <br>
+          <label for="#email">E-mail:</label>
+          <br>
+          <input type="email" id="email">
+          <br>
+          <label for="#date">Datum rodjenja:</label>
+          <br>
+          <input id="date" type="date">
+          <br>
+          <button type="submit" id="lgbut">Registruj se</button>
+        </form>
+        <p id="reglink">Već imaš nalog? <a href="#" data-toggle="modal"
+          data-target="#exampleModalCenter" data-dismiss="modal"> Uloguj se ovde!</a></p>
       </div>
     </div>
   </div>
@@ -149,16 +195,76 @@
       </div>
     </nav>
   </div>
+    <h2 id="naslovadd">Dodaj proizvod</h2>
+    <div class="addforma1">
+    <div id="addforma" class="row">
+      <div id="forma1" class="col">
+        <label for="#kat">Kategorija Proizvoda</label>
+        <br>
+        <select name="kat" id="kategorija">
+          <option value="psi1">Psi/ Hrana</option>
+          <option value="psi2">Psi/ Igračke</option>
+          <option value="psi3">Psi/ Higijena pasa</option>
+          <option value="psi4">Psi/ Oprema za pse</option>
+          <option value="macke1">Mačke/ Hrana</option>
+          <option value="macke2">Mačke/ Igraćke</option>
+          <option value="macke3">Mačke/ Nega Mačaka</option>
+          <option value="macke4">Mačke/ Oprema za Mačke</option>
+          <option value="glodari1">Glodari/ Hrana</option>
+          <option value="glodari2">Glodari/ Igračke</option>
+          <option value="glodari3">Glodari/ Kavezi</option>
+          <option value="glodari4">Glodari/ Podloga</option>
+          <option value="akva1">Akvaristika/ Hrana</option>
+          <option value="akva2">Akvaristika/ Rasveta</option>
+          <option value="akva3">Akvaristika/ Vazdušne pumpe</option>
+          <option value="akva4">Akvaristika/ Filteracija i Cirkulacija</option>
+          <option value="akva5">Akvaristika/ Lečenje</option>
+          <option value="tera1">Teraristika/ Terarijum</option>
+          <option value="tera2">Teraristika/ Higijena</option>
+          <option value="tera3">Terarisika/ Podloge</option>
+          <option value="tera4">Teraristika/ Dekor</option>
+        </select>
+        <br>
+        <label for="#imep">Naziv Proizvoda:</label>
+        <br>
+        <input type="text" name="imep" id="imep">
+        <br>
+        <label for="#proiz">Ime Proizvođača:</label>
+        <br>
+        <input type="text" name="proiz" id="proiz">
+        <br>
+        <label for="#cena">Cena Proizvoda:</label>
+        <br>
+        <input type="number" name="cena" id="cena">
+        <br>
+      <form>
+        <br>
+        <label for="#addslika">Dodaj sliku: </label>
+        <br>
+        <input type="file" alt="Unesi sliku">
+      </form>
+        <br>
+      </div>
+      <div id="forma2" class="col">
+        <label for="#kopis">Kratak opis:</label>
+        <br>
+        <textarea name="kopis" rows="4" cols="40" placeholder="Unesite kratak opis Proizvoda koji će biti prikazan na kartici..."></textarea>
+        <br>
+        <label for="#dopis">Dug opis:</label>
+        <br>
+        <textarea name="dopis" rows="8" cols="40" placeholder="Unesite detaljan opis Proizvoda koji će biti prikazan na stranici samog Proizvoda..."></textarea>
+      </div>
+    </div>
+    <div class="dugme">
+      <button type="submit" class="btn btn-danger" id="addpbut">Dodaj proizvod u sistem</button>  
+    </div>
+  </div>
   <a href="javascript:window.scrollTo(0,0);" id="vrhbut">Vrati se na vrh</a>
   <div class="container">
     <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
       <div class="col mb-3">
         <a class="logofoot1" href="#"><b>Pet Shop</b><i class="bi bi-basket ml-2 mr-2 mt-0"></i></a>
         <p class="text-muted">&copy; 2023</p>
-      </div>
-
-      <div class="col mb-3">
-
       </div>
 
 
@@ -183,11 +289,11 @@
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Uslovi korišćenja</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Politika privatnosti</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">O nama</a></li>
+          <li class="nav-item mb-2"><a href="onama.html" class="nav-link p-0 text-muted">O nama</a></li>
         </ul>
       </div>
     </footer>
   </div>
 </body>
 
-</html>     
+</html>

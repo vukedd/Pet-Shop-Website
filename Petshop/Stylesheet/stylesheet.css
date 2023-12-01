@@ -331,8 +331,9 @@ padding-top: 1.5%
     color: white;
 }
 
-.login {
-    margin-left: 23%;
+
+.login, .login1 {
+    margin-left: 20%;
 }
 
 #lgbut {
@@ -741,4 +742,53 @@ padding-top: 1.5%
     background-color: gray;
     width: 400px;
     border-radius: 20px;
+}
+
+#naslovadd {
+    text-align: center;
+    margin-top: 2%;
+}
+
+#addforma {
+    margin: 2% 10% 2% 10%;
+    padding-top: 3%;
+}
+
+.addforma1 {
+    background: radial-gradient(rgba(195, 195, 195, 0.704), rgb(233, 236, 239));
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 30px;
+}
+
+#forma1 {
+    padding: 2%;
+}
+
+#forma2 {
+    padding: 2%;
+}
+
+#addpbut {
+    padding: 9px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 350px;
+
+}
+
+.dugme {
+    display: flex;
+    justify-content: center;
+}
+
+#kategorija {
+    border-radius: 10px;
+    padding: 3px;
+}
+
+#imep, #proiz, #cena{
+    border-radius: 10px;
+    padding: 3px;
+    width: 269px;
 }

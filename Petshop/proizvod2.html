@@ -32,9 +32,9 @@
       </div>
       <div class="modal-body">
         <form class="login">
-          <label for="#id">Email:</label>
+          <label for="#id">Username:</label>
           <br>
-          <input type="email" id="email">
+          <input type="text" id="email">
           <br>
           <label for="#password">Password:</label>
           <br>
@@ -42,7 +42,53 @@
           <br>
           <button type="submit" id="lgbut">Prijavi se</button>
         </form>
-        <p id="reglink">Još nemaš nalog? <a href="#">Napravi ga ovde!</a></p>
+        <p id="reglink">Još nemaš nalog? <a href="#" data-toggle="modal"
+          data-target="#exampleModalCenter1" data-dismiss="modal">Napravi ga ovde!</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="exampleModalCenter1" tabindex="1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true" style="z-index: 999999;">
+  <div class="modal-dialog modal-dialog-centered" role="document" id="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Registruj se</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="login1">
+          <label for="#id">Ime:</label>
+          <br>
+          <input type="text" id="email">
+          <br>
+          <label for="#prez">Prezime: </label>
+          <br>
+          <input type="text" for="prez">
+          <br>
+          <label for="#un">Username:</label>
+          <br>
+          <input type="text" id="un">
+          <br>
+          <label for="#password">Password:</label>
+          <br>
+          <input type="password" id="password">
+          <br>
+          <label for="#email">E-mail:</label>
+          <br>
+          <input type="email" id="email">
+          <br>
+          <label for="#date">Datum rodjenja:</label>
+          <br>
+          <input id="date" type="date">
+          <br>
+          <button type="submit" id="lgbut">Registruj se</button>
+        </form>
+        <p id="reglink">Već imaš nalog? <a href="#" data-toggle="modal"
+          data-target="#exampleModalCenter" data-dismiss="modal"> Uloguj se ovde!</a></p>
       </div>
     </div>
   </div>
@@ -151,7 +197,7 @@
   </div>
   <br>
   <div class="path">
-    <pclass="text-muted">Home > Psi > <a href="#" id="hzp">Hrana za pse</a></p>
+    <pclass="text-muted">Home > Psi > <a href="#" id="hzp">Hrana</a></p>
   </div>
   <div id="productpage" class="row">
     <div class="slika">
@@ -238,6 +284,9 @@
           </p>
         </div>
       </a>
+      <div class="indexcena">
+        <p>2.000,00 RSD</p>
+      </div>
       <div class="card-body1">
         <a href="#" id="cartbut" class="btn btn-light">Dodaj u korpu</a>
       </div>
@@ -251,6 +300,9 @@
       <p class="text-muted">RUSTICAN Govedina sa pilećim srcima i brusnicom, potpuna hrana za odrasle pse.
         <br>Bez glutena.
       </p>
+    </div>
+    <div class="indexcena">
+      <p>2.000,00 RSD</p>
     </div>
     <div class="card-body1">
       <a href="#" id="cartbut" class="btn btn-light">Dodaj u korpu</a>
@@ -288,7 +340,7 @@
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Uslovi korišćenja</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Politika privatnosti</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">O nama</a></li>
+          <li class="nav-item mb-2"><a href="onama.html" class="nav-link p-0 text-muted">O nama</a></li>
         </ul>
       </div>
     </footer>
