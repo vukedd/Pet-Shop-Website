@@ -95,7 +95,7 @@ body {
 }
 
 #buttt {
-    font-size: 130%;
+    font-size: 150%;
 }
 
 
@@ -118,8 +118,8 @@ body {
 
 #pnaslov {
     text-align: center;
-    margin-bottom: 3%;
-    margin-top: 3%;
+    margin-bottom: 2%;
+    margin-top: 2%;
 }
 
 .kartice {
@@ -177,7 +177,7 @@ body {
     margin-top: 3%;
     margin-left: 5%;
     margin-right: 9%;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
 }
 
 .daprobamnesto {
@@ -370,10 +370,21 @@ padding-top: 1.5%
 }
 
 .path {
-    margin-top: 1%;
-    margin-bottom: 3%;
+    margin-top: 5px;
+    margin-bottom: 5px;
     margin-left: 4%;
     font-size: 120%;
+}
+
+.kocka {
+    border-top: .5px solid rgb(214, 214, 214);
+    width: 90%;
+}
+
+.kocka1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
 #hzp {
@@ -398,8 +409,8 @@ padding-top: 1.5%
     margin-left: 5%;
     margin-bottom: 2%;
     margin-right: 5%;
-    padding-top: 2%;
-    border-top: .5px rgba(185, 185, 185, 0.513) solid;
+    padding-top: 20px;
+    border-top: .5px rgba(150, 150, 150, 0.513) solid;
 }
 
 #cbody {
@@ -420,11 +431,12 @@ padding-top: 1.5%
     display: flex;
     justify-content: start;
     padding-left: 2%;
-    background-color: rgba(229, 229, 229, 0.585);
-    border-radius: 30px;
-    margin-left: 2%;
-    margin-right: 2%;
     margin-bottom: 2%;
+}
+
+.josproizvoda1 {
+    padding-top: 2%;
+    margin-top: 2%;
 }
 
 #cardp {
@@ -436,6 +448,11 @@ padding-top: 1.5%
 }
 
 #preporuka {
+    margin-left: 2%;
+}
+
+#preporuka1 {
+    padding-top: 2%;
     margin-left: 2%;
 }
 
@@ -791,4 +808,33 @@ padding-top: 1.5%
     border-radius: 10px;
     padding: 3px;
     width: 269px;
+}
+
+.karticarev {
+    background-color: rgb(255, 255, 255);
+    padding: 4%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    border-radius: 20px;
+    margin-top: 1%;
+    min-width: 230px;
+}
+
+#pfprev {
+    border-radius: 100px;
+}
+
+.pfrev {
+    display: flex;
+    justify-content: start;
+}
+
+#revnaslov {
+    padding: 2%;
+}
+
+#usernamerev {
+    padding-top: 10px;
+    padding-left: 5px;
 }
