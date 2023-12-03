@@ -13,6 +13,9 @@
  - Admin stranica za dodavanje novih proizvoda 
  - Login/ Register Modal koji iskace u prozorcicu na svakoj stranici
 
+### Uputstvo za pokretanje sajta: 
+ 1. Skinuti zip file sa projektom i extractovati.
+ 2. Dvoklikom na index.html otvarate Početnu stranicu i dalje navigirate kroz sajt.
 
 ### Tehnologije :
  - HTML
