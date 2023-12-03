@@ -74,12 +74,12 @@ body {
 }
 
 #carouselExampleIndicators {
-    max-height: 470px;
+    max-height: 600px;
     min-height: 100px;
 }
 
 #slikacar {
-    max-height: 470px;
+    max-height: 600px;
     min-height: 100px;
 }
 
@@ -186,7 +186,7 @@ body {
 
 #maker {
     font-size: 12px;
-    border-bottom: .5px solid gray;
+    border-bottom: .5px solid rgb(210, 210, 210);
     padding-bottom: .2%;
     width: fit-content;
 }
@@ -198,7 +198,7 @@ body {
 #kupi {
     position: relative;
     left: 0;
-    margin-top: 2%;
+    margin-top: 5px;
     margin-left: .5%;
     line-height: 1;
     font-size: 20px;
@@ -315,13 +315,13 @@ padding-top: 1.5%
     display: flex;
     justify-content: end;
     margin-right: 5%;   
-    color: black;
-    font-size: 100%;
+    color: red;
+    font-size: 250%;
     padding: 0;
 }
 
 #vrhbut:hover {
-    color: red;
+    color: rgb(163, 0, 0);
     transition: 1s;
     text-decoration: none;
 }
@@ -378,6 +378,7 @@ padding-top: 1.5%
 
 .kocka {
     border-top: .5px solid rgb(214, 214, 214);
+    border-bottom: .5px solid rgb(214, 214, 214);
     width: 90%;
 }
 
@@ -400,14 +401,14 @@ padding-top: 1.5%
 #viseop:hover {
     background-color: white;
     color: black;
-    transition: .5s;
+    transition: .1s;
 }
 
 .infop {
     padding: 0;
     text-align: start;
     margin-left: 5%;
-    margin-bottom: 2%;
+    margin-bottom: 0%;
     margin-right: 5%;
     padding-top: 20px;
     border-top: .5px rgba(150, 150, 150, 0.513) solid;
@@ -415,10 +416,11 @@ padding-top: 1.5%
 
 #cbody {
     padding-top: 2%;
-    background-color: rgba(255, 255, 255, 0.549);
+    background-color: rgb(233, 236, 239);
     border: none;
-    margin-bottom: 2%;
+    margin-bottom: 0%;
     border-radius: 5%;
+    color: black;
 }
 
 #cbody:hover {
@@ -435,7 +437,7 @@ padding-top: 1.5%
 }
 
 .josproizvoda1 {
-    padding-top: 2%;
+    padding-top: 0%;
     margin-top: 2%;
 }
 
@@ -476,7 +478,7 @@ padding-top: 1.5%
 .onamapage {
     font-size: 20px;
     margin-left: 3%;
-    margin-top: 2%;
+    margin-top: 1%;
     line-height: 1.5;
 }
 
@@ -583,6 +585,8 @@ padding-top: 1.5%
     border-top: .5px solid rgb(177, 177, 177);
 }
 
+
+
 .gotovo {
     float: top;
     display: flex;
@@ -598,7 +602,7 @@ padding-top: 1.5%
     border-radius: 5px;
     padding: 10px;
     height: 5%;
-    width: 250px;
+    width: 390px;
     font-size: 100%;
     padding-left: 2%;
     padding-right: 2%;
@@ -611,6 +615,24 @@ padding-top: 1.5%
     background-color: black;
     transition: .5s;
 
+}
+
+#ukloni {
+    color: red;
+    padding: 5px;
+}
+
+#ukloni:hover {
+    color: red;
+}
+
+#uredi {
+    padding: 5px;
+    color: rgb(0, 0, 0);
+}
+
+#uredi:hover {
+    color: rgb(0, 0, 0);
 }
 
 .naslovdugme {
@@ -837,4 +859,8 @@ padding-top: 1.5%
 #usernamerev {
     padding-top: 10px;
     padding-left: 5px;
+}
+
+#reviewstar {
+    color: rgb(255, 179, 0);
 }
