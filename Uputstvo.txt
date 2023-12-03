@@ -1,5 +1,0 @@
-___-_-_-_---_____-_--__-___-_-_-
-Uputsvo za pokretanje Web Sajta
-
-1. Skinuti ZIP file projekat i Extractovati na svom racunaru,
-2. U folderu "Pet Shop" otvoriti Index.html i upravljati Web Sajtom

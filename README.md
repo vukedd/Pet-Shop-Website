@@ -19,6 +19,10 @@
  - Javascript
  - Bootstrap 5
 
+### Uputstvo za pokretanje :
+ - Skinuti zip file projekta i extractovati na vaš računar
+ - U folderu Pet Shop otvoriti stranicu Index.html i upravljati Web Sajtom. :)
+
 ### Napomena :
  - Opcija za dodavanje proizvoda kao i prikaz svih korisnika se nalazi u navbaru.
 
