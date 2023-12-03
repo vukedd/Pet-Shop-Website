@@ -1,7 +1,7 @@
-# WD SR 8 2023 Pet shop Website
+# WD-SR-8-2023 Pet Shop XY Website
 
 
-### Vukašin Đuričić SR/08 2023
+### Vukašin Đuričić SR/08-2023
 
 
 ### Website koji čine :
