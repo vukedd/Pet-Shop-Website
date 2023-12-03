@@ -865,3 +865,14 @@ padding-top: 1.5%
 #reviewstar {
     color: rgb(255, 179, 0);
 }
+
+.handle {
+    display: flex;
+    justify-content: space-evenly;
+    width: 60px;
+}
+
+#iiii {
+padding-left: 5px;
+color: black;
+}
