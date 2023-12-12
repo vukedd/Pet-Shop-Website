@@ -62,29 +62,37 @@
       </div>
       <div class="modal-body">
         <form class="login1">
-          <label for="#id">Ime:</label>
+          <label for="#adresa">Adresa, Grad, Postanski br. : </label>
           <br>
-          <input type="text" id="email">
+          <input type="text" name="adresa">
           <br>
-          <label for="#prez">Prezime: </label>
+          <label for="#datumRodjenja">Datum rodjenja:</label>
           <br>
-          <input type="text" for="prez">
-          <br>
-          <label for="#un">Username:</label>
-          <br>
-          <input type="text" id="un">
-          <br>
-          <label for="#password">Password:</label>
-          <br>
-          <input type="password" id="password">
+          <input id="datepicker" type="date" name="datumRodjenja" min="1900-01-01" max="">
           <br>
           <label for="#email">E-mail:</label>
           <br>
-          <input type="email" id="email">
+          <input type="email" id="email" name="email">
           <br>
-          <label for="#date">Datum rodjenja:</label>
+          <label for="#ime">Ime:</label>
           <br>
-          <input id="date" type="date">
+          <input type="text" id="ime" name="ime">
+          <br>
+          <label for="#korisnickoIme">Username:</label>
+          <br>
+          <input type="text" id="un" name="korisnickoIme">
+          <br>
+          <label for="#lozinka">Password:</label>
+          <br>
+          <input type="password" id="password" name="lozinka">
+          <br>
+          <label for="#prezime">Prezime: </label>
+          <br>
+          <input type="text" name="prezime">
+          <br>
+          <label for="#telefon">Broj telefona:</label>
+          <br>
+          <input type="tel" name="telefon">
           <br>
           <button type="submit" id="lgbut">Registruj se</button>
         </form>
@@ -318,6 +326,30 @@
     </div>
   </footer>
 </div>
+<script>
+  const formEl = document.querySelector('.login1');
+
+  formEl.addEventListener('submit', event => {
+    event.preventDefault();
+
+    const formData = new FormData(formEl);
+    const data = Object.fromEntries(formData);
+
+  fetch('https://pet-shop-fff9d-default-rtdb.europe-west1.firebasedatabase.app/korisnici.json', {
+    method: 'POST',
+    headers: {
+      'content' : 'application/json',
+    },
+    body: JSON.stringify(data)
+  }).then(res => res.json()
+    .then(data => console.log(data)))
+    .catch(error => console.log(error));  
+  });
+
+  var today = new Date().toISOString().split('T')[0];
+  document.getElementById("datepicker").setAttribute("max",
+  today);
+</script>
 </body>
 
 </html>

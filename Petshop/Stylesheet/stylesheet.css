@@ -334,7 +334,7 @@ padding-top: 1.5%
 
 
 .login, .login1 {
-    margin-left: 20%;
+    margin-left: 10%;
 }
 
 #lgbut {
@@ -671,6 +671,12 @@ padding-top: 1.5%
 .korisnicitab {
     margin-top: 2%;
     margin-bottom: 4%;
+}
+
+#korisnicitbod {
+    text-align: center;
+    color: black;
+    font-weight: 450;
 }
 
 #headkorisnicirow {
