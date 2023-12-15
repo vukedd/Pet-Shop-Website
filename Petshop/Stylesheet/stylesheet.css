@@ -20,6 +20,11 @@ body {
     margin-top: 5px;
 }
 
+#navbeli {
+    display: flex;
+    justify-content: center;
+}
+
 #navbarSupportedContent {
     position: sticky;
     top:0;
@@ -28,6 +33,11 @@ body {
 .levo {
     display: flex;
     justify-content: end;
+}
+
+.desno {
+    display: flex;
+    justify-content: center;
 }
 
 #login {
@@ -95,7 +105,7 @@ body {
 }
 
 #buttt {
-    font-size: 150%;
+    font-size: 130%;
 }
 
 
@@ -408,11 +418,10 @@ padding-top: 1.5%
 .infop {
     padding: 0;
     text-align: start;
-    margin-left: 5%;
+    margin-left: 0%;
     margin-bottom: 0%;
     margin-right: 5%;
     padding-top: 20px;
-    border-top: .5px rgba(150, 150, 150, 0.513) solid;
 }
 
 #cbody {
@@ -881,4 +890,27 @@ padding-top: 1.5%
 #iiii {
 padding-left: 5px;
 color: black;
+}
+
+#footerdole {
+    height: 120px;
+    margin-top: 50px;
+}
+
+#izmenatabla {
+    text-decoration: none;
+    color: black;
+}
+
+#izmenatabla:hover {
+    color:blue;
+}
+
+#uklonitabla {
+    text-decoration: none;
+    color: black;   
+}
+
+#uklonitabla:hover {
+    color:darkRed;
 }

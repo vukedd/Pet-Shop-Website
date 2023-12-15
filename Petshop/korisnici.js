@@ -45,10 +45,6 @@ function removeTableRows(tBodyId) {
 function appendKorisniciRed(tBody, korisnik) {
     let KorisniciRed = document.createElement("tr");
 
-    let editBut = document.getElementById("edit");
-    let editTd = document.createElement("td");
-    KorisniciRed.appendChild(editTd);
-
     let UserTd = document.createElement("td");
     UserTd.innerText = korisnik.korisnickoIme;
     KorisniciRed.appendChild(UserTd);
@@ -69,7 +65,7 @@ function appendKorisniciRed(tBody, korisnik) {
     prezimeTd.innerText = korisnik.prezime;
     KorisniciRed.appendChild(prezimeTd);
 
-        let DatumRodTd = document.createElement("td");
+    let DatumRodTd = document.createElement("td");
     DatumRodTd.innerText = korisnik.datumRodjenja;
     KorisniciRed.appendChild(DatumRodTd);
 
@@ -80,6 +76,22 @@ function appendKorisniciRed(tBody, korisnik) {
     let TelefonTd = document.createElement("td");
     TelefonTd.innerText = korisnik.telefon;
     KorisniciRed.appendChild(TelefonTd);
-  
+
+    let editTd = document.createElement("td");
+    editTd.style.paddingLeft = "5px"
+    editTd.innerHTML = 
+    '<a href="#" id="izmenatabla"><i class="bi bi-pencil-fill"></i></a>'
+    KorisniciRed.appendChild(editTd);
+
+    let deleteTd = document.createElement("td");
+    deleteTd.style.paddingLeft = "5px"
+    deleteTd.innerHTML = 
+    '<a onclick="ukloniKorisnika()" id="uklonitabla"><i class="bi bi-trash3-fill"></i></a>'
+    KorisniciRed.appendChild(deleteTd);
+
     document.getElementById(tBody).appendChild(KorisniciRed);
+}
+
+function ukloniKorisnika() {
+
 }
