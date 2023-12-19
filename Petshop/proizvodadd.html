@@ -181,33 +181,12 @@
   </div>
     <h2 id="naslovadd">Dodaj proizvod</h2>
     <div class="addforma1">
+      <form>
     <div id="addforma" class="row">
       <div id="forma1" class="col">
-        <label for="#kat">Kategorija Proizvoda</label>
+        <label for="#kat">Tip Proizvoda</label>
         <br>
-        <select name="kat" id="kategorija">
-          <option value="psi1">Psi/ Hrana</option>
-          <option value="psi2">Psi/ Igračke</option>
-          <option value="psi3">Psi/ Higijena pasa</option>
-          <option value="psi4">Psi/ Oprema za pse</option>
-          <option value="macke1">Mačke/ Hrana</option>
-          <option value="macke2">Mačke/ Igraćke</option>
-          <option value="macke3">Mačke/ Nega Mačaka</option>
-          <option value="macke4">Mačke/ Oprema za Mačke</option>
-          <option value="glodari1">Glodari/ Hrana</option>
-          <option value="glodari2">Glodari/ Igračke</option>
-          <option value="glodari3">Glodari/ Kavezi</option>
-          <option value="glodari4">Glodari/ Podloga</option>
-          <option value="akva1">Akvaristika/ Hrana</option>
-          <option value="akva2">Akvaristika/ Rasveta</option>
-          <option value="akva3">Akvaristika/ Vazdušne pumpe</option>
-          <option value="akva4">Akvaristika/ Filteracija i Cirkulacija</option>
-          <option value="akva5">Akvaristika/ Lečenje</option>
-          <option value="tera1">Teraristika/ Terarijum</option>
-          <option value="tera2">Teraristika/ Higijena</option>
-          <option value="tera3">Terarisika/ Podloge</option>
-          <option value="tera4">Teraristika/ Dekor</option>
-        </select>
+        <input name="tip" id="tip" type="text">
         <br>
         <label for="#imep">Naziv Proizvoda:</label>
         <br>
@@ -241,6 +220,7 @@
     </div>
     <div class="dugme">
       <button type="submit" class="btn btn-danger" id="addpbut">Dodaj proizvod u sistem</button>  
+    </form>
     </div>
   </div>
   <a href="javascript:window.scrollTo(0,0);" id="vrhbut"><i class="bi bi-arrow-up-circle-fill"></i></a>
@@ -298,6 +278,7 @@
       .then(data => console.log(data)))
       .catch(error => console.log(error));  
     });
+
 
     var today = new Date().toISOString().split('T')[0];
     document.getElementById("datepicker").setAttribute("max",

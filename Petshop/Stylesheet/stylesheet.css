@@ -82,7 +82,7 @@ body {
 #search {
     margin-right: 20%;
 }
-
+    
 #carouselExampleIndicators {
     max-height: 550px;
     min-height: 100px;
@@ -343,7 +343,7 @@ padding-top: 1.5%
 }
 
 
-.login, .login1 {
+.login, .login1, .editModal {
     margin-left: 10%;
 }
 
@@ -913,4 +913,23 @@ color: black;
 
 #uklonitabla:hover {
     color:darkRed;
+}
+
+#edituserhead {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.formedit {
+    display: flex;
+    justify-content: center;
+}
+
+#submitedit {
+    color: white;
+    background-color: red;
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 10px;
 }
