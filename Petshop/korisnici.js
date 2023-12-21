@@ -4,8 +4,13 @@ let FirebaseURL = "https://pet-shop-fff9d-default-rtdb.europe-west1.firebasedata
 // Promenljiva u koju cemo dodati sve elemente iz jsona.
 let korisnici = {};
 
-// Ovde cu nakon svake iteracije sacuvati id korisnika.
-var trenutno;
+// objekat koji cemo da iskoristimo da posaljemo put request u bazu podataka.
+var editKorisnik = {
+    adresa: "", datumRodjenja: "", email: "", ime: "", korisnickoIme: "", lozinka: "", prezime: "", telefon: ""
+}
+
+// id korisnika.
+var korisnikId;
 
 GetKorisnici();
 
@@ -16,17 +21,16 @@ function GetKorisnici() {
     request.onreadystatechange = function() {
         if (this.readyState == 4) {
             if (this.status == 200) {
-                // Ukloni stari Tbody kako se ne bi ponavljali korisnici nakon svakog refresha.
 
                 // JSON file pretvaramo u Javascript array
                 korisnici = JSON.parse(request.responseText);
-
+                
+                
                 // Izvrsavamo iteraciju kroz sve korisnike u /korisnici.json //
                 for (var id in korisnici) {
                     let korisnik = korisnici[id];
-                    trenutno = id;
-                    appendKorisniciRed("korisnicitbod", korisnik);
-                }
+                    appendKorisniciRed("korisnicitbod", korisnik, id);
+                }   
             } else {
                 alert("Greska prilikom ucitavanja korisnika.");
             }
@@ -38,17 +42,74 @@ function GetKorisnici() {
 }
 
 
+// funkcija koja predstavlja put request za slanje izmena na odgovarajudi id.
+function updateKorisnik() {
+    let request = new XMLHttpRequest();
+
+    request.onreadystatechange = function() {
+        if (this.readyState == 4) {
+            if (this.status == 200) {
+                alert("Uspesno ste dodali korisnika.");
+            } else {
+                alert("Greska prilikom azuriranja korisnika");
+            }
+        }
+    };
+
+    request.open("PUT", FirebaseURL + "/korisnici/" + korisnikId +".json");
+    request.send(JSON.stringify(editKorisnik));
+}
+
+// pokusaj da pokupim elemente iz input polja i ubacim u objekat koji cu zatim poslati.
+
+let editForm = document.getElementById("editModal");
+editForm.addEventListener("submit", function(event){
+    event.preventDefault();
+
+    var editovanadresa = document.querySelector("#adresaedit").value;
+    if (editovanadresa != "") {
+        window.editKorisnik.adresa = editovanadresa;
+    }
+
+    var editovandatum = document.querySelector("#datepickeredit").value;
+    if (editovandatum != "") {
+        window.editKorisnik.datumRodjenja = editovandatum;
+    }
+
+    var editovanemail = document.querySelector("#emailedit").value;
+    if (editovanemail != "") {
+        window.editKorisnik.email = editovanemail;
+    }
+
+    var editovanoime = document.querySelector("#imedit").value;
+    if (editovanoime != ""){
+        window.editKorisnik.ime = editovanoime;
+    }
+
+    var editUN = document.querySelector("#unedit").value;
+    if (editUN != "") {
+        window.editKorisnik.korisnickoIme = editUN;
+    }
+
+    var editlozinka = document.querySelector("#passwordedit").value;
+    if (editlozinka != "") {
+        window.editKorisnik.lozinka = editlozinka;
+    }  
+
+    var editprezime = document.querySelector("#prezimedit").value;
+    if (editprezime != "") {
+        window.editKorisnik.prezime = editprezime;
+    }
+
+    var edittelefon = document.querySelector("#telefonedit").value;
+    if (edittelefon != "") {
+        window.editKorisnik.telefon = edittelefon;
+    }
+});
 
 
 // ---------- POMOCNE FUNKCIJE ------------- //
-function removeTableRows(tBodyId) {
-    let tBody = document.getElementById(tBodyId);
-    while (tBody.firstChild) {
-      tBody.removeChild(tBody.lastChild);
-    }
-  }
-
-function appendKorisniciRed(tBody, korisnik) {
+function appendKorisniciRed(tBody, korisnik, id) {
     let KorisniciRed = document.createElement("tr");
 
     let UserTd = document.createElement("td");
@@ -85,7 +146,7 @@ function appendKorisniciRed(tBody, korisnik) {
 
     // olovka
     let editTd = document.createElement("td");
-    editTd.style.paddingLeft = "5px"
+    editTd.style.paddingLeft = "5px";
     // link u kom se nalazi ikonica olovka
     let novaOlovka = document.createElement("a");
     novaOlovka.setAttribute("id", "izmeniTabla");
@@ -94,8 +155,22 @@ function appendKorisniciRed(tBody, korisnik) {
     novaOlovka.setAttribute("data-target", "#exampleModalCenter2");
     novaOlovka.setAttribute("data-dismiss", "modal")
     novaOlovka.addEventListener("click", () => {
-        console.log("Hello world", korisnik)
+        window.korisnikId = id;
+        var izmenjenoIme = document.getElementById("imedit").value = korisnik.ime;
+        var izmenjenoPrezime = document.getElementById("prezimedit").value = korisnik.prezime;
+        var izmenjenUN = document.getElementById("unedit").value = korisnik.korisnickoIme;
+        var izmenjenaAdresa = document.getElementById("adresaedit").value = korisnik.adresa;
+        var izmenjenEmail = document.getElementById("emailedit").value = korisnik.email;
+        var izmenjenaLozinka = document.getElementById("passwordedit").value = korisnik.lozinka;
+        var izmenjenBrTel = document.getElementById("telefonedit").value = korisnik.telefon;
+        var izmenjenDatum = document.getElementById("datepickeredit").value = korisnik.datumRodjenja;
+        
+        window.editKorisnik.ime = izmenjenoIme;
+
+        console.log(editKorisnik.ime);  
     })
+
+
     // ikonica olovke 
     let olovka = document.createElement("i");
     olovka.setAttribute("class", "bi bi-pencil-fill");
@@ -108,7 +183,7 @@ function appendKorisniciRed(tBody, korisnik) {
 
     // kanta
     let deleteTd = document.createElement("td");
-    deleteTd.style.paddingLeft = "5px"
+    deleteTd.style.paddingLeft = "5px";
     let novaKanta = document.createElement("a");
     novaKanta.setAttribute("id", "ukloniTabla");
     novaKanta.setAttribute("href", "#");

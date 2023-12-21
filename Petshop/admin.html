@@ -40,7 +40,7 @@
           <br>
           <input type="password" id="password">
           <br>
-          <button type="submit" id="lgbut">Prijavi se</button>
+          <button type="submit" class="lgbut">Prijavi se</button>
         </form>
         <p id="reglink">Još nemaš nalog? <a href="#" data-toggle="modal"
           data-target="#exampleModalCenter1" data-dismiss="modal">Napravi ga ovde!</a></p>
@@ -93,7 +93,7 @@
           <br>
           <input id="datepicker" type="date" name="datumRodjenja" min="1900-01-01" max="">
           <br>
-          <button type="submit" id="lgbut">Registruj se</button>
+          <button type="submit" class="lgbut">Registruj se</button>
         </form>
         <p id="reglink">Već imaš nalog? <a href="#" data-toggle="modal"
           data-target="#exampleModalCenter" data-dismiss="modal"> Uloguj se ovde!</a></p>
@@ -116,37 +116,37 @@
         <form class="editModal">
           <label for="#ime">Ime:</label>
           <br>
-          <input type="text" id="ime" name="ime">
+          <input type="text" id="imedit" name="ime">
           <br>
           <label for="#prezime">Prezime: </label>
           <br>
-          <input type="text" name="prezime">
+          <input type="text" name="prezime" id="prezimedit">
           <br>
           <label for="#korisnickoIme">Username:</label>
           <br>
-          <input type="text" id="un" name="korisnickoIme">
+          <input type="text" id="unedit" name="korisnickoIme">
           <br>
           <label for="#adresa">Adresa, Grad, Postanski br. : </label>
           <br>
-          <input type="text" name="adresa">
+          <input type="text" name="adresa" id="adresaedit">
           <br>
           <label for="#email">E-mail:</label>
           <br>
-          <input type="email" id="email" name="email">
+          <input type="email" id="emailedit" name="email">
           <br>
           <label for="#lozinka">Password:</label>
           <br>
-          <input type="password" id="password" name="lozinka">
+          <input type="text" id="passwordedit" name="lozinka">
           <br>
           <label for="#telefon">Broj telefona:</label>
           <br>
-          <input type="tel" name="telefon">
+          <input type="tel" name="telefon" id="telefonedit">
           <br>
           <label for="#datumRodjenja">Datum rodjenja:</label>
           <br>
-          <input id="datepicker" type="date" name="datumRodjenja" min="1900-01-01" max="">
+          <input id="datepickeredit" type="date" name="datumRodjenja" min="1900-01-01" max="">
           <br>
-          <button type="submit" id="lgbut">Potvrdi izmene o korisniku</button>
+          <button type="submit" class="lgbut" id="editbut" onclick="updateKorisnik()">Potvrdi izmene o korisniku</button>
         </form>
       </div>
     </div>
@@ -285,7 +285,7 @@
     </footer>
   </div>
 
-  <script src="korisnici.js"></script>
+  <script src="edit.js"></script>
   <script>
     const formEl = document.querySelector('.login1');
 
@@ -309,10 +309,12 @@
     var today = new Date().toISOString().split('T')[0];
     document.getElementById("datepicker").setAttribute("max",
     today);
+
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementById("datepickeredit").setAttribute("max",
+    today);
   
-    let olovkice = document.querySelectorAll("#izmeniTabla");
-    console.log(olovkice);
   </script>
-  <script src="edit.js"></script>
+  <script src="korisnici.js"></script>
 </body>
 </html>

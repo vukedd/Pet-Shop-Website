@@ -347,7 +347,7 @@ padding-top: 1.5%
     margin-left: 10%;
 }
 
-#lgbut {
+.lgbut {
     margin-top: 5%;
     margin-bottom: 10%;
     color: white;
@@ -357,7 +357,7 @@ padding-top: 1.5%
     padding: 1% 2% 1% 2%;
 }
 
-#lgbut:hover {
+.lgbut:hover {
     background-color: rgb(155, 0, 0);
     transition: 0.2s;
     border: 0px;
