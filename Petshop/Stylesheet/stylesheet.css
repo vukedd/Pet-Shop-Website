@@ -343,7 +343,7 @@ padding-top: 1.5%
 }
 
 
-.login, .login1, .editModal {
+.login, #register1, .editModal {
     margin-left: 10%;
 }
 

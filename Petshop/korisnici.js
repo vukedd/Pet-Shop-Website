@@ -1,18 +1,47 @@
 // Promenljiva u kojoj se nalazi Firebase sa json fileom.
 let FirebaseURL = "https://pet-shop-fff9d-default-rtdb.europe-west1.firebasedatabase.app";
 
+
 // Promenljiva u koju cemo dodati sve elemente iz jsona.
 let korisnici = {};
+
 
 // objekat koji cemo da iskoristimo da posaljemo put request u bazu podataka.
 var editKorisnik = {
     adresa: "", datumRodjenja: "", email: "", ime: "", korisnickoIme: "", lozinka: "", prezime: "", telefon: ""
 }
 
+
 // id korisnika.
 var korisnikId;
 
 GetKorisnici();
+
+// Registracija korisnika
+const formRegister = document.querySelector("#register1"); 
+formRegister.addEventListener('submit', event => {
+
+    const podaciForma = new FormData(formRegister);
+    const noviKorisnik = Object.fromEntries(podaciForma);
+    console.log(noviKorisnik);
+    const korisnikSlanje = JSON.stringify(noviKorisnik);
+
+    let registerReq = new XMLHttpRequest();
+    registerReq.onreadystatechange = function() {
+        if (this.readyState == 4){
+            if (this.status == 200){
+                console.log("Uspesno ste se registrovali.")
+            }
+            else {
+                alert("Greska prilikom registracije korisnika");
+            }
+        }
+    }
+    registerReq.open("POST", FirebaseURL + "/korisnici.json");
+    registerReq.send(korisnikSlanje);
+})
+
+
 
 // Funkcija uz pomoc koje cemo izvuci sve korisnike iz json file-a.
 function GetKorisnici() {
@@ -22,11 +51,8 @@ function GetKorisnici() {
         if (this.readyState == 4) {
             if (this.status == 200) {
 
-                // JSON file pretvaramo u Javascript array
                 korisnici = JSON.parse(request.responseText);
                 
-                
-                // Izvrsavamo iteraciju kroz sve korisnike u /korisnici.json //
                 for (var id in korisnici) {
                     let korisnik = korisnici[id];
                     appendKorisniciRed("korisnicitbod", korisnik, id);
@@ -42,70 +68,49 @@ function GetKorisnici() {
 }
 
 
-// funkcija koja predstavlja put request za slanje izmena na odgovarajudi id.
+
+// funkcija za potvrdjivanje izmena o korisniku, fali validacija podataka.
 function updateKorisnik() {
+
+    var editovanoIme = document.querySelector("#imedit").value;
+    editKorisnik.ime = editovanoIme;
+
+    var editovanoPrezime = document.querySelector("#prezimedit").value;
+    editKorisnik.prezime = editovanoPrezime;
+
+    var editovanUN = document.querySelector("#unedit").value;
+    editKorisnik.korisnickoIme = editovanUN;
+
+    var editovanDatum = document.querySelector("#datepickeredit").value;
+    editKorisnik.datumRodjenja = editovanDatum;
+
+    var editovanaLozinka = document.querySelector("#passwordedit").value;
+    editKorisnik.lozinka = editovanaLozinka;
+
+    var editovanaAdresa = document.querySelector("#adresaedit").value;
+    editKorisnik.adresa = editovanaAdresa;
+
+    var editovanEmail = document.querySelector("#emailedit").value;
+    editKorisnik.email = editovanEmail;
+
+    var editovanBroj = document.querySelector("#telefonEdit").value;
+    editKorisnik.telefon = editovanBroj;
+
     let request = new XMLHttpRequest();
 
     request.onreadystatechange = function() {
         if (this.readyState == 4) {
-            if (this.status == 200) {
-                alert("Uspesno ste dodali korisnika.");
+            if (this.status == 200) {          
+                alert("Uspesno Azuriran korisnik.");
             } else {
                 alert("Greska prilikom azuriranja korisnika");
             }
         }
     };
 
-    request.open("PUT", FirebaseURL + "/korisnici/" + korisnikId +".json");
+    request.open("PUT", FirebaseURL + "/korisnici/" + korisnikId + ".json");
     request.send(JSON.stringify(editKorisnik));
 }
-
-// pokusaj da pokupim elemente iz input polja i ubacim u objekat koji cu zatim poslati.
-
-let editForm = document.getElementById("editModal");
-editForm.addEventListener("submit", function(event){
-    event.preventDefault();
-
-    var editovanadresa = document.querySelector("#adresaedit").value;
-    if (editovanadresa != "") {
-        window.editKorisnik.adresa = editovanadresa;
-    }
-
-    var editovandatum = document.querySelector("#datepickeredit").value;
-    if (editovandatum != "") {
-        window.editKorisnik.datumRodjenja = editovandatum;
-    }
-
-    var editovanemail = document.querySelector("#emailedit").value;
-    if (editovanemail != "") {
-        window.editKorisnik.email = editovanemail;
-    }
-
-    var editovanoime = document.querySelector("#imedit").value;
-    if (editovanoime != ""){
-        window.editKorisnik.ime = editovanoime;
-    }
-
-    var editUN = document.querySelector("#unedit").value;
-    if (editUN != "") {
-        window.editKorisnik.korisnickoIme = editUN;
-    }
-
-    var editlozinka = document.querySelector("#passwordedit").value;
-    if (editlozinka != "") {
-        window.editKorisnik.lozinka = editlozinka;
-    }  
-
-    var editprezime = document.querySelector("#prezimedit").value;
-    if (editprezime != "") {
-        window.editKorisnik.prezime = editprezime;
-    }
-
-    var edittelefon = document.querySelector("#telefonedit").value;
-    if (edittelefon != "") {
-        window.editKorisnik.telefon = edittelefon;
-    }
-});
 
 
 // ---------- POMOCNE FUNKCIJE ------------- //
@@ -162,12 +167,8 @@ function appendKorisniciRed(tBody, korisnik, id) {
         var izmenjenaAdresa = document.getElementById("adresaedit").value = korisnik.adresa;
         var izmenjenEmail = document.getElementById("emailedit").value = korisnik.email;
         var izmenjenaLozinka = document.getElementById("passwordedit").value = korisnik.lozinka;
-        var izmenjenBrTel = document.getElementById("telefonedit").value = korisnik.telefon;
+        var izmenjenBrTel = document.getElementById("telefonEdit").value = korisnik.telefon;
         var izmenjenDatum = document.getElementById("datepickeredit").value = korisnik.datumRodjenja;
-        
-        window.editKorisnik.ime = izmenjenoIme;
-
-        console.log(editKorisnik.ime);  
     })
 
 
@@ -187,6 +188,27 @@ function appendKorisniciRed(tBody, korisnik, id) {
     let novaKanta = document.createElement("a");
     novaKanta.setAttribute("id", "ukloniTabla");
     novaKanta.setAttribute("href", "#");
+    novaKanta.addEventListener("click", () => {
+        var result = confirm("Da li ste sigurni da zelite da obrisete korisnika?")
+        if (result) {
+            korisnikId = id;
+            let DelRequest = new XMLHttpRequest();
+    
+            DelRequest.onreadystatechange = function (e) {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {
+                        location.reload();
+                    }
+                    else {
+                        alert("Greska pri brisanju korisnika iz sistema.");
+                    }
+                }
+            };
+            DelRequest.open("DELETE", FirebaseURL + "/korisnici/" + korisnikId + ".json");
+            DelRequest.send();
+        }
+
+    })
     let kanta = document.createElement("i");
     kanta.setAttribute("class","bi bi-trash3-fill");
     novaKanta.appendChild(kanta);

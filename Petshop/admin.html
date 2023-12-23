@@ -60,14 +60,14 @@
         </button>
       </div>
       <div class="modal-body">
-        <form class="login1">
+        <form id="register1">
           <label for="#ime">Ime:</label>
           <br>
           <input type="text" id="ime" name="ime">
           <br>
           <label for="#prezime">Prezime: </label>
           <br>
-          <input type="text" name="prezime">
+          <input type="text" name="prezime" id="prezime">
           <br>
           <label for="#korisnickoIme">Username:</label>
           <br>
@@ -75,19 +75,19 @@
           <br>
           <label for="#adresa">Adresa, Grad, Postanski br. : </label>
           <br>
-          <input type="text" name="adresa">
+          <input type="text" name="adresa" id="adresaa">
           <br>
-          <label for="#email">E-mail:</label>
+          <label for="#email1">E-mail:</label>
           <br>
-          <input type="email" id="email" name="email">
+          <input type="email" id="email1" name="email">
           <br>
           <label for="#lozinka">Password:</label>
           <br>
-          <input type="password" id="password" name="lozinka">
+          <input type="password" id="password1" name="lozinka">
           <br>
           <label for="#telefon">Broj telefona:</label>
           <br>
-          <input type="tel" name="telefon">
+          <input type="tel" name="telefon" id="telepun">
           <br>
           <label for="#datumRodjenja">Datum rodjenja:</label>
           <br>
@@ -140,7 +140,7 @@
           <br>
           <label for="#telefon">Broj telefona:</label>
           <br>
-          <input type="tel" name="telefon" id="telefonedit">
+          <input type="tel" name="telefon" id="telefonEdit">
           <br>
           <label for="#datumRodjenja">Datum rodjenja:</label>
           <br>
@@ -287,25 +287,7 @@
 
   <script src="edit.js"></script>
   <script>
-    const formEl = document.querySelector('.login1');
-
-    formEl.addEventListener('submit', event => {
-      event.preventDefault();
-
-      const formData = new FormData(formEl);
-      const data = Object.fromEntries(formData);
-
-    fetch('https://pet-shop-fff9d-default-rtdb.europe-west1.firebasedatabase.app/korisnici.json', {
-      method: 'POST',
-      headers: {
-        'content' : 'application/json',
-      },
-      body: JSON.stringify(data)
-    }).then(res => res.json()
-      .then(data => console.log(data)))
-      .catch(error => console.log(error));  
-    });
-
+    
     var today = new Date().toISOString().split('T')[0];
     document.getElementById("datepicker").setAttribute("max",
     today);
