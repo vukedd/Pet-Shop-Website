@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,8 +43,8 @@
           <br>
           <button type="submit" class="lgbut">Prijavi se</button>
         </form>
-        <p id="reglink">Još nemaš nalog? <a href="#" data-toggle="modal"
-          data-target="#exampleModalCenter1" data-dismiss="modal">Napravi ga ovde!</a></p>
+        <p id="reglink">Još nemaš nalog? <a href="#" data-toggle="modal" data-target="#exampleModalCenter1"
+            data-dismiss="modal">Napravi ga ovde!</a></p>
       </div>
     </div>
   </div>
@@ -95,8 +96,8 @@
           <br>
           <button type="submit" class="lgbut">Registruj se</button>
         </form>
-        <p id="reglink">Već imaš nalog? <a href="#" data-toggle="modal"
-          data-target="#exampleModalCenter" data-dismiss="modal"> Uloguj se ovde!</a></p>
+        <p id="reglink">Već imaš nalog? <a href="#" data-toggle="modal" data-target="#exampleModalCenter"
+            data-dismiss="modal"> Uloguj se ovde!</a></p>
       </div>
     </div>
   </div>
@@ -146,8 +147,63 @@
           <br>
           <input id="datepickeredit" type="date" name="datumRodjenja" min="1900-01-01" max="">
           <br>
-          <button type="submit" class="lgbut" id="editbut" onclick="updateKorisnik()">Potvrdi izmene o korisniku</button>
+          <button type="submit" class="lgbut" id="editbut" onclick="updateKorisnik()">Potvrdi izmene o
+            korisniku</button>
         </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalCenter3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Profil</h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body1">
+        <div class="profilhead">
+          <img src="images/pfpmitar.webp" width="10%" height="10%" id="pfp">
+          <h2 align="center" id="usernamehead">@mitarmiric</h2>
+        </div>
+        <div class="profilbody">
+          <h3 align="center" id="bodyhead">Informacije o korisniku</h3>
+          <div class="info1">
+            <table id="infopfp">
+              <tr>
+                <th>Ime:</th>
+                <td id="imeprofil"></td>
+              </tr>
+              <tr>
+                <th>Prezime:</th>
+                <td id="prezimeprofil"></td>
+              </tr>
+              <tr>
+                <th>Datum rođenja: </th>
+                <td id="datumprofil"></td>
+              </tr>
+              <tr>
+                <th>Adresa:</th>
+                <td id="adresaprofil"></td>
+              </tr>
+              <tr>
+                <th>Broj telefona:</th>
+                <td id="telefonprofil"></td>
+              </tr>
+              <tr>
+                <th>E-mail:</th>
+                <td id="emailprofil"></td>
+              </tr>
+              <tr>
+                <th>Lozinka:</th>
+                <td id="lozinkaprofil"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -156,13 +212,15 @@
 <body id="vrh">
   <div class="spojiih">
     <nav id="nav1" class="navbar navbar-danger bg-danger">
-        <a class="navbar-brand" href="index.html"><b>Pet Shop XY</b></a>
+      <a class="navbar-brand" href="index.html"><b>Pet Shop XY</b></a>
       <div class="sredina">
-        <a href="admin.html"><button id="buttt" type="button" class="btn btn-danger pb-2 pt-1" alt="users"><i class="bi bi-person-lock"></i>
-        </button></a>
-        
-        <a href="proizvodadd.html"> <button id="buttt" type="button" class="btn btn-danger pb-2 pt-1" alt="users"><i class="bi bi-plus-square"></i>
-        </button></a>
+        <a href="admin.html"><button id="buttt" type="button" class="btn btn-danger pb-2 pt-1" alt="users"><i
+              class="bi bi-person-lock"></i>
+          </button></a>
+
+        <a href="proizvodadd.html"> <button id="buttt" type="button" class="btn btn-danger pb-2 pt-1" alt="users"><i
+              class="bi bi-plus-square"></i>
+          </button></a>
       </div>
       <div class="levo">
 
@@ -170,7 +228,7 @@
           data-target="#exampleModalCenter">Uloguj se</button>
 
         <a href="korpa.html"><button id="butt" type="button" class="btn btn-danger pb-2 pt-1" alt="Cart"><i id="kolica"
-            class="bi bi-basket ml-0 mr-1 mt-0"></i></button></a>
+              class="bi bi-basket ml-0 mr-1 mt-0"></i></button></a>
 
       </div>
     </nav>
@@ -179,7 +237,7 @@
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
+
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
@@ -221,29 +279,25 @@
           </li>
           <li class="nav-item">
             <a href="onama.html">
-            <button class="btn btn-light pb-1" type="button" id="dropdownMenuButton">
-              O nama
-            </button>
-          </a>  
+              <button class="btn btn-light pb-1" type="button" id="dropdownMenuButton">
+                O nama
+              </button>
+            </a>
           </li>
         </ul>
       </div>
     </nav>
   </div>
   <div class="naslovdugme">
-    <h3 align="center" id="korisnicinaslov">Korisnici</h3> 
+    <h3 align="center" id="korisnicinaslov">Korisnici</h3>
   </div>
   <div id="Korisnici" width="100%" class="table-responsive">
     <table class="korisnicitab" align="center" border="1" width="90%" id="tablakorisnici1">
       <thead id="headkorisnicirow">
         <th class="headkorisicni">Username</th>
-        <th class="headkorisicni">Lozinka</th>
         <th class="headkorisicni">E-mail</th>
         <th class="headkorisicni">Ime</th>
         <th class="headkorisicni">Prezime</th>
-        <th class="headkorisicni">Datum Rođenja</th>
-        <th id="headkorisicni1">Adresa</th>
-        <th class="headkorisicni">Broj telefona</th>
         <th id="headkorisicni1" colspan="2">Izmeni | Ukloni</th>
       <tbody id="korisnicitbod"></tbody>
     </table>
@@ -254,7 +308,8 @@
       <div class="col mb-3">
         <a class="logofoot1" href="#"><b>Pet Shop XY</b></a>
         <p class="text-muted">&copy; 2023</p>
-        <div class="handle"><a href="#" id="iiii"><i class="bi bi-instagram"></i></a><a href="#" id="iiii"><i class="bi bi-facebook"></i></i></a><a href="#" id="iiii"><i class="bi bi-linkedin"></i><a></div>
+        <div class="handle"><a href="#" id="iiii"><i class="bi bi-instagram"></i></a><a href="#" id="iiii"><i
+              class="bi bi-facebook"></i></i></a><a href="#" id="iiii"><i class="bi bi-linkedin"></i><a></div>
       </div>
 
 
@@ -287,16 +342,17 @@
 
   <script src="edit.js"></script>
   <script>
-    
+
     var today = new Date().toISOString().split('T')[0];
     document.getElementById("datepicker").setAttribute("max",
-    today);
+      today);
 
     var today = new Date().toISOString().split('T')[0];
     document.getElementById("datepickeredit").setAttribute("max",
-    today);
-  
+      today);
+
   </script>
   <script src="korisnici.js"></script>
 </body>
+
 </html>

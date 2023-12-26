@@ -11,6 +11,10 @@ var editKorisnik = {
     adresa: "", datumRodjenja: "", email: "", ime: "", korisnickoIme: "", lozinka: "", prezime: "", telefon: ""
 }
 
+var popuniProfil = {
+    ime: "mitar", prezime: "", datumRodjenja: "", adresa: "", telefon: "", email: "", lozinka: ""
+}
+
 
 // id korisnika.
 var korisnikId;
@@ -112,18 +116,55 @@ function updateKorisnik() {
     request.send(JSON.stringify(editKorisnik));
 }
 
+function profilcina(){
+    let imeprofila = document.querySelector("#imeprofil");
+    imeprofila.innerHTML = popuniProfil.ime;
+
+    let prezimeprofila = document.querySelector("#prezimeprofil");
+    prezimeprofila.innerHTML = popuniProfil.prezime;
+
+    let datumprofila = document.querySelector("#datumprofil");
+    datumprofila.innerHTML = popuniProfil.datumRodjenja;
+
+    let adresaprofila = document.querySelector("#adresaprofil");
+    adresaprofila.innerHTML = popuniProfil.adresa;
+
+    let brojprofila = document.querySelector("#telefonprofil");
+    brojprofila.innerHTML = popuniProfil.telefon;
+
+    let emailprofil = document.querySelector("#emailprofil");
+    emailprofil.innerHTML = popuniProfil.email;
+
+    let lozinkaprofil = document.querySelector("#lozinkaprofil");
+    lozinkaprofil.innerHTML = popuniProfil.lozinka;
+
+    let KorisnickoImeprofil = document.querySelector("#usernamehead");
+    KorisnickoImeprofil.innerHTML = `@${popuniProfil.korisnickoIme}`;
+}
+
 
 // ---------- POMOCNE FUNKCIJE ------------- //
 function appendKorisniciRed(tBody, korisnik, id) {
     let KorisniciRed = document.createElement("tr");
 
     let UserTd = document.createElement("td");
-    UserTd.innerText = korisnik.korisnickoIme;
+    UserTd.innerHTML = `<a href="#" style="text-decoration: underline; color: black; font-size: 18px">${korisnik.korisnickoIme}</a>`;
+    UserTd.setAttribute("data-toggle", "modal");
+    UserTd.setAttribute("data-target", "#exampleModalCenter3");
+    UserTd.setAttribute("data-dismiss", "modal")
+    UserTd.addEventListener("click", () => {
+        window.korisnikId = id;
+        popuniProfil.korisnickoIme = korisnik.korisnickoIme;
+        popuniProfil.ime = korisnik.ime;
+        popuniProfil.prezime = korisnik.prezime;
+        popuniProfil.datumRodjenja = korisnik.datumRodjenja;
+        popuniProfil.adresa = korisnik.adresa;
+        popuniProfil.telefon = korisnik.telefon;
+        popuniProfil.email = korisnik.email;
+        popuniProfil.lozinka = korisnik.lozinka;
+        profilcina();
+    })
     KorisniciRed.appendChild(UserTd);
-
-    let pwTd = document.createElement("td");
-    pwTd.innerText = korisnik.lozinka;
-    KorisniciRed.appendChild(pwTd);
 
     let emailTd = document.createElement("td");
     emailTd.innerText = korisnik.email;
@@ -137,25 +178,14 @@ function appendKorisniciRed(tBody, korisnik, id) {
     prezimeTd.innerText = korisnik.prezime;
     KorisniciRed.appendChild(prezimeTd);
 
-    let DatumRodTd = document.createElement("td");
-    DatumRodTd.innerText = korisnik.datumRodjenja;
-    KorisniciRed.appendChild(DatumRodTd);
-
-    let adresaTd = document.createElement("td");
-    adresaTd.innerText = korisnik.adresa;
-    KorisniciRed.appendChild(adresaTd);
-
-    let TelefonTd = document.createElement("td");
-    TelefonTd.innerText = korisnik.telefon;
-    KorisniciRed.appendChild(TelefonTd);
-
     // olovka
     let editTd = document.createElement("td");
-    editTd.style.paddingLeft = "5px";
+    editTd.style.padding = "12px";
     // link u kom se nalazi ikonica olovka
     let novaOlovka = document.createElement("a");
     novaOlovka.setAttribute("id", "izmeniTabla");
     novaOlovka.setAttribute("href", "#")
+    novaOlovka.style.color = "blue";
     novaOlovka.setAttribute("data-toggle", "modal");
     novaOlovka.setAttribute("data-target", "#exampleModalCenter2");
     novaOlovka.setAttribute("data-dismiss", "modal")
@@ -184,10 +214,11 @@ function appendKorisniciRed(tBody, korisnik, id) {
 
     // kanta
     let deleteTd = document.createElement("td");
-    deleteTd.style.paddingLeft = "5px";
+    deleteTd.style.padding = "12px";
     let novaKanta = document.createElement("a");
     novaKanta.setAttribute("id", "ukloniTabla");
     novaKanta.setAttribute("href", "#");
+    novaKanta.style.color = "red";
     novaKanta.addEventListener("click", () => {
         var result = confirm("Da li ste sigurni da zelite da obrisete korisnika?")
         if (result) {

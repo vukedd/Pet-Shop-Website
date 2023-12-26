@@ -340,6 +340,7 @@ padding-top: 1.5%
 .modal-header {
     background-color: red;
     color: white;
+    border: none;
 }
 
 
