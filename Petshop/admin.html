@@ -147,8 +147,7 @@
           <br>
           <input id="datepickeredit" type="date" name="datumRodjenja" min="1900-01-01" max="">
           <br>
-          <button type="submit" class="lgbut" id="editbut" onclick="updateKorisnik()">Potvrdi izmene o
-            korisniku</button>
+          <button type="submit" class="lgbut" id="editbut" onclick="updateKorisnik()">Potvrdi izmene o korisniku</button>
         </form>
       </div>
     </div>
@@ -303,56 +302,50 @@
     </table>
   </div>
   <a href="javascript:window.scrollTo(0,0);" id="vrhbut"><i class="bi bi-arrow-up-circle-fill"></i></a>
-  <div class="container">
-    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top" id="footerdole">
-      <div class="col mb-3">
-        <a class="logofoot1" href="#"><b>Pet Shop XY</b></a>
-        <p class="text-muted">&copy; 2023</p>
-        <div class="handle"><a href="#" id="iiii"><i class="bi bi-instagram"></i></a><a href="#" id="iiii"><i
-              class="bi bi-facebook"></i></i></a><a href="#" id="iiii"><i class="bi bi-linkedin"></i><a></div>
-      </div>
+    <div class="container">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top" id="footerdole">
+        <div class="col mb-3">
+          <a class="logofoot1" href="#"><b><span class="naziv"></span></b></a>
+          <p class="text-muted">&copy; 2023</p>
+          <div class="handle"><a href="#" id="iiii"><i class="bi bi-instagram"></i></a><a href="#" id="iiii"><i class="bi bi-facebook"></i></i></a><a href="#" id="iiii"><i class="bi bi-linkedin"></i><a></div>
+          <br><p><b>Broj telefona:</b><br><span class="telefonPS"></span></p>
+        </div>
+  
+  
+        <div class="col mb-3">
+          <h5>Proizvodi</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Psi</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Macke</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Glodari</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Akvaristika</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Teraristika</a></li>
+          </ul>
+        </div>
+  
+        <div class="col mb-3">
+  
+        </div>
+  
+        <div class="col mb-3">
+          <h5>Pet Shop</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Uslovi korišćenja</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Politika privatnosti</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+            <li class="nav-item mb-2"><a href="onama.html" class="nav-link p-0 text-muted">O nama</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <script>
+      
+      var today = new Date().toISOString().split('T')[0];
+      console.log(today)
+      document.getElementById("datepicker").setAttribute("max", today);
 
-
-      <div class="col mb-3">
-        <h5>Proizvodi</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Psi</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Macke</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Glodari</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Akvaristika</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Teraristika</a></li>
-        </ul>
-      </div>
-
-      <div class="col mb-3">
-
-      </div>
-
-      <div class="col mb-3">
-        <h5>Pet Shop XY</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Uslovi korišćenja</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Politika privatnosti</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="onama.html" class="nav-link p-0 text-muted">O nama</a></li>
-        </ul>
-      </div>
-    </footer>
-  </div>
-
-  <script src="edit.js"></script>
-  <script>
-
-    var today = new Date().toISOString().split('T')[0];
-    document.getElementById("datepicker").setAttribute("max",
-      today);
-
-    var today = new Date().toISOString().split('T')[0];
-    document.getElementById("datepickeredit").setAttribute("max",
-      today);
-
-  </script>
-  <script src="korisnici.js"></script>
-</body>
-
-</html>
+    </script>
+    <script src="korisnici.js"></script>
+    <script src="onama.js"></script>
+  </body>
+  </html>

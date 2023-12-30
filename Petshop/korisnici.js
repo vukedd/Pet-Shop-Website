@@ -12,7 +12,7 @@ var editKorisnik = {
 }
 
 var popuniProfil = {
-    ime: "mitar", prezime: "", datumRodjenja: "", adresa: "", telefon: "", email: "", lozinka: ""
+    ime: "", prezime: "", datumRodjenja: "", adresa: "", telefon: "", email: "", lozinka: ""
 }
 
 
@@ -139,7 +139,7 @@ function profilcina(){
     lozinkaprofil.innerHTML = popuniProfil.lozinka;
 
     let KorisnickoImeprofil = document.querySelector("#usernamehead");
-    KorisnickoImeprofil.innerHTML = `@${popuniProfil.korisnickoIme}`;
+    KorisnickoImeprofil.innerHTML = `${popuniProfil.korisnickoIme}`;
 }
 
 
@@ -148,7 +148,7 @@ function appendKorisniciRed(tBody, korisnik, id) {
     let KorisniciRed = document.createElement("tr");
 
     let UserTd = document.createElement("td");
-    UserTd.innerHTML = `<a href="#" style="text-decoration: underline; color: black; font-size: 18px">${korisnik.korisnickoIme}</a>`;
+    UserTd.innerHTML = `<a href="#" style="text-decoration: underline; color: black; font-size: 18px; id="klikniprofil">${korisnik.korisnickoIme}</a>`;
     UserTd.setAttribute("data-toggle", "modal");
     UserTd.setAttribute("data-target", "#exampleModalCenter3");
     UserTd.setAttribute("data-dismiss", "modal")

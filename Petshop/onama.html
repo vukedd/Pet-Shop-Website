@@ -102,6 +102,45 @@
   </div>
 </div>
 
+<div class="modal fade" id="exampleModalCenter4" tabindex="1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true" style="z-index: 999999;">
+  <div class="modal-dialog modal-dialog-centered" role="document" id="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Izmeni detalje o PetShop-u</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="editOnama">
+          <label for="#nazivPS">Naziv Pet Shopa: </label>
+          <br>
+          <input type="text" id="imePS" name="nazivPS">
+          <br>
+          <label for="#godOtvaranja">Godina otvaranja: </label>
+          <br>
+          <input type="text" id="godOtvaranja" name="godOtvaranja">
+          <br>
+          <label for="#adresaPS">Adresa: </label>
+          <br>
+          <input type="text" name="adresaPS" id="adresaPS">
+          <br>
+          <label for="#telefonPS">Broj telefona:</label>
+          <br>
+          <input type="tel" name="telefonPS" id="telepunPS">
+          <br>
+          <label for="#logoPS">Logo: </label>
+          <br>
+          <input type="file" name="logoPS" id="logoPS">
+          <br>
+          <button type="submit" class="lgbut" onclick="izmenaDetalja()">Potvrdi izmene</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 <body id="vrh">
   <div class="spojiih">
     <nav id="nav1" class="navbar navbar-danger bg-danger">
@@ -179,10 +218,17 @@
       </div>
     </nav>
   </div>
-  <h2 id="onamahead">O <span class="naziv"></span>-u</h2>
+  <div class="onamanaslov">
+    <div class="onamanaslov">    
+      <h2 id="onamahead">O <span class="naziv"></span>-u</h2>
+    </div>
+    <div class="onamadugme"> 
+      <button type="button" class="btn btn-danger" data-target="#exampleModalCenter4" data-toggle="modal" id="izmeniPS"><i class="bi bi-pencil-fill"></i></button>
+    </div>
+  </div>
   <div class="onamapage">
-    <img id="onamapic">
-    <p><b><span class="naziv"></span> je specijalizovana maloprodaja hrane i opreme za sve kućne ljubimce</b>, prisutan u Srbiji od 2008. godine kada je na Novom Beogradu otvorena prva <span class="naziv"></span> prodavnica u Srbiji.
+    <img id="onamapic" src="images/logo.jpeg" alt="onamaslika">
+    <p><b><span class="naziv"></span> je specijalizovana maloprodaja hrane i opreme za sve kućne ljubimce</b>, prisutan u Srbiji od <span id="godinaOtvaranja"></span>. godine kada je u Nišu otvorena prva <span class="naziv"></span> prodavnica u Srbiji.
       Danas regionalni lider, <span class="naziv"></span> je započeo sa radom daleke 1999. godine, sa željom da postane mesto najšire ponude asortimana za kućne ljubimce.
       <br>
       Od tih početaka puno se promenilo: višestruko je proširen asortiman, prodavnice su veće i prilagođene najvišim standardima moderne maloprodaje, izradili smo vlastitu robnu marku hrane za pse i mačke koja pruža najbolji odnos cene i kvalitete na tržištu, te konstantno radimo na unapređenju ponude i osiguranju najboljih cena za naše kupce.
@@ -195,14 +241,16 @@
       <br>
       <b>Naša misija je uneti radost u živote kućnih ljubimaca i njihovih vlasnika, promovisati prednosti suživota ljudi i životinja, te edukovati široku javnost i konstantno promovisati dobrobit životinja.</b>
       <div style="width: 100%" class="mapa">
-        <iframe width="100%" height="400px" frameborder="1" align="center" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Janka%20Cmelika%2069+(Pet%20Shop)&amp;t=p&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/population/">Population Estimator map</a></iframe>
+        <iframe width="100%" height="400px" frameborder="1" align="center" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Trg%20Pavla%20Stojkovi%C4%87a%2012,%20Nis,%2018000+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">Population Estimator map</a></iframe>
       </div>
       <br>
       Zahvaljujemo našim kupcima na ukazanom poverenju i nadamo se da ćemo ga i u budućnosti opravdati, a ako do sada niste imali prilike posetiti neku od naših prodavnica, pozivamo Vas da svakako dođete zajedno sa svojim ljubimcem.
       <br>
+      <br>
+      <b>Čekamo vas na dobro poznatoj adresi:</b> <span id="adresaShop"></span><br><br>
       <b>Vaš <span class="naziv"></span>
       <br>
-      Ljubimci znaju zašto.</p></b>
+      Ljubimci znaju zašto.</b></p>
   </div>
   <a href="javascript:window.scrollTo(0,0);" id="vrhbut"><i class="bi bi-arrow-up-circle-fill"></i></a>
     <div class="container">
@@ -211,6 +259,7 @@
           <a class="logofoot1" href="#"><b><span class="naziv"></span></b></a>
           <p class="text-muted">&copy; 2023</p>
           <div class="handle"><a href="#" id="iiii"><i class="bi bi-instagram"></i></a><a href="#" id="iiii"><i class="bi bi-facebook"></i></i></a><a href="#" id="iiii"><i class="bi bi-linkedin"></i><a></div>
+          <br><p><b>Broj telefona:</b><br><span class="telefonPS"></span></p>
         </div>
   
   
@@ -250,5 +299,4 @@
     <script src="korisnici.js"></script>
     <script src="onama.js"></script>
   </body>
-  
   </html>

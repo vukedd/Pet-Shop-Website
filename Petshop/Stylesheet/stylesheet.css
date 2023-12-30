@@ -98,6 +98,19 @@ body {
     color: black;
 }
 
+.onamanaslov {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2%;
+    margin-right: 5%;
+    margin-top: 1%;
+}
+
+.onamadugme {
+    margin-top: 1%;
+}
+
+
 #butt {
     font-size: 120%;
     display: flex;
@@ -344,8 +357,8 @@ padding-top: 1.5%
 }
 
 
-.login, #register1, .editModal {
-    margin-left: 10%;
+.login, #register1, .editModal, #editOnama {
+    margin-left: 23%;
 }
 
 .lgbut {
@@ -476,9 +489,7 @@ padding-top: 1.5%
 }
 
 #onamahead {
-    margin-left: 3%;
-    margin-top: 2%;
-    margin-bottom:4%;
+    margin-bottom: 5%;
 }
 
 .mapa {
@@ -496,7 +507,7 @@ padding-top: 1.5%
 #onamapic {
     display: flex;
     float: left;
-    width: 40%;
+    width: 20%;
     min-width: 200px;
     margin-right: 1%;
 }
@@ -687,6 +698,7 @@ padding-top: 1.5%
     text-align: center;
     color: black;
     font-weight: 450;
+    background-color: white;
 }
 
 #headkorisnicirow {
