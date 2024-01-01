@@ -105,7 +105,7 @@
 <body id="vrh">
   <div class="spojiih">
     <nav id="nav1" class="navbar navbar-danger bg-danger">
-        <a class="navbar-brand" href="index.html"><b>Pet Shop XY</b></a>
+        <a class="navbar-brand" href="index.html"><b><span class="naziv"></span></b></a>
       <div class="sredina">
         <a href="admin.html"><button id="buttt" type="button" class="btn btn-danger pb-2 pt-1" alt="users"><i class="bi bi-person-lock"></i>
         </button></a>
@@ -181,7 +181,7 @@
   </div>
     <h2 id="naslovadd">Dodaj proizvod</h2>
     <div class="addforma1">
-      <form>
+      <form id="productAdd">
     <div id="addforma" class="row">
       <div id="forma1" class="col">
         <label for="#kat">Tip Proizvoda</label>
@@ -190,38 +190,32 @@
         <br>
         <label for="#imep">Naziv Proizvoda:</label>
         <br>
-        <input type="text" name="imep" id="imep">
+        <input type="text" name="imep" id="imeprod">
         <br>
-        <label for="#proiz">Ime Proizvođača:</label>
+        <label for="#cenap">Cena Proizvoda:</label>
         <br>
-        <input type="text" name="proiz" id="proiz">
+        <input type="number" name="cenap" id="cenaprod">
         <br>
-        <label for="#cena">Cena Proizvoda:</label>
         <br>
-        <input type="number" name="cena" id="cena">
+        <label for="#addslika">Dodaj sliku/e: </label>
         <br>
-      <form>
-        <br>
-        <label for="#addslika">Dodaj sliku: </label>
-        <br>
-        <input type="file" alt="Unesi sliku">
-      </form>
+        <input type="file" alt="Unesi sliku" id="slikeprod">
         <br>
       </div>
       <div id="forma2" class="col">
         <label for="#kopis">Kratak opis:</label>
         <br>
-        <textarea name="kopis" rows="4" cols="40" placeholder="Unesite kratak opis Proizvoda koji će biti prikazan na kartici..."></textarea>
+        <textarea name="kopis" rows="4" cols="40" id="kopisprod" placeholder="Unesite kratak opis Proizvoda koji će biti prikazan na kartici..."></textarea>
         <br>
-        <label for="#dopis">Dug opis:</label>
+        <label for="#dopis">Detaljan opis:</label>
         <br>
-        <textarea name="dopis" rows="8" cols="40" placeholder="Unesite detaljan opis Proizvoda koji će biti prikazan na stranici samog Proizvoda..."></textarea>
+        <textarea name="dopis" rows="8" cols="40" id="dopis" placeholder="Unesite detaljan opis Proizvoda koji će biti prikazan na stranici samog Proizvoda..."></textarea>
       </div>
     </div>
     <div class="dugme">
       <button type="submit" class="btn btn-danger" id="addpbut">Dodaj proizvod u sistem</button>  
-    </form>
     </div>
+  </form>
   </div>
   <a href="javascript:window.scrollTo(0,0);" id="vrhbut"><i class="bi bi-arrow-up-circle-fill"></i></a>
     <div class="container">
@@ -269,5 +263,6 @@
     </script>
     <script src="korisnici.js"></script>
     <script src="onama.js"></script>
+    <script src="proizvodadd.js"></script>
   </body>
   </html>

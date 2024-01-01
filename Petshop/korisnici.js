@@ -27,7 +27,6 @@ formRegister.addEventListener('submit', event => {
 
     const podaciForma = new FormData(formRegister);
     const noviKorisnik = Object.fromEntries(podaciForma);
-    console.log(noviKorisnik);
     const korisnikSlanje = JSON.stringify(noviKorisnik);
 
     let registerReq = new XMLHttpRequest();
