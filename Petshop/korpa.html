@@ -63,35 +63,43 @@
         <form id="register1">
           <label for="#ime">Ime:</label>
           <br>
-          <input type="text" id="ime" name="ime">
+          <input type="text" id="imereg" name="ime"><br>
+          <span id="errorime"></span>
           <br>
           <label for="#prezime">Prezime: </label>
           <br>
-          <input type="text" name="prezime" id="prezime">
+          <input type="text" name="prezime" id="prezime"><br>
+          <span id="errorprezime"></span>
           <br>
           <label for="#korisnickoIme">Username:</label>
           <br>
-          <input type="text" id="un" name="korisnickoIme">
+          <input type="text" id="un" name="korisnickoIme"><br>
+          <span id="errorun"></span>
           <br>
           <label for="#adresa">Adresa, Grad, Postanski br. : </label>
           <br>
-          <input type="text" name="adresa" id="adresaa">
+          <input type="text" name="adresa" id="adresaa"><br>
+          <span id="erroradresa"></span>
           <br>
-          <label for="#email1">E-mail:</label>
+          <label for="#email">E-mail:</label>
           <br>
-          <input type="email" id="email1" name="email">
+          <input type="text" id="email1" name="email"><br>
+          <span id="erroremail"></span>
           <br>
           <label for="#lozinka">Password:</label>
           <br>
-          <input type="password" id="password1" name="lozinka">
+          <input type="password" id="password1" name="lozinka"><br>
+          <span id="errorpw"></span>
           <br>
           <label for="#telefon">Broj telefona:</label>
           <br>
-          <input type="tel" name="telefon" id="telepun">
+          <input type="tel" name="telefon" id="telepun"><br>
+          <span id="errortel"></span>
           <br>
           <label for="#datumRodjenja">Datum rodjenja:</label>
           <br>
           <input id="datepicker" type="date" name="datumRodjenja" min="1900-01-01" max="">
+          <span id="errordate"></span>
           <br>
           <button type="submit" class="lgbut">Registruj se</button>
         </form>
@@ -273,7 +281,7 @@
 <div class="container">
   <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top" id="footerdole">
     <div class="col mb-3">
-      <a class="logofoot1" href="#"><b><span class="naziv"></span></b></a>
+      <a class="logofoot1" href="index.html"><b><span class="naziv"></span></b></a>
       <p class="text-muted">&copy; 2023</p>
       <div class="handle"><a href="#" id="iiii"><i class="bi bi-instagram"></i></a><a href="#" id="iiii"><i class="bi bi-facebook"></i></i></a><a href="#" id="iiii"><i class="bi bi-linkedin"></i><a></div>
       <br><p><b>Broj telefona:</b><br><span class="telefonPS"></span></p>
@@ -296,7 +304,7 @@
     </div>
 
     <div class="col mb-3">
-      <h5>Pet Shop</h5>
+      <h5><span class="naziv"></span></h5>
       <ul class="nav flex-column">
         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Uslovi korišćenja</a></li>
         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Politika privatnosti</a></li>

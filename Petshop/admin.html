@@ -64,40 +64,48 @@
         <form id="register1">
           <label for="#ime">Ime:</label>
           <br>
-          <input type="text" id="ime" name="ime">
+          <input type="text" id="imereg" name="ime"><br>
+          <span id="errorime"></span>
           <br>
           <label for="#prezime">Prezime: </label>
           <br>
-          <input type="text" name="prezime" id="prezime">
+          <input type="text" name="prezime" id="prezime"><br>
+          <span id="errorprezime"></span>
           <br>
           <label for="#korisnickoIme">Username:</label>
           <br>
-          <input type="text" id="un" name="korisnickoIme">
+          <input type="text" id="un" name="korisnickoIme"><br>
+          <span id="errorun"></span>
           <br>
           <label for="#adresa">Adresa, Grad, Postanski br. : </label>
           <br>
-          <input type="text" name="adresa" id="adresaa">
+          <input type="text" name="adresa" id="adresaa"><br>
+          <span id="erroradresa"></span>
           <br>
-          <label for="#email1">E-mail:</label>
+          <label for="#email">E-mail:</label>
           <br>
-          <input type="email" id="email1" name="email">
+          <input type="text" id="email1" name="email"><br>
+          <span id="erroremail"></span>
           <br>
           <label for="#lozinka">Password:</label>
           <br>
-          <input type="password" id="password1" name="lozinka">
+          <input type="password" id="password1" name="lozinka"><br>
+          <span id="errorpw"></span>
           <br>
           <label for="#telefon">Broj telefona:</label>
           <br>
-          <input type="tel" name="telefon" id="telepun">
+          <input type="tel" name="telefon" id="telepun"><br>
+          <span id="errortel"></span>
           <br>
           <label for="#datumRodjenja">Datum rodjenja:</label>
           <br>
           <input id="datepicker" type="date" name="datumRodjenja" min="1900-01-01" max="">
+          <span id="errordate"></span>
           <br>
           <button type="submit" class="lgbut">Registruj se</button>
         </form>
-        <p id="reglink">Već imaš nalog? <a href="#" data-toggle="modal" data-target="#exampleModalCenter"
-            data-dismiss="modal"> Uloguj se ovde!</a></p>
+        <p id="reglink">Već imaš nalog? <a href="#" data-toggle="modal"
+          data-target="#exampleModalCenter" data-dismiss="modal"> Uloguj se ovde!</a></p>
       </div>
     </div>
   </div>
@@ -117,37 +125,45 @@
         <form class="editModal">
           <label for="#ime">Ime:</label>
           <br>
-          <input type="text" id="imedit" name="ime">
+          <input type="text" id="imedit" name="ime"><br>
+          <span id="errorime1"></span>
           <br>
           <label for="#prezime">Prezime: </label>
           <br>
-          <input type="text" name="prezime" id="prezimedit">
+          <input type="text" name="prezime" id="prezimedit"><br>
+          <span id="errorprezime1"></span>
           <br>
           <label for="#korisnickoIme">Username:</label>
           <br>
-          <input type="text" id="unedit" name="korisnickoIme">
+          <input type="text" id="unedit" name="korisnickoIme"><br>
+          <span id="errorun1"></span>
           <br>
           <label for="#adresa">Adresa, Grad, Postanski br. : </label>
           <br>
-          <input type="text" name="adresa" id="adresaedit">
+          <input type="text" name="adresa" id="adresaedit"><br>
+          <span id="erroradresa1"></span>
           <br>
           <label for="#email">E-mail:</label>
           <br>
-          <input type="email" id="emailedit" name="email">
+          <input type="text" id="emailedit" name="email"><br>
+          <span id="erroremail1"></span>
           <br>
           <label for="#lozinka">Password:</label>
           <br>
-          <input type="text" id="passwordedit" name="lozinka">
+          <input type="text" id="passwordedit" name="lozinka"><br>
+          <span id="errorpw1"></span>
           <br>
           <label for="#telefon">Broj telefona:</label>
           <br>
-          <input type="tel" name="telefon" id="telefonEdit">
+          <input type="tel" name="telefon" id="telefonEdit"><br>
+          <span id="errortel1"></span>
           <br>
           <label for="#datumRodjenja">Datum rodjenja:</label>
           <br>
-          <input id="datepickeredit" type="date" name="datumRodjenja" min="1900-01-01" max="">
+          <input id="datepickeredit" type="date" name="datumRodjenja" min="1900-01-01" max=""><br>
+          <span id="errordate1"></span>
           <br>
-          <button type="submit" class="lgbut" id="editbut" onclick="updateKorisnik()">Potvrdi izmene o korisniku</button>
+          <button type="submit" class="lgbut" id="editbut">Potvrdi izmene o korisniku</button>
         </form>
       </div>
     </div>
@@ -305,7 +321,7 @@
     <div class="container">
       <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top" id="footerdole">
         <div class="col mb-3">
-          <a class="logofoot1" href="#"><b><span class="naziv"></span></b></a>
+          <a class="logofoot1" href="index.html"><b><span class="naziv"></span></b></a>
           <p class="text-muted">&copy; 2023</p>
           <div class="handle"><a href="#" id="iiii"><i class="bi bi-instagram"></i></a><a href="#" id="iiii"><i class="bi bi-facebook"></i></i></a><a href="#" id="iiii"><i class="bi bi-linkedin"></i><a></div>
           <br><p><b>Broj telefona:</b><br><span class="telefonPS"></span></p>
@@ -328,7 +344,7 @@
         </div>
   
         <div class="col mb-3">
-          <h5>Pet Shop</h5>
+          <h5><span class="naziv"></span></h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Uslovi korišćenja</a></li>
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Politika privatnosti</a></li>

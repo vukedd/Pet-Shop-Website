@@ -11,8 +11,13 @@ var editKorisnik = {
     adresa: "", datumRodjenja: "", email: "", ime: "", korisnickoIme: "", lozinka: "", prezime: "", telefon: ""
 }
 
+// P
 var popuniProfil = {
     ime: "", prezime: "", datumRodjenja: "", adresa: "", telefon: "", email: "", lozinka: ""
+}
+
+var noviKorisnik = {
+    adresa: "", datumRodjenja: "", email: "", ime: "", korisnickoIme: "", lozinka: "", prezime: "", telefon: ""
 }
 
 
@@ -21,19 +26,149 @@ var korisnikId;
 
 GetKorisnici();
 
-// Registracija korisnika
+// Registracija korisnika sa valiacijom podataka.
 const formRegister = document.querySelector("#register1"); 
 formRegister.addEventListener('submit', event => {
 
-    const podaciForma = new FormData(formRegister);
-    const noviKorisnik = Object.fromEntries(podaciForma);
-    const korisnikSlanje = JSON.stringify(noviKorisnik);
+    event.preventDefault();
 
-    let registerReq = new XMLHttpRequest();
-    registerReq.onreadystatechange = function() {
+    // Validacija za ime
+    let imereg = document.querySelector("#imereg").value;
+    let errorime = document.querySelector("#errorime");
+    if (imereg == ""){
+        errorime.innerText = "Neophodno je popuniti ovo polje";
+        errorime.style.color = "red";
+    }
+    else if (/\d/.test(imereg)) {
+        errorime.innerText = "Ime ne sme da sadrži brojeve.";
+        errorime.style.color = "red";
+    }
+    else {
+        errorime.innerText = "";
+        noviKorisnik.ime = imereg.trim();
+    }
+
+    // Validacija za prezime
+    let prezimereg = document.querySelector("#prezime").value;
+    let errorprezime = document.querySelector("#errorprezime");
+    if (prezimereg == ""){
+        errorprezime.innerText = "Neophodno je popuniti ovo polje";
+        errorprezime.style.color = "red";
+    }
+    else if (/\d/.test(prezimereg)) {
+        errorprezime.innerText = "Ime ne sme da sadrži brojeve.";
+        errorprezime.style.color = "red";
+    }
+    else {
+        errorprezime.innerText = "";
+        noviKorisnik.prezime = prezimereg.trim();
+    }
+
+    // Validacija za username
+    let unreg = document.querySelector("#un").value;
+    let errorun = document.querySelector("#errorun");
+    if (unreg == ""){
+        errorun.innerText = "Neophodno je popuniti ovo polje";
+        errorun.style.color = "red";
+    }
+    else {
+        errorun.innerText = "";
+        noviKorisnik.korisnickoIme = unreg.trim();
+    }
+    console.log(noviKorisnik);
+
+    // Validacija za adresu
+    let adresareg = document.querySelector("#adresaa").value;
+    let erroradresa = document.querySelector("#erroradresa");
+    if (adresareg == ""){
+        erroradresa.innerText = "Neophodno je popuniti ovo polje";
+        erroradresa.style.color = "red";
+    }
+    else if (adresareg.length < 10) {
+        erroradresa.innerText = "Format za unos: Adresa, Grad, Poštanski br."
+        erroradresa.style.color = "red";
+    }
+    else if (!/\b\d{5}\b/g.test(adresareg)){
+        erroradresa.innerText = "Neophodno je uneti poštanski broj."
+        erroradresa.style.color = "red";
+    }
+    else {
+        erroradresa.innerText = "";
+        noviKorisnik.adresa = adresareg.trim();
+    }
+    console.log(noviKorisnik);
+
+    // Validacija za email
+    let emailreg = document.querySelector("#email1").value;
+    let erroremail = document.querySelector("#erroremail");
+    if (emailreg == ""){
+        erroremail.innerText = "Neophodno je popuniti ovo polje";
+        erroremail.style.color = "red";
+    }
+    else if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(emailreg)){
+        erroremail.innerText = "Unesite važeću email adresu";
+        erroremail.style.color = "red";
+    }
+    else {
+        erroremail.innerText = "";
+        noviKorisnik.email = emailreg.trim();
+        console.log(noviKorisnik);
+    }
+    
+    // Validacija za sifru
+    let sifrareg = document.querySelector("#password1").value;
+    let errorsifra = document.querySelector("#errorpw");
+    if (sifrareg == ""){
+        errorsifra.innerText = "Neophodno je popuniti ovo polje";
+        errorsifra.style.color = "red";
+    }
+    else if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(sifrareg)){
+        errorsifra.innerText = "Lozinka mora biti minimum 8 karaktera i da sadrži bar jedan broj";
+        errorsifra.style.color = "red";
+    }
+    else {
+        errorsifra.innerText = "";
+        noviKorisnik.lozinka = sifrareg.trim();
+        console.log(noviKorisnik);
+    }
+
+    //Validacija za broj telefona
+    let telreg = document.querySelector("#telepun").value;
+    let errortel = document.querySelector("#errortel");
+    if (telreg == ""){
+        errortel.innerText = "Neophodno je popuniti ovo polje";
+        errortel.style.color = "red";
+    }
+    else if (!/^\d{3}-\d{3}-\d{4}$|^\d{3}-\d{3}-\d{3}$/.test(telreg)){
+        errortel.innerText = "Format za unos: xxx-xxx-xxx ili xxx-xxx-xxxx";
+        errortel.style.color = "red";
+    }
+    else {
+        errortel.innerText = "";
+        noviKorisnik.telefon = telreg.trim();
+        console.log(noviKorisnik);
+    }
+    
+    // Validacija za datum
+    let datereg = document.querySelector("#datepicker").value;
+    let errordate = document.querySelector("#errordate");
+    if (!/^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])-(19|20)\d{2}$/){
+        errordate.innerText = "Neophodno je popuniti ovo polje."
+        errordate.style.color = "red";
+    }
+    else {
+        errordate.innerHTML = "";
+        noviKorisnik.datumRodjenja = datereg.trim();
+        console.log(noviKorisnik);
+    }
+    let korisnikSlanje = JSON.stringify(noviKorisnik);
+    if (noviKorisnik.ime != "" && noviKorisnik.prezime != "" && noviKorisnik.korisnickoIme != "" && noviKorisnik.adresa != "" && noviKorisnik.lozinka != "" && noviKorisnik.telefon != "" && noviKorisnik.datumRodjenja != "" && noviKorisnik.email != ""){
+        let registerReq = new XMLHttpRequest();
+        registerReq.onreadystatechange = function() {
         if (this.readyState == 4){
             if (this.status == 200){
                 console.log("Uspesno ste se registrovali.")
+                location.reload();
             }
             else {
                 alert("Greska prilikom registracije korisnika");
@@ -42,9 +177,9 @@ formRegister.addEventListener('submit', event => {
     }
     registerReq.open("POST", FirebaseURL + "/korisnici.json");
     registerReq.send(korisnikSlanje);
+    } 
+
 })
-
-
 
 // Funkcija uz pomoc koje cemo izvuci sve korisnike iz json file-a.
 function GetKorisnici() {
@@ -70,52 +205,160 @@ function GetKorisnici() {
     request.send();
 }
 
+// Funkcija koja validira podatke za izmenu korisnika i salje u firebase.
+const formEdit = document.querySelector(".editModal"); 
+formEdit.addEventListener('submit', event => {
 
+    event.preventDefault();
 
-// funkcija za potvrdjivanje izmena o korisniku, fali validacija podataka.
-function updateKorisnik() {
+    // Validacija za ime
+    let imereg1 = document.querySelector("#imedit").value;
+    let errorime1 = document.querySelector("#errorime1");
+    if (imereg1 == ""){
+        errorime1.innerText = "Neophodno je popuniti ovo polje";
+        errorime1.style.color = "red";
+    }
+    else if (/\d/.test(imereg1)) {
+        errorime1.innerText = "Ime ne sme da sadrži brojeve.";
+        errorime1.style.color = "red";
+    }
+    else {
+        errorime1.innerText = "";
+        editKorisnik.ime = imereg1.trim();
+    }
 
-    var editovanoIme = document.querySelector("#imedit").value;
-    editKorisnik.ime = editovanoIme;
+    // Validacija za prezime
+    let prezimereg1 = document.querySelector("#prezimedit").value;
+    let errorprezime1 = document.querySelector("#errorprezime1");
+    if (prezimereg1 == ""){
+        errorprezime1.innerText = "Neophodno je popuniti ovo polje";
+        errorprezime1.style.color = "red";
+    }
+    else if (/\d/.test(prezimereg1)) {
+        errorprezime1.innerText = "Ime ne sme da sadrži brojeve.";
+        errorprezime1.style.color = "red";
+    }
+    else {
+        errorprezime1.innerText = "";
+        editKorisnik.prezime = prezimereg1.trim();
+    }
 
-    var editovanoPrezime = document.querySelector("#prezimedit").value;
-    editKorisnik.prezime = editovanoPrezime;
+    // Validacija za username
+    let unreg1 = document.querySelector("#unedit").value;
+    let errorun1 = document.querySelector("#errorun1");
+    if (unreg1 == ""){
+        errorun1.innerText = "Neophodno je popuniti ovo polje";
+        errorun1.style.color = "red";
+    }
+    else {
+        errorun1.innerText = "";
+        editKorisnik.korisnickoIme = unreg1.trim();
+    }
 
-    var editovanUN = document.querySelector("#unedit").value;
-    editKorisnik.korisnickoIme = editovanUN;
+    // Validacija za adresu
+    let adresareg1 = document.querySelector("#adresaedit").value;
+    let erroradresa1 = document.querySelector("#erroradresa1");
+    if (adresareg1 == ""){
+        erroradresa1.innerText = "Neophodno je popuniti ovo polje";
+        erroradresa1.style.color = "red";
+    }
+    else if (adresareg1.length < 10) {
+        erroradresa1.innerText = "Format za unos: Adresa, Grad, Poštanski br."
+        erroradresa1.style.color = "red";
+    }
+    else if (!/\b\d{5}\b/g.test(adresareg1)){
+        erroradresa1.innerText = "Neophodno je uneti poštanski broj."
+        erroradresa1.style.color = "red";
+    }
+    else {
+        erroradresa1.innerText = "";
+        editKorisnik.adresa = adresareg1.trim();
+    }
 
-    var editovanDatum = document.querySelector("#datepickeredit").value;
-    editKorisnik.datumRodjenja = editovanDatum;
+    // Validacija za email
+    let emailreg1 = document.querySelector("#emailedit").value;
+    let erroremail1 = document.querySelector("#erroremail1");
+    if (emailreg1 == ""){
+        erroremail1.innerText = "Neophodno je popuniti ovo polje";
+        erroremail1.style.color = "red";
+    }
+    else if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(emailreg1)){
+        erroremail1.innerText = "Unesite važeću email adresu";
+        erroremail1.style.color = "red";
+    }
+    else {
+        erroremail1.innerText = "";
+        editKorisnik.email = emailreg1.trim();
+    }
+    
+    // Validacija za sifru
+    let sifrareg1 = document.querySelector("#passwordedit").value;
+    let errorsifra1 = document.querySelector("#errorpw1");
+    if (sifrareg1 == ""){
+        errorsifra1.innerText = "Neophodno je popuniti ovo polje";
+        errorsifra1.style.color = "red";
+    }
+    else if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(sifrareg1)){
+        errorsifra1.innerText = "Lozinka mora biti minimum 8 karaktera i da sadrži bar jedan broj";
+        errorsifra1.style.color = "red";
+    }
+    else {
+        errorsifra1.innerText = "";
+        editKorisnik.lozinka = sifrareg1.trim();
+    }
 
-    var editovanaLozinka = document.querySelector("#passwordedit").value;
-    editKorisnik.lozinka = editovanaLozinka;
+    //Validacija za broj telefona
+    let telreg1 = document.querySelector("#telefonEdit").value;
+    let errortel1 = document.querySelector("#errortel1");
+    if (telreg1 == ""){
+        errortel1.innerText = "Neophodno je popuniti ovo polje";
+        errortel1.style.color = "red";
+    }
+    else if (!/^\d{3}-\d{3}-\d{4}$|^\d{3}-\d{3}-\d{3}$/.test(telreg1)){
+        errortel1.innerText = "Format za unos: xxx-xxx-xxx ili xxx-xxx-xxxx";
+        errortel1.style.color = "red";
+    }
+    else {
+        errortel1.innerText = "";
+        editKorisnik.telefon = telreg1.trim();
+    }
+    
+    // Validacija za datum
+    let datereg1 = document.querySelector("#datepickeredit").value;
+    let errordate1 = document.querySelector("#errordate1");
+    if (datereg1.length < 7){
+        errordate1.innerText = "Neophodno je popuniti ovo polje."
+        errordate1.style.color = "red";
+    }
+    else {
+        errordate1.innerHTML = "";
+        editKorisnik.datumRodjenja = datereg1.trim();
+    }
 
-    var editovanaAdresa = document.querySelector("#adresaedit").value;
-    editKorisnik.adresa = editovanaAdresa;
+    console.log(editKorisnik);
 
-    var editovanEmail = document.querySelector("#emailedit").value;
-    editKorisnik.email = editovanEmail;
+    if (editKorisnik.ime != "" && editKorisnik.prezime != "" && editKorisnik.korisnickoIme != "" && editKorisnik.adresa != "" && editKorisnik.lozinka != "" && editKorisnik.telefon != "" && editKorisnik.datumRodjenja != "" && editKorisnik.email != ""){
+        let request = new XMLHttpRequest();
 
-    var editovanBroj = document.querySelector("#telefonEdit").value;
-    editKorisnik.telefon = editovanBroj;
-
-    let request = new XMLHttpRequest();
-
-    request.onreadystatechange = function() {
-        if (this.readyState == 4) {
-            if (this.status == 200) {          
-                alert("Uspesno Azuriran korisnik.");
-            } else {
-                alert("Greska prilikom azuriranja korisnika");
+        request.onreadystatechange = function() {
+            if (this.readyState == 4) {
+                if (this.status == 200) {          
+                    alert("Uspesno Azuriran korisnik.");
+                    location.reload();
+                } else {
+                    alert("Greska prilikom azuriranja korisnika");
+                }
             }
-        }
-    };
+        };
 
     request.open("PUT", FirebaseURL + "/korisnici/" + korisnikId + ".json");
     request.send(JSON.stringify(editKorisnik));
-}
+    } 
 
-function profilcina(){
+})
+
+// Funkcija koja popunjava formu za izmenu korisnika prilikom klika.
+function izmenaPopuni(){
     let imeprofila = document.querySelector("#imeprofil");
     imeprofila.innerHTML = popuniProfil.ime;
 
@@ -161,7 +404,7 @@ function appendKorisniciRed(tBody, korisnik, id) {
         popuniProfil.telefon = korisnik.telefon;
         popuniProfil.email = korisnik.email;
         popuniProfil.lozinka = korisnik.lozinka;
-        profilcina();
+        izmenaPopuni();
     })
     KorisniciRed.appendChild(UserTd);
 
