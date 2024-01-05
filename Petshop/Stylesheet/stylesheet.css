@@ -154,11 +154,11 @@ body {
     margin-bottom: 4%;
 }
 
-.card-title {
+#card-title {
     color: black;
 }
 
-.card-title:hover {
+#card-title:hover {
     color: black;
 }
 
@@ -945,4 +945,37 @@ color: black;
     padding: 5px;
     border-radius: 10px;
     margin-top: 10px;
+}
+
+#sviproizvodi {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    grid-template-rows: repeat(4, 1fr);    
+    gap: 5px;
+    margin-left: 3%;
+    margin-top: 3%;
+}
+
+#kartica {
+    padding: 10px; 
+    height: 100%; 
+}
+
+@media (max-width: 600px) {
+    #sviproizvodi {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+#showall {
+    text-align: center;
+}
+
+#dugmeshowall {
+    color: black;
+}
+
+#naslovsvi {
+    margin-top: 1%;
+    text-align: center;
 }

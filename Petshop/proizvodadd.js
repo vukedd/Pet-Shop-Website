@@ -53,6 +53,9 @@ prodAddForm.addEventListener('submit', event => {
 })
 
 
+
+
+
 // function dodajProizvod(){
 //     let tipProizvoda = document.querySelector("#tip").value;
 //     let imeProizvoda = document.querySelector("imep").value;

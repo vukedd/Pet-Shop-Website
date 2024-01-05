@@ -11,7 +11,7 @@ var editKorisnik = {
     adresa: "", datumRodjenja: "", email: "", ime: "", korisnickoIme: "", lozinka: "", prezime: "", telefon: ""
 }
 
-// P
+// 
 var popuniProfil = {
     ime: "", prezime: "", datumRodjenja: "", adresa: "", telefon: "", email: "", lozinka: ""
 }
@@ -200,7 +200,6 @@ function GetKorisnici() {
             }
         }
     };
-
     request.open("GET", FirebaseURL + "/korisnici.json");
     request.send();
 }
