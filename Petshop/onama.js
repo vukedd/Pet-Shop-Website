@@ -4,7 +4,6 @@ let godOtvaranja = document.querySelector("#godinaOtvaranja");
 let telefonPS = document.querySelectorAll(".telefonPS");
 let adresaPS = document.querySelector("#adresaShop");
 
-console.log(adresaPS);
 
 let informacije = {};
 
@@ -14,7 +13,6 @@ request.onreadystatechange = function () {
     if (this.readyState == 4){
         if (this.status == 200){
             informacije = JSON.parse(this.responseText);
-            console.log(ime)
             for (var span in ime){
                 ime[span].innerHTML = informacije.naziv;
             }
@@ -23,9 +21,7 @@ request.onreadystatechange = function () {
                 telefonPS[span].innerHTML = informacije.telefon;
             }
             
-            console.log(informacije);
             godOtvaranja.innerHTML = informacije.godinaOtvaranja;
-            console.log(informacije.adresa);
             adresaPS.innerHTML = informacije.adresa;
 
             // var logo = informacije.logo;
@@ -67,9 +63,7 @@ function izmenaDetalja(){
     let brojtelPotvrdi = document.querySelector("#telepunPS").value;
     informacije.telefon = brojtelPotvrdi;
     
-    console.log(informacije);
-
-    PotvrdiReq = new XMLHttpRequest();
+    let PotvrdiReq = new XMLHttpRequest();
 
     PotvrdiReq.onreadystatechange = function () {
         if (this.readyState == 4) {

@@ -1,9 +1,6 @@
 let proizvodi = {};
 let slike = {};
-console.log(slike);
-
 let listaProizvoda = document.getElementById("sviproizvodi");
-console.log(listaProizvoda);
 
 let getproizvod = new XMLHttpRequest();
 getproizvod.onreadystatechange = function() {
@@ -11,13 +8,12 @@ getproizvod.onreadystatechange = function() {
         if (this.status == 200){
             proizvodi = JSON.parse(this.response);
             console.log(proizvodi);
-            for (id in proizvodi){
+            for (let id in proizvodi){
                 let proizvod = proizvodi[id];
+                console.log(proizvod);
                 slike = proizvod.slike;
                 let glavnaSlika = slike[0];
-                console.log(glavnaSlika);
                 proizvodAppend(listaProizvoda, id, proizvod, glavnaSlika);
-  
             }
         } else {
 
@@ -32,7 +28,7 @@ function proizvodAppend(listaProizvoda, id, proizvod, slika) {
     let karticaProizvoda = document.createElement("div");
     karticaProizvoda.innerHTML = `
     <div class="card" id="kartica" style="width: 15rem;">
-        <a href="proizvod1.html" id="proizvodi">
+        <a href="proizvod1.html?id=${id}" class="proizvodi-link">
           <img class="card-img-top" src="${slika}" alt="Card image cap">
           <div class="card-body">
             <h5 id="card-title">${proizvod.naziv}</h5>
@@ -48,4 +44,14 @@ function proizvodAppend(listaProizvoda, id, proizvod, slika) {
     </div>
     `
     sviProizvodi.appendChild(karticaProizvoda);
-}
+
+    // Dodeli linku koji vodi na proizvod sa odgovarajucim id-om;
+    let linkDoProizvoda = karticaProizvoda.querySelector('.proizvodi-link');
+    linkDoProizvoda.addEventListener("click", (event) => {
+        // Preuzmi ID iz linka iz ?id=${'id'};
+        let kliknutiProizvod = id;
+
+        // Sacuvaj id u local storage.
+        localStorage.setItem('id', kliknutiProizvod);
+    });
+  }

@@ -93,6 +93,11 @@ body {
     min-height: 100px;
 }
 
+.slika {
+    width: 450px;
+    height: 450px;
+}
+
 #onama {
     text-decoration: none;
     color: black;
@@ -203,6 +208,14 @@ body {
     margin-bottom: 2%;
 }
 
+#proizvodsection {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2%;
+    margin-right: 5%;
+    margin-top: 1%;
+}
+
 .daprobamnesto {
     margin-left: 5%;
 }
@@ -216,7 +229,7 @@ body {
 
 #slika {
     border-radius: 20px;
-    height:465px;
+    height: 465px;
 }
 
 #kupi {
@@ -263,6 +276,7 @@ input::-webkit-inner-spin-button {
 
 #rsd {
     padding-top: 0;
+    font-size: 200%;
 }
 
 #kg {
@@ -292,10 +306,10 @@ padding-top: 1.5%
     text-decoration: underline;
     width: 118.5%;
     margin-right: 20%;
-    font-size: 150%;
+    font-size: 200%;
 }
 
-#proizvodi:hover {
+.proizvodi-link:hover {
     text-decoration: none;
 }
 
@@ -357,7 +371,7 @@ padding-top: 1.5%
 }
 
 
-.login, #register1, .editModal, #editOnama {
+.login, #register1, .editModal, #editOnama, #editProdForm {
     margin-left: 20%;
 }
 
@@ -951,7 +965,7 @@ color: black;
     display: grid;
     grid-template-columns: repeat(6, 1fr); 
     grid-template-rows: repeat(4, 1fr);    
-    gap: 5px;
+    gap: 2px;
     margin-left: 3%;
     margin-top: 3%;
 }
@@ -972,10 +986,30 @@ color: black;
 }
 
 #dugmeshowall {
+    color: white;
+    background-color: red;
+    padding: 20px;
+    border-radius: 35px;
+}
+
+#dugmeshowall:hover {
     color: black;
+    background-color: white;
+    transition: 0.5s;
+    text-decoration: double;
 }
 
 #naslovsvi {
     margin-top: 1%;
     text-align: center;
+}
+
+.carousel-item {
+        height: 100%;
+        overflow: hidden;
+        width: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
 }
