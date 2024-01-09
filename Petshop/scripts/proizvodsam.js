@@ -1,3 +1,4 @@
+
 let idprodcina;
 let proizvodinfo = {};
 
@@ -98,5 +99,28 @@ window.onload = function() {
     }
     productreq.open("GET", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
     productreq.send();
+
+    
+    let obrisiDugme = document.querySelector("#obrisiProizvod");
+    obrisiDugme.addEventListener("click", (event) => {
+
+        event.preventDefault();
+        var odgovor = confirm("Da li ste sigurni da želite da obrišete ovaj proizvod?");
+
+        if (odgovor){
+            let DelProdRequest = new XMLHttpRequest();
+            DelProdRequest.onreadystatechange = function (){
+                if (this.readyState == 4){
+                    if (this.status == 200){
+                        window.location.href = "index.html";
+                    } else {
+                        console.log("Neuspešno brisanje proizvoda.")
+                    }
+                }
+            }
+            DelProdRequest.open("DELETE", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
+            DelProdRequest.send();
+        }
+    });
     
 }

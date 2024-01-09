@@ -1,3 +1,4 @@
+
 let proizvodi = {};
 let slike = {};
 let listaProizvoda = document.getElementById("sviproizvodi");
@@ -54,4 +55,4 @@ function proizvodAppend(listaProizvoda, id, proizvod, slika) {
         // Sacuvaj id u local storage.
         localStorage.setItem('id', kliknutiProizvod);
     });
-  }
+}

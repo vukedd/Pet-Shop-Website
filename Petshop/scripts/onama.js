@@ -1,3 +1,4 @@
+
 let ime = document.querySelectorAll(".naziv");
 let slika = document.querySelector("#onamapic");
 let godOtvaranja = document.querySelector("#godinaOtvaranja");
