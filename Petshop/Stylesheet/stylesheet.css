@@ -419,13 +419,11 @@ padding-top: 1.5%
     border-top: .5px solid rgb(214, 214, 214);
     border-bottom: .5px solid rgb(214, 214, 214);
     width: 90%;
-}
-
-.kocka1 {
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
+    flex-direction: column;
 }
+
 
 #hzp {
     color: black;
@@ -978,26 +976,9 @@ color: black;
 
 @media (max-width: 600px) {
     #sviproizvodi {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 20%;
     }
-}
-
-#showall {
-    text-align: center;
-}
-
-#dugmeshowall {
-    color: white;
-    background-color: red;
-    padding: 20px;
-    border-radius: 35px;
-}
-
-#dugmeshowall:hover {
-    color: black;
-    background-color: white;
-    transition: 0.5s;
-    text-decoration: double;
 }
 
 #naslovsvi {
@@ -1006,11 +987,59 @@ color: black;
 }
 
 .carousel-item {
-        height: 100%;
-        overflow: hidden;
-        width: 100%;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
 }
 
 .carousel-item img {
     width: 100%;
+}
+
+#ocenaKorisnika {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 3%;
+    border-top: 1px solid rgba(128, 128, 128, 0.397);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.336);
+    padding: 3%;
+}
+
+#prosek {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#oceniOvajProizvod {
+    padding-bottom: 20px;
+}
+
+#unesiOcenu {
+    background-color: rgba(165, 165, 165, 0.123);
+    padding: 10%;
+    border-radius: 20px;
+}
+
+#prosekOcena {
+    font-size: 350%;
+    padding-left: 17%;
+}
+
+#oceni {
+    padding: 2%;
+    font-size: 100%;
+    padding-left: 15%;
+    padding-right: 14%;
+    margin-left: 18%;
+}
+
+#naslovic {
+    font-size: 150%;
+}
+
+#ocena {
+    margin-bottom: 2%;
+    width: 100px;
+    text-align: center;
 }

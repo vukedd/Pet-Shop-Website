@@ -266,7 +266,7 @@
       </div>
     </div>
     <div id="kupi" class="col">
-      <p id="maker">Proizvođač : <b>/</b> &nbsp/&#160 Prosečna ocena: <b><span id="POcena"></span></b></p>
+      <p id="maker">Proizvođač : <b>/</b></p>
       <h1 id="producthead"></h1>
       <br>
       <div class="zinfo">
@@ -294,30 +294,18 @@
 
           </div>
   </div>
-  </div>
-  <div class="kocka1">
-  <div class="kocka">
-  <h2 align="center" id="revnaslov">Prosečna ocena: </h2>
-  <div class="row">
-    <div class="col">
-      <div class="karticarev">
-        <div class="pfrev">
-          <img src="images/pfpmitar.webp" width="40px" height="40px" id="pfprev">
-          <h6 id="usernamerev"><b>@mitarmiric</b></h6>
-        </div>
-        <p id="reviewstar"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i> 4/5</p>
-        <p>EXTRA proizvod, moj ljubimac Miki je ponovo veseo :)</p>
-      </div>
+  <div id="ocenaKorisnika">
+    <div id="prosek">
+      <h4>Prosečna ocena:</h4><br>
+      <h1 id="prosekOcena"></h1>
     </div>
-    <div class="col">
-      <div class="karticarev">
-        <div class="pfrev">
-          <img src="images/pfpmitar.webp" width="40px" height="40px" id="pfprev">
-          <h6 id="usernamerev"><b>@mitarmiric</b></h6>
-        </div>
-        <p id="reviewstar"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> 5/5</p>
-        <p>Slučajno sam stavio ocenu 4</p>
-      </div>
+    <div id="unosOcene">
+      <form id="unesiOcenu">
+        <label for="ocena" id="naslovic">Vaša ocena: </label><br>
+        <input type="number" id="ocena" name="ocena" placeholder="1-10"><br>
+        <textarea cols="20" rows="10" placeholder="Vaš utisak"></textarea>
+        <button type="submit" class="lgbut" id="oceni">Potvrdi</button>
+      </form>
     </div>
   </div>
 </div>

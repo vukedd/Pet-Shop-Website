@@ -16,7 +16,7 @@ window.onload = function() {
                 let proizvodnaslov = document.querySelector("#producthead");
                 let tip = document.querySelector("#hzp");
                 let cena = document.querySelector("#rsd");
-                let prosecnaOcena = document.querySelector("#POcena");
+                let prosecnaOcena = document.querySelector("#prosekOcena");
                 let detaljanOpis = document.querySelector("#cbody");
                 console.log(proizvodinfo);
                 proizvodnaslov.innerHTML = proizvodinfo.naziv;
@@ -24,6 +24,7 @@ window.onload = function() {
                 cena.innerHTML = proizvodinfo.cena + " RSD";
                 prosecnaOcena.innerHTML = proizvodinfo.prosecnaOcena;
                 detaljanOpis.innerHTML = proizvodinfo.detaljanOpis;
+                let sveOcene = proizvodinfo.ocene;
 
                 // Popunjavanje carousela
                 // let carouselSlike = document.querySelector("#carousel-inner");
@@ -91,7 +92,35 @@ window.onload = function() {
         potvrdiIzmeneReq.open("PUT", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
         potvrdiIzmeneReq.send(JSON.stringify(proizvodinfoEdit));
     })
-
+    
+    let oceniProizvod = document.querySelector("#oceni");
+    oceniProizvod.addEventListener("click", (e) => {
+        e.preventDefault();
+        let ocenaZaDodati = document.querySelector("#ocena").value;
+        let ocenaZaDodatireal = parseInt(ocenaZaDodati);
+        sveOcene.push(ocenaZaDodatireal);
+        proizvodinfo.ocene = sveOcene;
+        let suma = 0;
+        for(let index = 0; index < sveOcene.length; index++){
+            console.log(sveOcene[index]);
+            suma = suma + sveOcene[index];
+        }
+        let prosecnaOcenaZaDodati = suma / sveOcene.length;
+        proizvodinfo.prosecnaOcena = prosecnaOcenaZaDodati.toFixed(2);
+        
+        let ProsekRequest = new XMLHttpRequest();
+        ProsekRequest.onreadystatechange = function(){
+            if (this.readyState == 4){
+                if (this.status == 200){
+                    location.reload();
+                } else {
+                    console.log("ne");
+                }
+            }
+        }
+        ProsekRequest.open("PUT", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
+        ProsekRequest.send(JSON.stringify(proizvodinfo));
+    })
             } else {
 
             }
@@ -122,5 +151,7 @@ window.onload = function() {
             DelProdRequest.send();
         }
     });
+
+    
     
 }
