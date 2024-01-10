@@ -25,6 +25,8 @@ window.onload = function() {
                 prosecnaOcena.innerHTML = proizvodinfo.prosecnaOcena;
                 detaljanOpis.innerHTML = proizvodinfo.detaljanOpis;
                 let sveOcene = proizvodinfo.ocene;
+                let brojOcena = document.querySelector("#brojOcena");
+                brojOcena.innerHTML = sveOcene.length;
 
                 // Popunjavanje carousela
                 // let carouselSlike = document.querySelector("#carousel-inner");
@@ -97,29 +99,35 @@ window.onload = function() {
     oceniProizvod.addEventListener("click", (e) => {
         e.preventDefault();
         let ocenaZaDodati = document.querySelector("#ocena").value;
-        let ocenaZaDodatireal = parseInt(ocenaZaDodati);
-        sveOcene.push(ocenaZaDodatireal);
-        proizvodinfo.ocene = sveOcene;
-        let suma = 0;
-        for(let index = 0; index < sveOcene.length; index++){
-            console.log(sveOcene[index]);
-            suma = suma + sveOcene[index];
-        }
-        let prosecnaOcenaZaDodati = suma / sveOcene.length;
-        proizvodinfo.prosecnaOcena = prosecnaOcenaZaDodati.toFixed(2);
-        
-        let ProsekRequest = new XMLHttpRequest();
-        ProsekRequest.onreadystatechange = function(){
-            if (this.readyState == 4){
-                if (this.status == 200){
-                    location.reload();
-                } else {
-                    console.log("ne");
+        if (ocenaZaDodati > 0 && ocenaZaDodati < 11){
+            let ocenaZaDodatireal = parseInt(ocenaZaDodati);
+            sveOcene.push(ocenaZaDodatireal);
+            proizvodinfo.ocene = sveOcene;
+            let suma = 0;
+            for(let index = 0; index < sveOcene.length; index++){
+                console.log(sveOcene[index]);
+                suma = suma + sveOcene[index];
+            }
+            let prosecnaOcenaZaDodati = suma / sveOcene.length;
+            proizvodinfo.prosecnaOcena = prosecnaOcenaZaDodati.toFixed(2);
+            
+            let ProsekRequest = new XMLHttpRequest();
+            ProsekRequest.onreadystatechange = function(){
+                if (this.readyState == 4){
+                    if (this.status == 200){
+                        location.reload();
+                    } else {
+                        console.log("ne");
+                    }
                 }
             }
+            ProsekRequest.open("PUT", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
+            ProsekRequest.send(JSON.stringify(proizvodinfo));
         }
-        ProsekRequest.open("PUT", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
-        ProsekRequest.send(JSON.stringify(proizvodinfo));
+        else {
+            let upozorenje = document.querySelector("#upozorenje");
+            upozorenje.innerHTML = "Molim vas unesite ocenu između 1 i 10."
+        }
     })
             } else {
 

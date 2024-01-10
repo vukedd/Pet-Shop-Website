@@ -21,35 +21,88 @@ const prodAddForm = document.querySelector("#productAdd");
 prodAddForm.addEventListener('submit', event => {
     event.preventDefault();
 
+    // Validacija za tip proizvoda
     let tipProizvoda = document.querySelector("#tip").value;
-    noviProizvod.tip = tipProizvoda;
+    if (tipProizvoda == "") {
+        let upozorenjeTip = document.querySelector("#upozorenjeTip");
+        upozorenjeTip.innerHTML = "Popunite ovo polje."
+    }
+    else if (/\d/.test(tipProizvoda)) {
+        upozorenjeTip.innerText = "Tip ne sme da sadrži brojeve.";
+    }
+    else {
+        noviProizvod.tip = tipProizvoda;
+        upozorenjeTip.innerText = "";
+    }
 
+    // Validacija za naziv proizvoda
     let imeProizvoda = document.querySelector("#imeprod").value;
-    noviProizvod.naziv = imeProizvoda;
+    if (imeProizvoda == "") {
+        let upozorenjeNaziv = document.querySelector("#upozorenjeNaziv");
+        upozorenjeNaziv.innerHTML = "Popunite ovo polje."
+    }
+    else if (/\d/.test(imeProizvoda)) {
+        upozorenjeNaziv.innerText = "Naziv ne sme da sadrži brojeve.";
+    }
+    else {
+        noviProizvod.naziv = imeProizvoda;
+        upozorenjeNaziv.innerText = "";
+    }
 
+    // Validacija za cenu proizvoda
     let cenaProizvoda = document.querySelector("#cenaprod").value;
-    noviProizvod.cena = cenaProizvoda;
+    if (cenaProizvoda == ""){
+        let upozorenjeCena = document.querySelector("#upozorenjeCena");
+        upozorenjeCena.innerHTML = "Popunite ovo polje."
+    }
+    else if (cenaProizvoda < 0){
+        let upozorenjeCena = document.querySelector("#upozorenjeCena");
+        upozorenjeCena.innerHTML = "Unesite važeću cenu."
+    }
+    else {
+        noviProizvod.cena = cenaProizvoda;
+        upozorenjeCena.innerHTML = "Popunite ovo polje."
+    }
 
+    // Validacija za kratak opis
     let kratakOpis = document.querySelector("#kopisprod").value;
-    noviProizvod.kratakOpis = kratakOpis;
+    if (kratakOpis == ""){
+        let upozorenjeKopis = document.querySelector("#upozorenjeKopis");
+        upozorenjeKopis.innerHTML = "Popunite ovo polje."
+    }
+    else {
+        noviProizvod.kratakOpis = kratakOpis;
+        upozorenjeKopis.innerHTML = "";
+    }
 
+    // Validacija za detaljan Opis.
     let detaljanOpis = document.querySelector("#dopis").value;
-    noviProizvod.detaljanOpis = detaljanOpis;
+    if (detaljanOpis == ""){
+        let upozorenjeDopis = document.querySelector("#upozorenjeDopis");
+        upozorenjeDopis.innerHTML = "Popunite ovo polje."
+    }
+    else {
+        noviProizvod.detaljanOpis = detaljanOpis;
+        upozorenjeDopis.innerHTML = "";
+    }
 
-    let proizvodSlanje = JSON.stringify(noviProizvod);
+    // Konacan uslov
+    if (tipProizvoda != "" && imeProizvoda != "" && cenaProizvoda != "" && kratakOpis != "" && detaljanOpis != ""){
+        let proizvodSlanje = JSON.stringify(noviProizvod);
 
-    let newProdReq = new XMLHttpRequest();
-    newProdReq.onreadystatechange = function() {
-        if (this.readyState == 4) {
-            if (this.status == 200) {
-                alert("Uspesno ste dodali novi proizvod.");
-            } else {
-                alert("Greska prilikom dodavanja proizvoda.");
+        let newProdReq = new XMLHttpRequest();
+        newProdReq.onreadystatechange = function() {
+            if (this.readyState == 4) {
+                if (this.status == 200) {
+                    location.reload();  
+                } else {
+                    alert("Greska prilikom dodavanja proizvoda.");
+                }
             }
         }
+        newProdReq.open("POST", firebaseurl + "/proizvodi/-MNVEu6iMr2EFlQO6TW60.json");
+        newProdReq.send(proizvodSlanje);
     }
-    newProdReq.open("POST", firebaseurl + "/proizvodi/-MNVEu6iMr2EFlQO6TW60.json");
-    newProdReq.send(proizvodSlanje);
 })
 
 

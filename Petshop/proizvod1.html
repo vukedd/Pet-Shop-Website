@@ -296,14 +296,16 @@
   </div>
   <div id="ocenaKorisnika">
     <div id="prosek">
-      <h4>Prosečna ocena:</h4><br>
+      <p class="text-muted" id="brojOcenaMain">Iz <span id="brojOcena"></span> uzoraka</p>
+      <h2>Prosečna ocena:</h2><br>
       <h1 id="prosekOcena"></h1>
     </div>
     <div id="unosOcene">
       <form id="unesiOcenu">
-        <label for="ocena" id="naslovic">Vaša ocena: </label><br>
-        <input type="number" id="ocena" name="ocena" placeholder="1-10"><br>
-        <textarea cols="20" rows="10" placeholder="Vaš utisak"></textarea>
+        <label for="ocena" id="naslovic">Ocenite proizvod: </label><br>
+        <span id="upozorenje"></span>
+        <input type="number" id="ocena" name="ocena" placeholder="1-10" min="1" max="10"><br>
+        <textarea placeholder="Vaš utisak (nije neophodno)" id="utisakkorisnika" cols="30" rows="5"></textarea>
         <button type="submit" class="lgbut" id="oceni">Potvrdi</button>
       </form>
     </div>
