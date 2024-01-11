@@ -29,17 +29,55 @@ window.onload = function() {
                 brojOcena.innerHTML = sveOcene.length;
 
                 // Popunjavanje carousela
-                // let carouselSlike = document.querySelector("#carousel-inner");
-                // console.log(proizvodinfo.slike);
-                // slike.forEach(element => {
-                //     var slide = document.createElement("div");
-                //     slide.setAttribute("carousel-item active");
+                let carouselSlike = document.querySelector(".carousel-inner");
+                let slikeProizvoda = proizvodinfo.slike;
 
-                //     var image = document.createElement("img");
-                //     image.src = 
-                // });
-                let proizvodinfoEdit = {cena: "", detaljanOpis: "", kratakOpis: "", naziv:"", ocene: proizvodinfo.ocene, prosecnaOcena: proizvodinfo.prosecnaOcena, slike: proizvodinfo.slike, tip: proizvodinfo.tip, uKorpi: false};
+                // Prva petlja koja ce dodati samo prvu slike sa classom carousel-item active.
+                for (element in slikeProizvoda){
+                    console.log(slikeProizvoda[0]);
+                    let karoselSlide = document.createElement("div");
+                    karoselSlide.setAttribute("class", "carousel-item active");
+                    console.log(karoselSlide)
 
+                    let slikaSlide = document.createElement("img");
+                    slikaSlide.setAttribute("src", slikeProizvoda[0]);
+                    slikaSlide.setAttribute("class", "d-block w-100");
+                    console.log(slikaSlide);
+                
+                    karoselSlide.appendChild(slikaSlide);
+                    carouselSlike.appendChild(karoselSlide);
+                    break;
+                }
+                
+                // Druga petlja koja ce dodati preostale slike sa classom carousel-item
+                for (let i = 1; i < slikeProizvoda.length; i++){
+                    let karoselSlide = document.createElement("div");
+                    karoselSlide.setAttribute("class", "carousel-item");
+                    console.log(karoselSlide)
+
+                    let slikaSlide = document.createElement("img");
+                    slikaSlide.setAttribute("src", slikeProizvoda[i]);
+                    slikaSlide.setAttribute("class", "d-block w-100");
+                    console.log(slikaSlide);
+                
+                    karoselSlide.appendChild(slikaSlide);
+                    carouselSlike.appendChild(karoselSlide);
+                    console.log(slikeProizvoda[i]);
+                }
+
+            } else {
+                alert("Greška prilikom učitavanja podataka iz firebase-a");
+            }
+        }
+    }
+    productreq.open("GET", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
+    productreq.send();
+
+    
+    let proizvodinfoEdit = {cena: "", detaljanOpis: "", kratakOpis: "", naziv:"", ocene: proizvodinfo.ocene, prosecnaOcena: proizvodinfo.prosecnaOcena, slike: proizvodinfo.slike, tip: proizvodinfo.tip, uKorpi: false};
+
+    
+    // Event listener koji ce popuniti formu za edit nakon klika na olovku
     let editProduct = document.querySelector("#izmeniProizvod")
     editProduct.addEventListener("click", (e) => {
         e.preventDefault();
@@ -61,6 +99,7 @@ window.onload = function() {
         
     })
 
+    // Event listener koji ce poslati put request izmenjenih podataka ukoliko je sve popunjeno.
     let potvrdiEditProd = document.querySelector("#IzmeniProduct");
     potvrdiEditProd.addEventListener("click", (e) => {
         e.preventDefault();
@@ -95,11 +134,12 @@ window.onload = function() {
         potvrdiIzmeneReq.send(JSON.stringify(proizvodinfoEdit));
     })
     
+    // event listener na dugmetu za slanje ocene u bazu podatka koje takodje racuna prosek i popunjava array sa ocenama novom ocenom.
     let oceniProizvod = document.querySelector("#oceni");
     oceniProizvod.addEventListener("click", (e) => {
         e.preventDefault();
         let ocenaZaDodati = document.querySelector("#ocena").value;
-        if (ocenaZaDodati > 0 && ocenaZaDodati < 11){
+        if (ocenaZaDodati > 1 && ocenaZaDodati < 10.1){
             let ocenaZaDodatireal = parseInt(ocenaZaDodati);
             sveOcene.push(ocenaZaDodatireal);
             proizvodinfo.ocene = sveOcene;
@@ -129,15 +169,7 @@ window.onload = function() {
             upozorenje.innerHTML = "Molim vas unesite ocenu između 1 i 10."
         }
     })
-            } else {
 
-            }
-        }
-    }
-    productreq.open("GET", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
-    productreq.send();
-
-    
     let obrisiDugme = document.querySelector("#obrisiProizvod");
     obrisiDugme.addEventListener("click", (event) => {
 
