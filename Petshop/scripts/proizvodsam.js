@@ -93,35 +93,90 @@ window.onload = function() {
                     let potvrdiEditProd = document.querySelector("#IzmeniProduct");
                     potvrdiEditProd.addEventListener("click", (e) => {
                         e.preventDefault();
+
                         let nazivIzmenaPotvrda = document.querySelector("#nazivProd").value;
-                        proizvodinfoEdit.naziv = nazivIzmenaPotvrda;
-                
+                        let EditNazivAlert = document.querySelector("#editNazivAlert");
+                        if (nazivIzmenaPotvrda == ""){
+                            proizvodinfoEdit.naziv = "";
+                            EditNazivAlert.innerHTML = " Neophodno je popuniti ovo polje";
+                            EditNazivAlert.style.color = "red";
+                        }
+                        else{
+                            EditNazivAlert.innerHTML = "";
+                            proizvodinfoEdit.naziv = nazivIzmenaPotvrda;
+                        }
+
+                        // 000000000000000000000000
                         let cenaIzmenaPotvrda = document.querySelector("#cenaProizvoda").value;
-                        proizvodinfoEdit.cena = cenaIzmenaPotvrda;
-                
+                        let EditCenaAlert = document.querySelector("#editCenaAlert");
+                        if (cenaIzmenaPotvrda == ""){
+                            proizvodinfoEdit.cena = "";
+                            EditCenaAlert.innerHTML = " Neophodno je popuniti ovo polje";
+                            EditCenaAlert.style.color = "red";
+                        }
+                        else if(!/^[1-9]\d*$/.test(cenaIzmenaPotvrda)){
+                            proizvodinfoEdit.cena = "";
+                            EditCenaAlert.innerHTML = " Unesite važeću cenu!";
+                            EditCenaAlert.style.color = "red";
+                        }
+                        else{
+                            EditCenaAlert.innerHTML = "";
+                            proizvodinfoEdit.cena = cenaIzmenaPotvrda;
+                        }
+
+                        // 0000000000000000000000000
                         let tipProizvodaPotvrda = document.querySelector("#tipProizvod").value;
-                        proizvodinfoEdit.tip = tipProizvodaPotvrda;
+                        let EditTipAlert = document.querySelector("#editTipAlert");
+                        if (tipProizvodaPotvrda == ""){
+                            proizvodinfoEdit.tip = "";
+                            EditTipAlert.innerHTML = " Neophodno je popuniti ovo polje";
+                            EditTipAlert.style.color = "red";
+                        }
+                        else{
+                            EditTipAlert.innerHTML = "";
+                            proizvodinfoEdit.tip = tipProizvodaPotvrda;
+                        }
                 
                         let detaljanOpisPotvrdi = document.querySelector("#detaljanOpis").value;
-                        proizvodinfoEdit.detaljanOpis = detaljanOpisPotvrdi;
+                        let EditDopisAlert = document.querySelector("#editDopisAlert");
+                        if (detaljanOpisPotvrdi == ""){
+                            proizvodinfoEdit.detaljanOpis = "";
+                            EditDopisAlert.innerHTML = " Neophodno je popuniti ovo polje";
+                            EditDopisAlert.style.color = "red";
+                        }
+                        else{
+                            EditDopisAlert.innerHTML = "";
+                            proizvodinfoEdit.detaljanOpis = detaljanOpisPotvrdi;
+                        }
                                     
                         let kratakOpisPotvrdi = document.querySelector("#kratakOpis").value;
-                        proizvodinfoEdit.kratakOpis = kratakOpisPotvrdi;        
+                        let EditKopisAlert = document.querySelector("#editKopisAlert");
+                        if (kratakOpisPotvrdi == ""){
+                            proizvodinfoEdit.kratakOpis = "";
+                            EditKopisAlert.innerHTML = " Neophodno je popuniti ovo polje";
+                            EditKopisAlert.style.color = "red";
+                        }
+                        else{
+                            EditKopisAlert.innerHTML = "";
+                            proizvodinfoEdit.kratakOpis = kratakOpisPotvrdi;
+                        }   
                         
                         console.log(proizvodinfoEdit);
-                
-                        let potvrdiIzmeneReq = new XMLHttpRequest();
-                        potvrdiIzmeneReq.onreadystatechange = function() {
-                            if (this.readyState == 4){
-                                if(this.status == 200){
-                                    location.reload();
-                                } else {
-                                    alert("Greska prilikom azuriranja proizvoda");
+
+                        if (proizvodinfoEdit.naziv != "" && proizvodinfoEdit.tip != "" && proizvodinfoEdit.cena != "" && proizvodinfoEdit.detaljanOpis != "" && proizvodinfoEdit.kratakOpis != ""){
+                            let potvrdiIzmeneReq = new XMLHttpRequest();
+                            potvrdiIzmeneReq.onreadystatechange = function() {
+                                if (this.readyState == 4){
+                                    if(this.status == 200){
+                                        location.reload();
+                                    } else {
+                                        alert("Greska prilikom azuriranja proizvoda");
+                                    }
                                 }
-                            }
-                        };
-                        potvrdiIzmeneReq.open("PUT", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
-                        potvrdiIzmeneReq.send(JSON.stringify(proizvodinfoEdit));
+                            };
+                            potvrdiIzmeneReq.open("PUT", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
+                            potvrdiIzmeneReq.send(JSON.stringify(proizvodinfoEdit));
+                        }
                     })
                     
                     // event listener na dugmetu za slanje ocene u bazu podatka koje takodje racuna prosek i popunjava array sa ocenama novom ocenom.

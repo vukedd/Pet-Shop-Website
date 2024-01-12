@@ -114,8 +114,8 @@ formRegister.addEventListener('submit', event => {
         errortel.innerText = "Neophodno je popuniti ovo polje";
         errortel.style.color = "red";
     }
-    else if (!/^\d{3}-\d{3}-\d{4}$|^\d{3}-\d{3}-\d{3}$/.test(telreg)){
-        errortel.innerText = "Format za unos: xxx-xxx-xxx ili xxx-xxx-xxxx";
+    else if (!/^06\d-[0-9]{3,4}-[0-9]{3}$/.test(telreg)){
+        errortel.innerText = "Format za unos: 06x-xxx(x)-xxx";
         errortel.style.color = "red";
     }
     else {
