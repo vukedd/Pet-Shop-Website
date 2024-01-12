@@ -122,19 +122,19 @@
       </div>
       <div class="modal-body">
         <form id="editOnama">
-          <label for="#nazivPS">Naziv Pet Shopa: </label>
+          <label for="#nazivPS">Naziv Pet Shopa: </label><span id="nazivEditValidation"></span>
           <br>
           <input type="text" id="imePS" name="nazivPS">
           <br>
-          <label for="#godOtvaranja">Godina otvaranja: </label>
+          <label for="#godOtvaranja">Godina otvaranja: </label><span id="godinaEditValidation"></span>
           <br>
           <input type="text" id="godOtvaranja" name="godOtvaranja">
           <br>
-          <label for="#adresaPS">Adresa: </label>
+          <label for="#adresaPS">Adresa: </label><span id="adresaEditValidation"></span>
           <br>
           <input type="text" name="adresaPS" id="adresaPS">
           <br>
-          <label for="#telefonPS">Broj telefona:</label>
+          <label for="#telefonPS">Broj telefona:</label><span id="telefonEditValidation"></span>
           <br>
           <input type="tel" name="telefonPS" id="telepunPS">
           <br>
@@ -142,7 +142,7 @@
           <br>
           <input type="file" name="logoPS" id="logoPS">
           <br>
-          <button type="submit" class="lgbut" onclick="izmenaDetalja()">Potvrdi izmene</button>
+          <button type="submit" class="lgbut" id="izmeniDetalje">Potvrdi izmene</button>
         </form>
       </div>
     </div>

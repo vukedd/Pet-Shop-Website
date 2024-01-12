@@ -1,5 +1,5 @@
 
-let proizvodi = {};
+let proizvodi = {}; // ovde su svi proizvodi
 let slike = {};
 let listaProizvoda = document.getElementById("sviproizvodi");
 

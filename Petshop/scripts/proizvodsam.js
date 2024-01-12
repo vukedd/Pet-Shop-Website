@@ -63,6 +63,125 @@ window.onload = function() {
                     karoselSlide.appendChild(slikaSlide);
                     carouselSlike.appendChild(karoselSlide);
                     console.log(slikeProizvoda[i]);
+                    
+                    let proizvodinfoEdit = {cena: "", detaljanOpis: "", kratakOpis: "", naziv:"", ocene: proizvodinfo.ocene, prosecnaOcena: proizvodinfo.prosecnaOcena, slike: proizvodinfo.slike, tip: proizvodinfo.tip, uKorpi: false};
+
+    
+                    // Event listener koji ce popuniti formu za edit nakon klika na olovku
+                    let editProduct = document.querySelector("#izmeniProizvod")
+                    editProduct.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        let nazivIzmenaEdit = document.querySelector("#nazivProd");
+                        nazivIzmenaEdit.setAttribute("value", proizvodinfo.naziv);
+                
+                        let tipProzivodEdit = document.querySelector("#tipProizvod");
+                        tipProzivodEdit.setAttribute("value", proizvodinfo.tip);
+                
+                        let cenaProizvodaEdit = document.querySelector("#cenaProizvoda");
+                        cenaProizvodaEdit.setAttribute("value", proizvodinfo.cena);
+                
+                        let detaljanOpisEdit = document.querySelector("#detaljanOpis");
+                        detaljanOpisEdit.innerHTML = proizvodinfo.detaljanOpis;
+                
+                        let kratakOpisEdit = document.querySelector("#kratakOpis");
+                        kratakOpisEdit.innerHTML = proizvodinfo.kratakOpis;
+                
+                        
+                    })
+                
+                    // Event listener koji ce poslati put request izmenjenih podataka ukoliko je sve popunjeno.
+                    let potvrdiEditProd = document.querySelector("#IzmeniProduct");
+                    potvrdiEditProd.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        let nazivIzmenaPotvrda = document.querySelector("#nazivProd").value;
+                        proizvodinfoEdit.naziv = nazivIzmenaPotvrda;
+                
+                        let cenaIzmenaPotvrda = document.querySelector("#cenaProizvoda").value;
+                        proizvodinfoEdit.cena = cenaIzmenaPotvrda;
+                
+                        let tipProizvodaPotvrda = document.querySelector("#tipProizvod").value;
+                        proizvodinfoEdit.tip = tipProizvodaPotvrda;
+                
+                        let detaljanOpisPotvrdi = document.querySelector("#detaljanOpis").value;
+                        proizvodinfoEdit.detaljanOpis = detaljanOpisPotvrdi;
+                                    
+                        let kratakOpisPotvrdi = document.querySelector("#kratakOpis").value;
+                        proizvodinfoEdit.kratakOpis = kratakOpisPotvrdi;        
+                        
+                        console.log(proizvodinfoEdit);
+                
+                        let potvrdiIzmeneReq = new XMLHttpRequest();
+                        potvrdiIzmeneReq.onreadystatechange = function() {
+                            if (this.readyState == 4){
+                                if(this.status == 200){
+                                    location.reload();
+                                } else {
+                                    alert("Greska prilikom azuriranja proizvoda");
+                                }
+                            }
+                        };
+                        potvrdiIzmeneReq.open("PUT", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
+                        potvrdiIzmeneReq.send(JSON.stringify(proizvodinfoEdit));
+                    })
+                    
+                    // event listener na dugmetu za slanje ocene u bazu podatka koje takodje racuna prosek i popunjava array sa ocenama novom ocenom.
+                    let oceniProizvod = document.querySelector("#oceni");
+                    oceniProizvod.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        let ocenaZaDodati = document.querySelector("#ocena").value;
+                        if (ocenaZaDodati > 1 && ocenaZaDodati < 11){
+                            let ocenaZaDodatireal = parseInt(ocenaZaDodati);
+                            sveOcene.push(ocenaZaDodatireal);
+                            proizvodinfo.ocene = sveOcene;
+                            let suma = 0;
+                            for(let index = 0; index < sveOcene.length; index++){
+                                console.log(sveOcene[index]);
+                                suma = suma + sveOcene[index];
+                            }
+                            let prosecnaOcenaZaDodati = suma / sveOcene.length;
+                            proizvodinfo.prosecnaOcena = prosecnaOcenaZaDodati.toFixed(2);
+                            
+                            let ProsekRequest = new XMLHttpRequest();
+                            ProsekRequest.onreadystatechange = function(){
+                                if (this.readyState == 4){
+                                    if (this.status == 200){
+                                        location.reload();
+                                    } else {
+                                        console.log("ne");
+                                    }
+                                }
+                            }
+                            ProsekRequest.open("PUT", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
+                            ProsekRequest.send(JSON.stringify(proizvodinfo));
+                        }
+                        else {
+                            let upozorenje = document.querySelector("#upozorenje");
+                            upozorenje.innerHTML = "Molim vas unesite ocenu između 1 i 10."
+                        }
+                    })
+                
+                    let obrisiDugme = document.querySelector("#obrisiProizvod");
+                    obrisiDugme.addEventListener("click", (event) => {
+                
+                        event.preventDefault();
+                        var odgovor = confirm("Da li ste sigurni da želite da obrišete ovaj proizvod?");
+                
+                        if (odgovor){
+                            let DelProdRequest = new XMLHttpRequest();
+                            DelProdRequest.onreadystatechange = function (){
+                                if (this.readyState == 4){
+                                    if (this.status == 200){
+                                        window.location.href = "index.html";
+                                    } else {
+                                        console.log("Neuspešno brisanje proizvoda.")
+                                    }
+                                }
+                            }
+                            DelProdRequest.open("DELETE", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
+                            DelProdRequest.send();
+                        }
+                    });
+                
                 }
 
             } else {
@@ -73,125 +192,4 @@ window.onload = function() {
     productreq.open("GET", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
     productreq.send();
 
-    
-    let proizvodinfoEdit = {cena: "", detaljanOpis: "", kratakOpis: "", naziv:"", ocene: proizvodinfo.ocene, prosecnaOcena: proizvodinfo.prosecnaOcena, slike: proizvodinfo.slike, tip: proizvodinfo.tip, uKorpi: false};
-
-    
-    // Event listener koji ce popuniti formu za edit nakon klika na olovku
-    let editProduct = document.querySelector("#izmeniProizvod")
-    editProduct.addEventListener("click", (e) => {
-        e.preventDefault();
-        let nazivIzmenaEdit = document.querySelector("#nazivProd");
-        nazivIzmenaEdit.setAttribute("value", proizvodinfo.naziv);
-
-        let tipProzivodEdit = document.querySelector("#tipProizvod");
-        tipProzivodEdit.setAttribute("value", proizvodinfo.tip);
-
-        let cenaProizvodaEdit = document.querySelector("#cenaProizvoda");
-        cenaProizvodaEdit.setAttribute("value", proizvodinfo.cena);
-
-        let detaljanOpisEdit = document.querySelector("#detaljanOpis");
-        detaljanOpisEdit.innerHTML = proizvodinfo.detaljanOpis;
-
-        let kratakOpisEdit = document.querySelector("#kratakOpis");
-        kratakOpisEdit.innerHTML = proizvodinfo.kratakOpis;
-
-        
-    })
-
-    // Event listener koji ce poslati put request izmenjenih podataka ukoliko je sve popunjeno.
-    let potvrdiEditProd = document.querySelector("#IzmeniProduct");
-    potvrdiEditProd.addEventListener("click", (e) => {
-        e.preventDefault();
-        let nazivIzmenaPotvrda = document.querySelector("#nazivProd").value;
-        proizvodinfoEdit.naziv = nazivIzmenaPotvrda;
-
-        let cenaIzmenaPotvrda = document.querySelector("#cenaProizvoda").value;
-        proizvodinfoEdit.cena = cenaIzmenaPotvrda;
-
-        let tipProizvodaPotvrda = document.querySelector("#tipProizvod").value;
-        proizvodinfoEdit.tip = tipProizvodaPotvrda;
-
-        let detaljanOpisPotvrdi = document.querySelector("#detaljanOpis").value;
-        proizvodinfoEdit.detaljanOpis = detaljanOpisPotvrdi;
-                    
-        let kratakOpisPotvrdi = document.querySelector("#kratakOpis").value;
-        proizvodinfoEdit.kratakOpis = kratakOpisPotvrdi;        
-        
-        console.log(proizvodinfoEdit);
-
-        let potvrdiIzmeneReq = new XMLHttpRequest();
-        potvrdiIzmeneReq.onreadystatechange = function() {
-            if (this.readyState == 4){
-                if(this.status == 200){
-                    location.reload();
-                } else {
-                    alert("Greska prilikom azuriranja proizvoda");
-                }
-            }
-        };
-        potvrdiIzmeneReq.open("PUT", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
-        potvrdiIzmeneReq.send(JSON.stringify(proizvodinfoEdit));
-    })
-    
-    // event listener na dugmetu za slanje ocene u bazu podatka koje takodje racuna prosek i popunjava array sa ocenama novom ocenom.
-    let oceniProizvod = document.querySelector("#oceni");
-    oceniProizvod.addEventListener("click", (e) => {
-        e.preventDefault();
-        let ocenaZaDodati = document.querySelector("#ocena").value;
-        if (ocenaZaDodati > 1 && ocenaZaDodati < 10.1){
-            let ocenaZaDodatireal = parseInt(ocenaZaDodati);
-            sveOcene.push(ocenaZaDodatireal);
-            proizvodinfo.ocene = sveOcene;
-            let suma = 0;
-            for(let index = 0; index < sveOcene.length; index++){
-                console.log(sveOcene[index]);
-                suma = suma + sveOcene[index];
-            }
-            let prosecnaOcenaZaDodati = suma / sveOcene.length;
-            proizvodinfo.prosecnaOcena = prosecnaOcenaZaDodati.toFixed(2);
-            
-            let ProsekRequest = new XMLHttpRequest();
-            ProsekRequest.onreadystatechange = function(){
-                if (this.readyState == 4){
-                    if (this.status == 200){
-                        location.reload();
-                    } else {
-                        console.log("ne");
-                    }
-                }
-            }
-            ProsekRequest.open("PUT", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
-            ProsekRequest.send(JSON.stringify(proizvodinfo));
-        }
-        else {
-            let upozorenje = document.querySelector("#upozorenje");
-            upozorenje.innerHTML = "Molim vas unesite ocenu između 1 i 10."
-        }
-    })
-
-    let obrisiDugme = document.querySelector("#obrisiProizvod");
-    obrisiDugme.addEventListener("click", (event) => {
-
-        event.preventDefault();
-        var odgovor = confirm("Da li ste sigurni da želite da obrišete ovaj proizvod?");
-
-        if (odgovor){
-            let DelProdRequest = new XMLHttpRequest();
-            DelProdRequest.onreadystatechange = function (){
-                if (this.readyState == 4){
-                    if (this.status == 200){
-                        window.location.href = "index.html";
-                    } else {
-                        console.log("Neuspešno brisanje proizvoda.")
-                    }
-                }
-            }
-            DelProdRequest.open("DELETE", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
-            DelProdRequest.send();
-        }
-    });
-
-    
-    
 }
