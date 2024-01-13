@@ -63,7 +63,7 @@ formRegister.addEventListener('submit', event => {
         erroradresa.innerText = "Format za unos: Adresa, Grad, Poštanski br."
         erroradresa.style.color = "red";
     }
-    else if (!/\b\d{5}\b/g.test(adresareg)){
+    else if (!/\D*\d.*\d.*\d.*\d.*\d\D*/.test(adresareg)){
         erroradresa.innerText = "Neophodno je uneti poštanski broj."
         erroradresa.style.color = "red";
     }
