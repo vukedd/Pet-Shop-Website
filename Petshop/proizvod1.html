@@ -149,6 +149,26 @@
   </div>
 </div>
 
+<div class="modal fade" id="exampleModalCenter6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Brisanje Proizvoda</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Da li ste sigurni da želite da obrišete ovaj proizvod?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Poništi</button>
+        <button type="button" class="btn btn-danger" id="obrisiProizvod">Potvrdi</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <body id="vrh">
   <div class="spojiih">
     <nav id="nav1" class="navbar navbar-danger bg-danger">
@@ -170,50 +190,27 @@
 
       </div>
     </nav>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-3" id="smanjime">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       
-
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown">
-            <button class="btn btn-light pb-1" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown"
-              aria-expanded="false">
+          <li class="nav-item">
+            <a href="#">
+            <button class="btn btn-light pb-1" type="button" id="dropdownMenuButton">
               Psi
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><a class="dropdown-item" href="#">Hrana</a></li>
-              <li><a class="dropdown-item" href="#">Igračke</a></li>
-              <li><a class="dropdown-item" href="#">Higijena pasa</a></li>
-              <li><a class="dropdown-item" href="#">Oprema za pse</a></li>
-            </ul>
+          </a>  
           </li>
-          <li class="nav-item dropdown">
-            <button class="btn btn-light pb-1" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown"
-              aria-expanded="false">
+          <li class="nav-item">
+            <a href="#">
+            <button class="btn btn-light pb-1" type="button" id="dropdownMenuButton">
               Mačke
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><a class="dropdown-item" href="#">Hrana</a></li>
-              <li><a class="dropdown-item" href="#">Igračke</a></li>
-              <li><a class="dropdown-item" href="#">Nega Mačaka</a></li>
-              <li><a class="dropdown-item" href="#">Oprema za Mačke</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <button class="btn btn-light pb-1" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown"
-              aria-expanded="false">
-              Glodari
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><a class="dropdown-item" href="#">Hrana</a></li>
-              <li><a class="dropdown-item" href="#">Igračke</a></li>
-              <li><a class="dropdown-item" href="#">Kavezi</a></li>
-              <li><a class="dropdown-item" href="#">Podloga</a></li>
-            </ul>
+          </a>  
           </li>
           <li class="nav-item">
             <a href="onama.html">
@@ -233,7 +230,7 @@
     </div>
     <div id="editProizvod">
       <button type="button" class="btn btn-danger" data-target="#exampleModalCenter5" data-toggle="modal" id="izmeniProizvod"><i class="bi bi-pencil-fill"></i></button>
-      <button type="button" class="btn btn-danger" id="obrisiProizvod"><i class="bi bi-trash3-fill"></i></button>
+      <button type="button" class="btn btn-danger" data-target="#exampleModalCenter6" data-toggle="modal"><i class="bi bi-trash3-fill"></i></button>
     </div>
   </div>
   <div id="productpage" class="row">
@@ -266,7 +263,7 @@
       <br>
       <div class="test">
         <div class="cena">
-          <h2 id="rsd">2,000.00 RSD</h2>
+          <h2 id="rsd">.00 RSD</h2>
           <p id="kg" class="text-muted">(-/kg)</p>
         </div>
         <div>
@@ -292,7 +289,7 @@
       <h2>Prosečna ocena:</h2><br>
       <h1 id="prosekOcena"></h1>
     </div>
-    <div id="unosOcene">
+    <div id="unosOcene" >
       <form id="unesiOcenu">
         <label for="ocena" id="naslovic">Ocenite proizvod: </label><br>
         <span id="upozorenje"></span>
@@ -343,8 +340,8 @@
   </div>
 </div>
 <a href="javascript:window.scrollTo(0,0);" id="vrhbut"><i class="bi bi-arrow-up-circle-fill"></i></a>
-<div class="container">
-  <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top" id="footerdole">
+<div class="container" id="ceo">
+  <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top border-left" id="footerdole">
     <div class="col mb-3">
       <a class="logofoot1" href="index.html"><b><span class="naziv"></span></b></a>
       <p class="text-muted">&copy; 2023</p>

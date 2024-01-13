@@ -21,7 +21,7 @@ window.onload = function() {
                 console.log(proizvodinfo);
                 proizvodnaslov.innerHTML = proizvodinfo.naziv;
                 tip.innerHTML = proizvodinfo.tip;
-                cena.innerHTML = proizvodinfo.cena + " RSD";
+                cena.innerHTML = proizvodinfo.cena +",00 RSD";
                 prosecnaOcena.innerHTML = proizvodinfo.prosecnaOcena;
                 detaljanOpis.innerHTML = proizvodinfo.detaljanOpis;
                 let sveOcene = proizvodinfo.ocene;
@@ -63,9 +63,10 @@ window.onload = function() {
                     karoselSlide.appendChild(slikaSlide);
                     carouselSlike.appendChild(karoselSlide);
                     console.log(slikeProizvoda[i]);
+                }
                     
                     let proizvodinfoEdit = {cena: "", detaljanOpis: "", kratakOpis: "", naziv:"", ocene: proizvodinfo.ocene, prosecnaOcena: proizvodinfo.prosecnaOcena, slike: proizvodinfo.slike, tip: proizvodinfo.tip, uKorpi: false};
-
+                    console.log(proizvodinfoEdit);
     
                     // Event listener koji ce popuniti formu za edit nakon klika na olovku
                     let editProduct = document.querySelector("#izmeniProizvod")
@@ -86,7 +87,6 @@ window.onload = function() {
                         let kratakOpisEdit = document.querySelector("#kratakOpis");
                         kratakOpisEdit.innerHTML = proizvodinfo.kratakOpis;
                 
-                        
                     })
                 
                     // Event listener koji ce poslati put request izmenjenih podataka ukoliko je sve popunjeno.
@@ -218,26 +218,20 @@ window.onload = function() {
                     let obrisiDugme = document.querySelector("#obrisiProizvod");
                     obrisiDugme.addEventListener("click", (event) => {
                 
-                        event.preventDefault();
-                        var odgovor = confirm("Da li ste sigurni da želite da obrišete ovaj proizvod?");
-                
-                        if (odgovor){
-                            let DelProdRequest = new XMLHttpRequest();
-                            DelProdRequest.onreadystatechange = function (){
-                                if (this.readyState == 4){
-                                    if (this.status == 200){
-                                        window.location.href = "index.html";
-                                    } else {
-                                        console.log("Neuspešno brisanje proizvoda.")
-                                    }
+                        let DelProdRequest = new XMLHttpRequest();
+                        DelProdRequest.onreadystatechange = function (){
+                            if (this.readyState == 4){
+                                if (this.status == 200){
+                                    window.location.href = "index.html";
+                                } else {
+                                    console.log("Neuspešno brisanje proizvoda.")
                                 }
                             }
-                            DelProdRequest.open("DELETE", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
-                            DelProdRequest.send();
                         }
+                        DelProdRequest.open("DELETE", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
+                        DelProdRequest.send();
                     });
                 
-                }
 
             } else {
                 alert("Greška prilikom učitavanja podataka iz firebase-a");

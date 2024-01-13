@@ -1,17 +1,17 @@
-# WD-SR-8-2023 Pet Shop XY Website
+## WD-SR-8-2023 Pet Shop XY Website
 
 
-### Vukašin Đuričić SR/08-2023
+## Vukašin Đuričić SR/08-2023
 
 
 ### Website koji čine :
- - Početna stranica
- - Pojedinačna stranica svakog proizvoda
+ - Početna stranica na kojoj su prikazani svi proizvnodi iz sistemu
+ - Svaki proizvod poseduje pojedinačnu stranicu, na kojoj se nalaze opcije za izmenu detalja o proizvodu, kao i opcija brisanja samog proizvoda
  - Stranica koja predstavlja korpu
- - Stranica na kojoj se nalaze detalji o samom Pet Shop-u
- - Admin stranica za prikaz svih korisnika korisnicima
- - Admin stranica za dodavanje novih proizvoda 
- - Login/ Register Modal koji iskace u prozorcicu na svakoj stranici
+ - Stranica na kojoj se nalaze detalji o samom Pet Shop-u, kao i opcija za izmenu podataka o Pet Shop-u
+ - Admin stranica za prikaz svih korisnika, profil svakog korisnika, izmena podataka korisnika, kao i brisanje samog korisnika
+ - Funkcionalna admin stranica za dodavanje novih proizvoda
+ - Funkcionalan Login/ Register Modal na svakoj stranici 
 
 ### Tehnologije :
  - HTML

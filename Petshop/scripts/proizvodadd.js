@@ -24,10 +24,12 @@ prodAddForm.addEventListener('submit', event => {
     // Validacija za tip proizvoda
     let tipProizvoda = document.querySelector("#tip").value;
     if (tipProizvoda == "") {
+        noviProizvod.tip = "";
         let upozorenjeTip = document.querySelector("#upozorenjeTip");
         upozorenjeTip.innerHTML = "Popunite ovo polje."
     }
-    else if (/\d/.test(tipProizvoda)) {
+    else if (!/^[^\d]*$/.test(tipProizvoda)) {
+        noviProizvod.tip = "";
         upozorenjeTip.innerText = "Tip ne sme da sadrži brojeve.";
     }
     else {
@@ -38,10 +40,12 @@ prodAddForm.addEventListener('submit', event => {
     // Validacija za naziv proizvoda
     let imeProizvoda = document.querySelector("#imeprod").value;
     if (imeProizvoda == "") {
+        noviProizvod.naziv = "";
         let upozorenjeNaziv = document.querySelector("#upozorenjeNaziv");
         upozorenjeNaziv.innerHTML = "Popunite ovo polje."
     }
-    else if (/\d/.test(imeProizvoda)) {
+    else if (!/^[^\d]*$/.test(imeProizvoda)) {
+        noviProizvod.naziv = "";
         upozorenjeNaziv.innerText = "Naziv ne sme da sadrži brojeve.";
     }
     else {
@@ -52,21 +56,23 @@ prodAddForm.addEventListener('submit', event => {
     // Validacija za cenu proizvoda
     let cenaProizvoda = document.querySelector("#cenaprod").value;
     if (cenaProizvoda == ""){
+        noviProizvod.cena = "";
         let upozorenjeCena = document.querySelector("#upozorenjeCena");
         upozorenjeCena.innerHTML = "Popunite ovo polje."
     }
     else if (cenaProizvoda < 0){
+        noviProizvod.cena = "";
         let upozorenjeCena = document.querySelector("#upozorenjeCena");
         upozorenjeCena.innerHTML = "Unesite važeću cenu."
     }
     else {
         noviProizvod.cena = cenaProizvoda;
-        upozorenjeCena.innerHTML = "Popunite ovo polje."
     }
 
     // Validacija za kratak opis
     let kratakOpis = document.querySelector("#kopisprod").value;
     if (kratakOpis == ""){
+        noviProizvod.kratakOpis = "";
         let upozorenjeKopis = document.querySelector("#upozorenjeKopis");
         upozorenjeKopis.innerHTML = "Popunite ovo polje."
     }
@@ -78,6 +84,7 @@ prodAddForm.addEventListener('submit', event => {
     // Validacija za detaljan Opis.
     let detaljanOpis = document.querySelector("#dopis").value;
     if (detaljanOpis == ""){
+        noviProizvod.detaljanOpis = "";
         let upozorenjeDopis = document.querySelector("#upozorenjeDopis");
         upozorenjeDopis.innerHTML = "Popunite ovo polje."
     }
@@ -87,7 +94,7 @@ prodAddForm.addEventListener('submit', event => {
     }
 
     // Konacan uslov
-    if (tipProizvoda != "" && imeProizvoda != "" && cenaProizvoda != "" && kratakOpis != "" && detaljanOpis != ""){
+    if (noviProizvod.tip != "" && noviProizvod.naziv != "" && noviProizvod.cena != "" && noviProizvod.kratakOpis != "" && noviProizvod.detaljanOpis != ""){
         let proizvodSlanje = JSON.stringify(noviProizvod);
 
         let newProdReq = new XMLHttpRequest();
