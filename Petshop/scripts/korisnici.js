@@ -109,7 +109,7 @@ formEdit.addEventListener('submit', event => {
         erroradresa1.innerText = "Format za unos: Adresa, Grad, Poštanski br."
         erroradresa1.style.color = "red";
     }
-    else if (!/\b\d{5}\b/g.test(adresareg1)){
+    else if (!/[a-zA-Z].*\d{5,}$/.test(adresareg1)){
         erroradresa1.innerText = "Neophodno je uneti poštanski broj."
         erroradresa1.style.color = "red";
     }

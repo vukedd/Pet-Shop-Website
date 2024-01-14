@@ -63,7 +63,7 @@ formRegister.addEventListener('submit', event => {
         erroradresa.innerText = "Format za unos: Adresa, Grad, Poštanski br."
         erroradresa.style.color = "red";
     }
-    else if (!/\D*\d.*\d.*\d.*\d.*\d\D*/.test(adresareg)){
+    else if (!/[a-zA-Z].*\d{5,}$/.test(adresareg)){
         erroradresa.innerText = "Neophodno je uneti poštanski broj."
         erroradresa.style.color = "red";
     }
@@ -71,7 +71,6 @@ formRegister.addEventListener('submit', event => {
         erroradresa.innerText = "";
         noviKorisnik.adresa = adresareg.trim();
     }
-    console.log(noviKorisnik);
 
     // Validacija za email
     let emailreg = document.querySelector("#email1").value;
