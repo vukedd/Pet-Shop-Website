@@ -8,7 +8,6 @@ reqreq.onreadystatechange = function() {
     if (this.readyState == 4){
         if (this.status == 200){
             proizvodi = JSON.parse(this.response);
-            console.log(proizvodi);
         } else {
 
         }

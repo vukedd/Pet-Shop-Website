@@ -8,10 +8,8 @@ getproizvod.onreadystatechange = function() {
     if (this.readyState == 4){
         if (this.status == 200){
             proizvodi = JSON.parse(this.response);
-            console.log(proizvodi);
             for (let id in proizvodi){
                 let proizvod = proizvodi[id];
-                console.log(proizvod);
                 slike = proizvod.slike;
                 let glavnaSlika = slike[0];
                 proizvodAppend(listaProizvoda, id, proizvod, glavnaSlika);

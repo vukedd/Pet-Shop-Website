@@ -178,7 +178,6 @@ formEdit.addEventListener('submit', event => {
         editKorisnik.datumRodjenja = datereg1.trim();
     }
 
-    console.log(editKorisnik);
 
     if (editKorisnik.ime != "" && editKorisnik.prezime != "" && editKorisnik.korisnickoIme != "" && editKorisnik.adresa != "" && editKorisnik.lozinka != "" && editKorisnik.telefon != "" && editKorisnik.datumRodjenja != "" && editKorisnik.email != ""){
         let request = new XMLHttpRequest();

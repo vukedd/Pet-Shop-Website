@@ -1,11 +1,9 @@
-
 let idprodcina;
 let proizvodinfo = {};
 
 // Na ucitavanje stranice preuzmi id iz local storage-a
 window.onload = function() {
     idprodcina = localStorage.getItem('id');
-    console.log(idprodcina);
 
     let productreq = new XMLHttpRequest();
     productreq.onreadystatechange = function () {
@@ -18,7 +16,6 @@ window.onload = function() {
                 let cena = document.querySelector("#rsd");
                 let prosecnaOcena = document.querySelector("#prosekOcena");
                 let detaljanOpis = document.querySelector("#cbody");
-                console.log(proizvodinfo);
                 proizvodnaslov.innerHTML = proizvodinfo.naziv;
                 tip.innerHTML = proizvodinfo.tip;
                 cena.innerHTML = proizvodinfo.cena +",00 RSD";
@@ -34,15 +31,12 @@ window.onload = function() {
 
                 // Prva petlja koja ce dodati samo prvu slike sa classom carousel-item active.
                 for (element in slikeProizvoda){
-                    console.log(slikeProizvoda[0]);
                     let karoselSlide = document.createElement("div");
                     karoselSlide.setAttribute("class", "carousel-item active");
-                    console.log(karoselSlide)
 
                     let slikaSlide = document.createElement("img");
                     slikaSlide.setAttribute("src", slikeProizvoda[0]);
                     slikaSlide.setAttribute("class", "d-block w-100");
-                    console.log(slikaSlide);
                 
                     karoselSlide.appendChild(slikaSlide);
                     carouselSlike.appendChild(karoselSlide);
@@ -53,20 +47,16 @@ window.onload = function() {
                 for (let i = 1; i < slikeProizvoda.length; i++){
                     let karoselSlide = document.createElement("div");
                     karoselSlide.setAttribute("class", "carousel-item");
-                    console.log(karoselSlide)
 
                     let slikaSlide = document.createElement("img");
                     slikaSlide.setAttribute("src", slikeProizvoda[i]);
                     slikaSlide.setAttribute("class", "d-block w-100");
-                    console.log(slikaSlide);
                 
                     karoselSlide.appendChild(slikaSlide);
                     carouselSlike.appendChild(karoselSlide);
-                    console.log(slikeProizvoda[i]);
                 }
                     
                     let proizvodinfoEdit = {cena: "", detaljanOpis: "", kratakOpis: "", naziv:"", ocene: proizvodinfo.ocene, prosecnaOcena: proizvodinfo.prosecnaOcena, slike: proizvodinfo.slike, tip: proizvodinfo.tip, uKorpi: false};
-                    console.log(proizvodinfoEdit);
     
                     // Event listener koji ce popuniti formu za edit nakon klika na olovku
                     let editProduct = document.querySelector("#izmeniProizvod")
@@ -161,7 +151,6 @@ window.onload = function() {
                             proizvodinfoEdit.kratakOpis = kratakOpisPotvrdi;
                         }   
                         
-                        console.log(proizvodinfoEdit);
 
                         if (proizvodinfoEdit.naziv != "" && proizvodinfoEdit.tip != "" && proizvodinfoEdit.cena != "" && proizvodinfoEdit.detaljanOpis != "" && proizvodinfoEdit.kratakOpis != ""){
                             let potvrdiIzmeneReq = new XMLHttpRequest();
@@ -190,7 +179,6 @@ window.onload = function() {
                             proizvodinfo.ocene = sveOcene;
                             let suma = 0;
                             for(let index = 0; index < sveOcene.length; index++){
-                                console.log(sveOcene[index]);
                                 suma = suma + sveOcene[index];
                             }
                             let prosecnaOcenaZaDodati = suma / sveOcene.length;
@@ -202,7 +190,7 @@ window.onload = function() {
                                     if (this.status == 200){
                                         location.reload();
                                     } else {
-                                        console.log("ne");
+                                        alert()
                                     }
                                 }
                             }
@@ -224,7 +212,7 @@ window.onload = function() {
                                 if (this.status == 200){
                                     window.location.href = "index.html";
                                 } else {
-                                    console.log("Neuspešno brisanje proizvoda.")
+                                    alert("Neuspešno brisanje proizvoda")
                                 }
                             }
                         }

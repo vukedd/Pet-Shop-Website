@@ -1,12 +1,8 @@
-
-let ime = document.querySelectorAll(".naziv");
 let slika = document.querySelector("#onamapic");
 let godOtvaranja = document.querySelector("#godinaOtvaranja");
-let telefonPS = document.querySelectorAll(".telefonPS");
 let adresaPS = document.querySelector("#adresaShop");
 
-
-let informacije = {};
+informacije = {};
 
 let request = new XMLHttpRequest();
 
@@ -14,13 +10,6 @@ request.onreadystatechange = function () {
     if (this.readyState == 4){
         if (this.status == 200){
             informacije = JSON.parse(this.responseText);
-            for (var span in ime){
-                ime[span].innerHTML = informacije.naziv;
-            }
-            
-            for (var span in telefonPS){
-                telefonPS[span].innerHTML = informacije.telefon;
-            }
             
             godOtvaranja.innerHTML = informacije.godinaOtvaranja;
             adresaPS.innerHTML = informacije.adresa;

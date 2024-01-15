@@ -50,7 +50,6 @@ formRegister.addEventListener('submit', event => {
         errorun.innerText = "";
         noviKorisnik.korisnickoIme = unreg.trim();
     }
-    console.log(noviKorisnik);
 
     // Validacija za adresu
     let adresareg = document.querySelector("#adresaa").value;
@@ -86,7 +85,6 @@ formRegister.addEventListener('submit', event => {
     else {
         erroremail.innerText = "";
         noviKorisnik.email = emailreg.trim();
-        console.log(noviKorisnik);
     }
     
     // Validacija za sifru
@@ -103,7 +101,6 @@ formRegister.addEventListener('submit', event => {
     else {
         errorsifra.innerText = "";
         noviKorisnik.lozinka = sifrareg.trim();
-        console.log(noviKorisnik);
     }
 
     //Validacija za broj telefona
@@ -120,7 +117,6 @@ formRegister.addEventListener('submit', event => {
     else {
         errortel.innerText = "";
         noviKorisnik.telefon = telreg.trim();
-        console.log(noviKorisnik);
     }
     
     // Validacija za datum
@@ -133,7 +129,6 @@ formRegister.addEventListener('submit', event => {
     else {
         errordate.innerHTML = "";
         noviKorisnik.datumRodjenja = datereg.trim();
-        console.log(noviKorisnik);
     }
     let korisnikSlanje = JSON.stringify(noviKorisnik);
     if (noviKorisnik.ime != "" && noviKorisnik.prezime != "" && noviKorisnik.korisnickoIme != "" && noviKorisnik.adresa != "" && noviKorisnik.lozinka != "" && noviKorisnik.telefon != "" && noviKorisnik.datumRodjenja != "" && noviKorisnik.email != ""){
@@ -141,7 +136,6 @@ formRegister.addEventListener('submit', event => {
         registerReq.onreadystatechange = function() {
         if (this.readyState == 4){
             if (this.status == 200){
-                console.log("Uspesno ste se registrovali.")
                 location.reload();
             }
             else {
