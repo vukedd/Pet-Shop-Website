@@ -1002,14 +1002,15 @@ color: black;
     margin: 3%;
     border-top: 1px solid rgba(128, 128, 128, 0.397);
     border-bottom: 1px solid rgba(128, 128, 128, 0.336);
-    padding: 3%;
     background-color: rgba(182, 182, 182, 0.164);
+    height: 320px;
 }
 
 #prosek {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-right: 2%;
 }
 
 
@@ -1018,13 +1019,10 @@ color: black;
 }
 
 #unesiOcenu {
-    padding: 10%;
+    margin-top: 20px;
     border-radius: 20px;
 }
 
-#unosOcene {
-    padding: 5%;
-}
 
 #prosekOcena {
     font-size: 400%;
@@ -1048,6 +1046,11 @@ color: black;
     margin-bottom: 2%;
     width: 100px;
     text-align: center;
+    border-radius: 10px;
+}
+
+#utisakkorisnika {
+    border-radius: 10px;
 }
 
 #brojOcenaMain {
@@ -1062,4 +1065,3 @@ color: black;
 #upozorenjeTip, #upozorenjeNaziv, #upozorenjeCena, #upozorenjeKopis, #upozorenjeDopis {
     color:red;
 }
-
