@@ -22,9 +22,11 @@ window.onload = function() {
                 prosecnaOcena.innerHTML = proizvodinfo.prosecnaOcena;
                 detaljanOpis.innerHTML = proizvodinfo.detaljanOpis;
                 let sveOcene = proizvodinfo.ocene;
+                console.log(proizvodinfo);
                 let brojOcena = document.querySelector("#brojOcena");
                 brojOcena.innerHTML = sveOcene.length;
 
+                console.log(proizvodinfo);
                 // Popunjavanje carousela
                 let carouselSlike = document.querySelector(".carousel-inner");
                 let slikeProizvoda = proizvodinfo.slike;
@@ -173,7 +175,7 @@ window.onload = function() {
                     oceniProizvod.addEventListener("click", (e) => {
                         e.preventDefault();
                         let ocenaZaDodati = document.querySelector("#ocena").value;
-                        if (ocenaZaDodati > 1 && ocenaZaDodati < 11){
+                        if (ocenaZaDodati > 1 && ocenaZaDodati < 10.1){
                             let ocenaZaDodatireal = parseInt(ocenaZaDodati);
                             sveOcene.push(ocenaZaDodatireal);
                             proizvodinfo.ocene = sveOcene;
@@ -199,7 +201,7 @@ window.onload = function() {
                         }
                         else {
                             let upozorenje = document.querySelector("#upozorenje");
-                            upozorenje.innerHTML = "Molim vas unesite ocenu između 1 i 10."
+                            upozorenje.innerHTML = "    *ocena: 1-10"
                         }
                     })
                 

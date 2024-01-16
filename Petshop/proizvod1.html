@@ -31,7 +31,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form class="login">
+        <form class="login" autocomplete="off">
           <label for="#id">Username:</label>
           <br>
           <input type="text" id="email">
@@ -60,7 +60,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="register1">
+        <form id="register1" autocomplete="off">
           <label for="#ime">Ime:</label>
           <br>
           <input type="text" id="imereg" name="ime"><br>
@@ -121,7 +121,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="editProdForm">
+        <form id="editProdForm" autocomplete="off">
           <label for="#nazivProd">Naziv Proizvoda: </label><span id="editNazivAlert"></span>
           <br>
           <input type="text" id="nazivProd" name="nazivProd">
@@ -286,15 +286,14 @@
   <div id="ocenaKorisnika">
     <div id="prosek">
       <p class="text-muted" id="brojOcenaMain">Iz <span id="brojOcena"></span> uzoraka</p>
-      <h2 id="prosekNaslov">Prosečna ocena:</h2><br>
+      <h2 id="prosekNaslov">Prosečna ocena:</h2>
       <h1 id="prosekOcena"></h1>
       <br>
     </div>
     <div id="unosOcene" >
-      <form id="unesiOcenu">
+      <form id="unesiOcenu" autocomplete="off">
         <label for="ocena" id="naslovic">Ocenite proizvod: </label><br>
-        <span id="upozorenje"></span>
-        <input type="number" id="ocena" name="ocena" placeholder="1-10" min="1" max="10"><br>
+        <input type="number" id="ocena" name="ocena" placeholder="1-10" min="1" max="10"><span id="upozorenje"></span><br>
         <textarea placeholder="Vaš utisak (nije neophodno)" id="utisakkorisnika" cols="30" rows="5"></textarea>
         <button type="submit" class="lgbut" id="oceni">Potvrdi</button>
       </form>

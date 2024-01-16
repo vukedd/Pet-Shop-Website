@@ -1,6 +1,6 @@
 let firebaseurl = "https://pet-shop-fff9d-default-rtdb.europe-west1.firebasedatabase.app";
 
-let noviProizvod = {cena: "", detaljanOpis: "", kratakOpis: "", naziv: "", ocene: {0: ""}, prosecnaOcena: "", slike:{0:""}, tip: "", uKorpi: false};
+let noviProizvod = {cena: "", detaljanOpis: "", kratakOpis: "", naziv: "", ocene: [0], prosecnaOcena: "0", slike:[], tip: "", uKorpi: false};
 let proizvodi = {}
 
 let reqreq = new XMLHttpRequest();
@@ -68,6 +68,28 @@ prodAddForm.addEventListener('submit', event => {
         noviProizvod.cena = cenaProizvoda;
     }
 
+    let slikaProizvoda1 = document.querySelector("#slikeprod1").value;
+    if (slikaProizvoda1 == ""){
+        let upozorenjeSlika = document.querySelector("#upozorenjeSlika");
+        upozorenjeSlika.innerHTML = "Popunite ovo polje."
+        upozorenjeSlika.style.color = "red";
+    }
+    else {
+        upozorenjeSlika.innerHTML = "";
+        noviProizvod.slike.push(slikaProizvoda1);
+        console.log(noviProizvod.slike);
+    }
+
+    let slikaProizvoda2 = document.querySelector("#slikeprod2").value;
+    if (slikaProizvoda2 != ""){
+        noviProizvod.slike.push(slikaProizvoda2);
+    }
+
+    let slikaProizvoda3 = document.querySelector("#slikeprod3").value;
+    if (slikaProizvoda3 != ""){
+        noviProizvod.slike.push(slikaProizvoda3);
+    }
+
     // Validacija za kratak opis
     let kratakOpis = document.querySelector("#kopisprod").value;
     if (kratakOpis == ""){
@@ -92,7 +114,7 @@ prodAddForm.addEventListener('submit', event => {
         upozorenjeDopis.innerHTML = "";
     }
 
-    // Konacan uslov
+    console.log(noviProizvod);
     if (noviProizvod.tip != "" && noviProizvod.naziv != "" && noviProizvod.cena != "" && noviProizvod.kratakOpis != "" && noviProizvod.detaljanOpis != ""){
         let proizvodSlanje = JSON.stringify(noviProizvod);
 

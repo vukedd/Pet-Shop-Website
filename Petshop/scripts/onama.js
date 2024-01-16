@@ -14,10 +14,10 @@ request.onreadystatechange = function () {
             godOtvaranja.innerHTML = informacije.godinaOtvaranja;
             adresaPS.innerHTML = informacije.adresa;
 
-            // var logo = informacije.logo;
-            // slika.setAttribute("src", logo);
-            // console.log(slika);
-            // slika.style.width="20%";
+            var logo = informacije.logo;
+            slika.setAttribute("src", logo);
+            console.log(slika);
+            slika.style.width="20%";
         }
     }
 }
@@ -38,6 +38,9 @@ editPS.addEventListener("click", () => {
 
     let brojtelIzmena = document.querySelector("#telepunPS");
     brojtelIzmena.setAttribute("value", informacije.telefon);
+
+    let logoIzmena = document.querySelector("#logoPS");
+    logoIzmena.setAttribute("value", informacije.logo);
 })
 
 let potvrdiIzmene = document.querySelector("#izmeniDetalje");
@@ -111,10 +114,22 @@ potvrdiIzmene.addEventListener("click", function(event){
         telefonEditValidation.innerText = "";
         informacije.telefon = brojtelPotvrdi.trim();
     }
+
+    let logoPotvrdi = document.querySelector("#logoPS").value;
+    let logoEditValidation = document.querySelector("#logoEditValidation")
+    if (logoPotvrdi == ""){
+        informacije.logo = "";
+        logoEditValidation.innerHTML = "Neophodno je popuniti ovo polje";
+        logoEditValidation.style.color = 'red'; 
+    }
+    else {
+        informacije.logo = logoPotvrdi;
+        logoEditValidation = "";
+    }
     
     let PotvrdiReq = new XMLHttpRequest();
 
-    if (informacije.naziv != "" && informacije.godinaOtvaranja != "" && informacije.adresa != "" && informacije.telefon != ""){
+    if (informacije.naziv != "" && informacije.godinaOtvaranja != "" && informacije.adresa != "" && informacije.telefon != "" && informacije.logo != ""){
         PotvrdiReq.onreadystatechange = function () {
             if (this.readyState == 4) {
                 if (this.status == 200) {

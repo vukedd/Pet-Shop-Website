@@ -31,7 +31,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form class="login">
+        <form class="login" autocomplete="off">
           <label for="#id">Username:</label>
           <br>
           <input type="text" id="email">
@@ -60,7 +60,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="register1">
+        <form id="register1" autocomplete="off">
           <label for="#ime">Ime:</label>
           <br>
           <input type="text" id="imereg" name="ime"><br>
@@ -166,7 +166,7 @@
   </div>
     <h2 id="naslovadd">Dodaj proizvod</h2>
     <div class="addforma1">
-      <form id="productAdd">
+      <form id="productAdd" autocomplete="off">
     <div id="addforma" class="row">
       <div id="forma1" class="col">
         <label for="#kat">Tip Proizvoda: </label>
@@ -186,9 +186,13 @@
         <br>
         <br>
         <label for="#addslika">Dodaj sliku/e: </label>
+        <span id="upozorenjeSlika"></span>
         <br>
-        <input type="file" alt="Unesi sliku" id="slikeprod">
-        <br>
+        <input type="text" alt="Unesi sliku" id="slikeprod1">
+        <br><br>
+        <input type="text" alt="Unesi sliku" id="slikeprod2">
+        <br><br>
+        <input type="text" alt="Unesi sliku" id="slikeprod3">
       </div>
       <div id="forma2" class="col">
         <label for="#kopis">Kratak opis: </label>
