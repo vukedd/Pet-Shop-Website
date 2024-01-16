@@ -77,7 +77,6 @@ prodAddForm.addEventListener('submit', event => {
     else {
         upozorenjeSlika.innerHTML = "";
         noviProizvod.slike.push(slikaProizvoda1);
-        console.log(noviProizvod.slike);
     }
 
     let slikaProizvoda2 = document.querySelector("#slikeprod2").value;
@@ -114,7 +113,6 @@ prodAddForm.addEventListener('submit', event => {
         upozorenjeDopis.innerHTML = "";
     }
 
-    console.log(noviProizvod);
     if (noviProizvod.tip != "" && noviProizvod.naziv != "" && noviProizvod.cena != "" && noviProizvod.kratakOpis != "" && noviProizvod.detaljanOpis != ""){
         let proizvodSlanje = JSON.stringify(noviProizvod);
 

@@ -22,11 +22,9 @@ window.onload = function() {
                 prosecnaOcena.innerHTML = proizvodinfo.prosecnaOcena;
                 detaljanOpis.innerHTML = proizvodinfo.detaljanOpis;
                 let sveOcene = proizvodinfo.ocene;
-                console.log(proizvodinfo);
                 let brojOcena = document.querySelector("#brojOcena");
                 brojOcena.innerHTML = sveOcene.length;
 
-                console.log(proizvodinfo);
                 // Popunjavanje carousela
                 let carouselSlike = document.querySelector(".carousel-inner");
                 let slikeProizvoda = proizvodinfo.slike;

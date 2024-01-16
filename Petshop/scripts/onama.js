@@ -16,7 +16,6 @@ request.onreadystatechange = function () {
 
             var logo = informacije.logo;
             slika.setAttribute("src", logo);
-            console.log(slika);
             slika.style.width="20%";
         }
     }

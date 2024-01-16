@@ -16,11 +16,6 @@ requestlogo.onreadystatechange = function () {
             for (var span in telefonPS){
                 telefonPS[span].innerHTML = informacije.telefon;
             }
-
-            // var logo = informacije.logo;
-            // slika.setAttribute("src", logo);
-            // console.log(slika);
-            // slika.style.width="20%";
         }
     }
 }
