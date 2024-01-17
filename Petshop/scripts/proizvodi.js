@@ -27,7 +27,7 @@ function proizvodAppend(listaProizvoda, id, proizvod, slika) {
     let karticaProizvoda = document.createElement("div");
     karticaProizvoda.innerHTML = `
     <div class="card" id="kartica" style="width: 15rem;">
-        <a href="proizvod1.html?id=${id}" class="proizvodi-link">
+        <a href="proizvod1.html" class="proizvodi-link">
           <img class="card-img-top" src="${slika}" alt="Card image cap">
           <div class="card-body">
             <h5 id="card-title">${proizvod.naziv}</h5>

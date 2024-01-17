@@ -31,7 +31,7 @@ formRegister.addEventListener('submit', event => {
         errorprezime.style.color = "red";
     }
     else if (/\d/.test(prezimereg)) {
-        errorprezime.innerText = "Ime ne sme da sadrži brojeve.";
+        errorprezime.innerText = "Prezime ne sme da sadrži brojeve.";
         errorprezime.style.color = "red";
     }
     else {

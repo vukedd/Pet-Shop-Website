@@ -10,7 +10,6 @@ var editKorisnik = {
     adresa: "", datumRodjenja: "", email: "", ime: "", korisnickoIme: "", lozinka: "", prezime: "", telefon: ""
 }
 
-// 
 var popuniProfil = {
     ime: "", prezime: "", datumRodjenja: "", adresa: "", telefon: "", email: "", lozinka: ""
 }

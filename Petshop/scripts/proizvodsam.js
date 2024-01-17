@@ -4,6 +4,7 @@ let proizvodinfo = {};
 // Na ucitavanje stranice preuzmi id iz local storage-a
 window.onload = function() {
     idprodcina = localStorage.getItem('id');
+    console.log(idprodcina);
 
     let productreq = new XMLHttpRequest();
     productreq.onreadystatechange = function () {
