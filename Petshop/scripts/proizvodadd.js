@@ -120,7 +120,7 @@ prodAddForm.addEventListener('submit', event => {
         newProdReq.onreadystatechange = function() {
             if (this.readyState == 4) {
                 if (this.status == 200) {
-                    location.reload();  
+                    window.location.href = "index.html";
                 } else {
                     alert("Greska prilikom dodavanja proizvoda.");
                 }
