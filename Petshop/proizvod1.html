@@ -285,19 +285,19 @@
   </div>
   <div id="ocenaKorisnika">
     <div id="prosek">
-      <p class="text-muted" id="brojOcenaMain">Iz <span id="brojOcena"></span> uzoraka</p>
-      <h2 id="prosekNaslov">Prosečna ocena:</h2>
-      <h1 id="prosekOcena"></h1>
+      <h2 id="prosekNaslov">Average Rating:</h2>
+      <div>
+        <i class="bi bi-star"id="zvezdap1"></i><i class="bi bi-star"id="zvezdap2"></i><i class="bi bi-star"id="zvezdap3"></i><i class="bi bi-star"id="zvezdap4"></i><i class="bi bi-star"id="zvezdap5"></i><span id="prosekOcena" class="text-muted"></span>
+      </div>
       <br>
     </div>
-    <div id="unosOcene" >
-      <form id="unesiOcenu" autocomplete="off">
-        <label for="ocena" id="naslovic">Ocenite proizvod: </label><br>
-        <input type="number" id="ocena" name="ocena" placeholder="1-10" min="1" max="10"><span id="upozorenje"></span><br>
-        <textarea placeholder="Vaš utisak (nije neophodno)" id="utisakkorisnika" cols="30" rows="5"></textarea>
-        <button type="submit" class="lgbut" id="oceni">Potvrdi</button>
-      </form>
-    </div>
+      <div id="prosek">
+        <h2 id="prosekNaslov">Leave a review!! :)</h2>
+        <div>
+          <a href="#"><i class="bi bi-star"id="zvezda1"></i></a><a href="#"><i class="bi bi-star"id="zvezda2"></i></a><a href="#"><i class="bi bi-star"id="zvezda3"></i></a><a href="#"><i class="bi bi-star"id="zvezda4"></i></a><a href="#"><i class="bi bi-star"id="zvezda5"></i></a>
+        </div>
+        <br>
+
   </div>
   <div>
   </div>
@@ -385,5 +385,6 @@
 <script src="scripts/proizvodsam.js"></script>
 <script src="scripts/register.js"></script>
 <script src="scripts/navbarlogo.js"></script>
+<script src="scripts/ocene.js"></script>
 </body>
 </html>

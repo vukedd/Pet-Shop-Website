@@ -27,7 +27,7 @@ function proizvodAppend(listaProizvoda, id, proizvod, slika) {
     let karticaProizvoda = document.createElement("div");
     karticaProizvoda.innerHTML = `
     <div class="card" id="kartica" style="width: 15rem;">
-        <a href="proizvod1.html" class="proizvodi-link">
+        <a href="proizvod1.html?id=${id}" class="proizvodi-link">
           <img class="card-img-top" src="${slika}" alt="Card image cap">
           <div class="card-body">
             <h5 id="card-title">${proizvod.naziv}</h5>
@@ -43,14 +43,4 @@ function proizvodAppend(listaProizvoda, id, proizvod, slika) {
     </div>
     `
     sviProizvodi.appendChild(karticaProizvoda);
-
-    // Dodeli linku koji vodi na proizvod sa odgovarajucim id-om;
-    let linkDoProizvoda = karticaProizvoda.querySelector('.proizvodi-link');
-    linkDoProizvoda.addEventListener("click", (event) => {
-        // Preuzmi ID iz linka iz ?id=${'id'};
-        let kliknutiProizvod = id;
-
-        // Sacuvaj id u local storage.
-        localStorage.setItem('id', kliknutiProizvod);
-    });
 }

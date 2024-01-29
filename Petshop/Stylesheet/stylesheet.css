@@ -1011,6 +1011,8 @@ color: black;
     flex-direction: column;
     justify-content: center;
     padding-right: 2%;
+    width: 50%;
+    text-align: center;
 }
 
 
@@ -1025,8 +1027,8 @@ color: black;
 
 
 #prosekOcena {
-    font-size: 400%;
-    padding-left: 0%;
+    font-size: 100%;
+    padding-left: 5%;
 }
 
 #oceni {
@@ -1068,4 +1070,14 @@ color: black;
 
 #checkStanje{
     color: green;
+}
+
+#zvezda1, #zvezda2, #zvezda3, #zvezda4, #zvezda5 {
+    color: black;
+    font-size: 30px;
+}
+
+#zvezdap1, #zvezdap2, #zvezdap3, #zvezdap4, #zvezdap5 {
+    color: orange;
+    font-size: 30px;
 }

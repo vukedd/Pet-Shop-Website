@@ -1,30 +1,132 @@
 let idprodcina;
 let proizvodinfo = {};
+let zvezda1 = document.querySelector("#zvezda1");
+let zvezda2 = document.querySelector("#zvezda2");
+let zvezda3 = document.querySelector("#zvezda3");
+let zvezda4 = document.querySelector("#zvezda4");
+let zvezda5 = document.querySelector("#zvezda5");
+
+
+
+// Hover zvezdica funkcionalnost
+$(zvezda1).hover(
+    function infunction(){
+        zvezda1.setAttribute("class", "bi bi-star-fill");
+        zvezda1.style.color = "orange";
+    },
+    function outfunction(){
+        zvezda1.setAttribute("class", "bi bi-star");
+        zvezda1.style.color = "black";
+    }
+);
+
+$(zvezda2).hover(
+    function infunction1(){
+        zvezda1.setAttribute("class", "bi bi-star-fill");
+        zvezda1.style.color = "orange";
+        zvezda2.setAttribute("class", "bi bi-star-fill");
+        zvezda2.style.color = "orange";
+    },
+    function outfunction1(){
+        zvezda1.setAttribute("class", "bi bi-star");
+        zvezda1.style.color = "black";
+        zvezda2.setAttribute("class", "bi bi-star");
+        zvezda2.style.color = "black";
+    }
+)
+
+$(zvezda3).hover(
+    function infunction1(){
+        zvezda1.setAttribute("class", "bi bi-star-fill");
+        zvezda1.style.color = "orange";
+        zvezda2.setAttribute("class", "bi bi-star-fill");
+        zvezda2.style.color = "orange";
+        zvezda3.setAttribute("class", "bi bi-star-fill");
+        zvezda3.style.color = "orange";
+    },
+    function outfunction1(){
+        zvezda1.setAttribute("class", "bi bi-star");
+        zvezda1.style.color = "black";
+        zvezda2.setAttribute("class", "bi bi-star");
+        zvezda2.style.color = "black";
+        zvezda3.setAttribute("class", "bi bi-star");
+        zvezda3.style.color = "black";
+    }
+)
+
+$(zvezda4).hover(
+    function infunction1(){
+        zvezda1.setAttribute("class", "bi bi-star-fill");
+        zvezda1.style.color = "orange";
+        zvezda2.setAttribute("class", "bi bi-star-fill");
+        zvezda2.style.color = "orange";
+        zvezda3.setAttribute("class", "bi bi-star-fill");
+        zvezda3.style.color = "orange";
+        zvezda4.setAttribute("class", "bi bi-star-fill");
+        zvezda4.style.color = "orange";
+    },
+    function outfunction1(){
+        zvezda1.setAttribute("class", "bi bi-star");
+        zvezda1.style.color = "black";
+        zvezda2.setAttribute("class", "bi bi-star");
+        zvezda2.style.color = "black";
+        zvezda3.setAttribute("class", "bi bi-star");
+        zvezda3.style.color = "black";
+        zvezda4.setAttribute("class", "bi bi-star");
+        zvezda4.style.color = "black";
+    }
+)
+
+$(zvezda5).hover(
+    function infunction1(){
+        zvezda1.setAttribute("class", "bi bi-star-fill");
+        zvezda1.style.color = "orange";
+        zvezda2.setAttribute("class", "bi bi-star-fill");
+        zvezda2.style.color = "orange";
+        zvezda3.setAttribute("class", "bi bi-star-fill");
+        zvezda3.style.color = "orange";
+        zvezda4.setAttribute("class", "bi bi-star-fill");
+        zvezda4.style.color = "orange";
+        zvezda5.setAttribute("class", "bi bi-star-fill");
+        zvezda5.style.color = "orange";
+    },
+    function outfunction1(){
+        zvezda1.setAttribute("class", "bi bi-star");
+        zvezda1.style.color = "black";
+        zvezda2.setAttribute("class", "bi bi-star");
+        zvezda2.style.color = "black";
+        zvezda3.setAttribute("class", "bi bi-star");
+        zvezda3.style.color = "black";
+        zvezda4.setAttribute("class", "bi bi-star");
+        zvezda4.style.color = "black";
+        zvezda5.setAttribute("class", "bi bi-star");
+        zvezda5.style.color = "black";
+        
+    }
+)
+
 
 // Na ucitavanje stranice preuzmi id iz local storage-a
-window.onload = function() {
-    idprodcina = localStorage.getItem('id');
+    idprodcina = getParamValue("id")
     console.log(idprodcina);
 
     let productreq = new XMLHttpRequest();
     productreq.onreadystatechange = function () {
         if (this.readyState == 4){
             if (this.status == 200){
-                // Dodavanje detalja u stranicu sa proizvodima.
+                // Dodavanje detalja u stranicu sa proizvodima. 
                 proizvodinfo = JSON.parse(this.response);
                 let proizvodnaslov = document.querySelector("#producthead");
                 let tip = document.querySelector("#hzp");
                 let cena = document.querySelector("#rsd");
                 let prosecnaOcena = document.querySelector("#prosekOcena");
+                prosecnaOcena.innerHTML =`(${proizvodinfo.prosecnaOcena})`;
                 let detaljanOpis = document.querySelector("#cbody");
                 proizvodnaslov.innerHTML = proizvodinfo.naziv;
                 tip.innerHTML = proizvodinfo.tip;
                 cena.innerHTML = proizvodinfo.cena +",00 RSD";
-                prosecnaOcena.innerHTML = proizvodinfo.prosecnaOcena;
                 detaljanOpis.innerHTML = proizvodinfo.detaljanOpis;
                 let sveOcene = proizvodinfo.ocene;
-                let brojOcena = document.querySelector("#brojOcena");
-                brojOcena.innerHTML = sveOcene.length;
 
                 // Popunjavanje carousela
                 let carouselSlike = document.querySelector(".carousel-inner");
@@ -170,12 +272,11 @@ window.onload = function() {
                     })
                     
                     // event listener na dugmetu za slanje ocene u bazu podatka koje takodje racuna prosek i popunjava array sa ocenama novom ocenom.
-                    let oceniProizvod = document.querySelector("#oceni");
-                    oceniProizvod.addEventListener("click", (e) => {
+                    zvezda1.addEventListener("click", (e) => {
                         e.preventDefault();
-                        let ocenaZaDodati = document.querySelector("#ocena").value;
-                        if (ocenaZaDodati > 1 && ocenaZaDodati < 10.1){
+                        let ocenaZaDodati = 1;
                             let ocenaZaDodatireal = parseInt(ocenaZaDodati);
+                            console.log(sveOcene);
                             sveOcene.push(ocenaZaDodatireal);
                             proizvodinfo.ocene = sveOcene;
                             let suma = 0;
@@ -197,11 +298,118 @@ window.onload = function() {
                             }
                             ProsekRequest.open("PUT", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
                             ProsekRequest.send(JSON.stringify(proizvodinfo));
-                        }
-                        else {
-                            let upozorenje = document.querySelector("#upozorenje");
-                            upozorenje.innerHTML = "    *ocena: 1-10"
-                        }
+                    })
+
+                    zvezda2.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        let ocenaZaDodati = 2;
+                            let ocenaZaDodatireal = parseInt(ocenaZaDodati);
+                            console.log(sveOcene);
+                            sveOcene.push(ocenaZaDodatireal);
+                            proizvodinfo.ocene = sveOcene;
+                            let suma = 0;
+                            for(let index = 0; index < sveOcene.length; index++){
+                                suma = suma + sveOcene[index];
+                            }
+                            let prosecnaOcenaZaDodati = suma / sveOcene.length;
+                            proizvodinfo.prosecnaOcena = prosecnaOcenaZaDodati.toFixed(2);
+                            
+                            let ProsekRequest = new XMLHttpRequest();
+                            ProsekRequest.onreadystatechange = function(){
+                                if (this.readyState == 4){
+                                    if (this.status == 200){
+                                        location.reload();
+                                    } else {
+                                        alert()
+                                    }
+                                }
+                            }
+                            ProsekRequest.open("PUT", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
+                            ProsekRequest.send(JSON.stringify(proizvodinfo));
+                    })
+
+                    zvezda3.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        let ocenaZaDodati = 3;
+                            let ocenaZaDodatireal = parseInt(ocenaZaDodati);
+                            console.log(sveOcene);
+                            sveOcene.push(ocenaZaDodatireal);
+                            proizvodinfo.ocene = sveOcene;
+                            let suma = 0;
+                            for(let index = 0; index < sveOcene.length; index++){
+                                suma = suma + sveOcene[index];
+                            }
+                            let prosecnaOcenaZaDodati = suma / sveOcene.length;
+                            proizvodinfo.prosecnaOcena = prosecnaOcenaZaDodati.toFixed(2);
+                            
+                            let ProsekRequest = new XMLHttpRequest();
+                            ProsekRequest.onreadystatechange = function(){
+                                if (this.readyState == 4){
+                                    if (this.status == 200){
+                                        location.reload();
+                                    } else {
+                                        alert()
+                                    }
+                                }
+                            }
+                            ProsekRequest.open("PUT", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
+                            ProsekRequest.send(JSON.stringify(proizvodinfo));
+                    })
+
+                    zvezda4.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        let ocenaZaDodati = 4;
+                            let ocenaZaDodatireal = parseInt(ocenaZaDodati);
+                            console.log(sveOcene);
+                            sveOcene.push(ocenaZaDodatireal);
+                            proizvodinfo.ocene = sveOcene;
+                            let suma = 0;
+                            for(let index = 0; index < sveOcene.length; index++){
+                                suma = suma + sveOcene[index];
+                            }
+                            let prosecnaOcenaZaDodati = suma / sveOcene.length;
+                            proizvodinfo.prosecnaOcena = prosecnaOcenaZaDodati.toFixed(2);
+                            
+                            let ProsekRequest = new XMLHttpRequest();
+                            ProsekRequest.onreadystatechange = function(){
+                                if (this.readyState == 4){
+                                    if (this.status == 200){
+                                        location.reload();
+                                    } else {
+                                        alert()
+                                    }
+                                }
+                            }
+                            ProsekRequest.open("PUT", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
+                            ProsekRequest.send(JSON.stringify(proizvodinfo));
+                    })
+
+                    zvezda5.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        let ocenaZaDodati = 5;
+                            let ocenaZaDodatireal = parseInt(ocenaZaDodati);
+                            console.log(sveOcene);
+                            sveOcene.push(ocenaZaDodatireal);
+                            proizvodinfo.ocene = sveOcene;
+                            let suma = 0;
+                            for(let index = 0; index < sveOcene.length; index++){
+                                suma = suma + sveOcene[index];
+                            }
+                            let prosecnaOcenaZaDodati = suma / sveOcene.length;
+                            proizvodinfo.prosecnaOcena = prosecnaOcenaZaDodati.toFixed(2);
+                            
+                            let ProsekRequest = new XMLHttpRequest();
+                            ProsekRequest.onreadystatechange = function(){
+                                if (this.readyState == 4){
+                                    if (this.status == 200){
+                                        location.reload();
+                                    } else {
+                                        alert()
+                                    }
+                                }
+                            }
+                            ProsekRequest.open("PUT", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
+                            ProsekRequest.send(JSON.stringify(proizvodinfo));
                     })
                 
                     let obrisiDugme = document.querySelector("#obrisiProizvod");
@@ -220,7 +428,6 @@ window.onload = function() {
                         DelProdRequest.open("DELETE", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
                         DelProdRequest.send();
                     });
-                
 
             } else {
                 alert("Greška prilikom učitavanja podataka iz firebase-a");
@@ -230,4 +437,18 @@ window.onload = function() {
     productreq.open("GET", FirebaseURL + "/proizvodi/-MNVEu6iMr2EFlQO6TW60/" + idprodcina + ".json");
     productreq.send();
 
+function getParamValue(name) {
+  let location = decodeURI(window.location.toString());
+  let index = location.indexOf("?") + 1;
+  let subs = location.substring(index, location.length);
+  let splitted = subs.split("&");
+
+  for (i = 0; i < splitted.length; i++) {
+    let s = splitted[i].split("=");
+    let pName = s[0];
+    let pValue = s[1];
+    if (pName == name) {
+      return pValue;
+    }
+  }
 }
