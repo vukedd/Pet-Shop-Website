@@ -1010,11 +1010,14 @@ color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-right: 2%;
+    padding-right: 10%;
     width: 50%;
     text-align: center;
 }
 
+#prosekNaslov {
+    padding-top: 15px;
+}
 
 #oceniOvajProizvod {
     padding-bottom: 20px;
@@ -1028,7 +1031,7 @@ color: black;
 
 #prosekOcena {
     font-size: 100%;
-    padding-left: 5%;
+    padding-left: 0%;
 }
 
 #oceni {
@@ -1075,9 +1078,21 @@ color: black;
 #zvezda1, #zvezda2, #zvezda3, #zvezda4, #zvezda5 {
     color: black;
     font-size: 30px;
+    padding-left: 2px;
 }
 
 #zvezdap1, #zvezdap2, #zvezdap3, #zvezdap4, #zvezdap5 {
     color: orange;
     font-size: 30px;
+    padding-left: 2px;
+}
+
+#zvezdag1, #zvezdag2, #zvezdag3, #zvezdag4, #zvezdag5 {
+    color: orange;
+    font-size: 120%;
+    padding-left: 2px;  
+}
+
+#brojOcena {
+    padding-top: 20px;
 }

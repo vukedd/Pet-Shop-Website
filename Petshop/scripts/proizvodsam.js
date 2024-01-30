@@ -126,7 +126,30 @@ $(zvezda5).hover(
                 tip.innerHTML = proizvodinfo.tip;
                 cena.innerHTML = proizvodinfo.cena +",00 RSD";
                 detaljanOpis.innerHTML = proizvodinfo.detaljanOpis;
+                ////////////////////////////////////////////////////////////
                 let sveOcene = proizvodinfo.ocene;
+                let petice = sveOcene.filter((ocena) => ocena == 5);
+                let brojPetica = petice.length;
+                let ocena5 = document.querySelector("#broj5");
+                ocena5.innerHTML = `(${brojPetica})`;
+                let cetvorke = sveOcene.filter((ocena) => ocena == 4);
+                let brojCetvorki = cetvorke.length;
+                let ocena4 = document.querySelector("#broj4");
+                ocena4.innerHTML = `(${brojCetvorki})`;
+                let trojke = sveOcene.filter((ocena) => ocena == 3);
+                let brojTrojki = trojke.length;
+                let ocena3 = document.querySelector("#broj3");
+                ocena3.innerHTML = `(${brojTrojki})`;
+                let dvojke = sveOcene.filter((ocena) => ocena == 2);
+                let brojDvojki = dvojke.length;
+                let ocena2 = document.querySelector("#broj2");
+                ocena2.innerHTML = `(${brojDvojki})`;
+                let cke = sveOcene.filter((ocena) => ocena == 1);
+                let brojKeceva = cke.length;
+                let ocena1 = document.querySelector("#broj1");
+                ocena1.innerHTML = `(${brojKeceva})`;
+
+                console.log(brojPetica);
 
                 // Popunjavanje carousela
                 let carouselSlike = document.querySelector(".carousel-inner");

@@ -1,6 +1,6 @@
 let firebaseurl = "https://pet-shop-fff9d-default-rtdb.europe-west1.firebasedatabase.app";
 
-let noviProizvod = {cena: "", detaljanOpis: "", kratakOpis: "", naziv: "", ocene: [0], prosecnaOcena: "0", slike:[], tip: "", uKorpi: false};
+let noviProizvod = {cena: "", detaljanOpis: "", kratakOpis: "", naziv: "", ocene: [5], prosecnaOcena: "5.00", slike:[], tip: "", uKorpi: false};
 let proizvodi = {}
 
 let reqreq = new XMLHttpRequest();
