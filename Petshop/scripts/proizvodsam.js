@@ -149,7 +149,26 @@ $(zvezda5).hover(
                 let ocena1 = document.querySelector("#broj1");
                 ocena1.innerHTML = `(${brojKeceva})`;
 
-                console.log(brojPetica);
+                let divZvezdice = document.querySelector("#zvezdiceProsek");
+                console.log(divZvezdice);
+                let prosekCut = Math.round(proizvodinfo.prosecnaOcena);
+                console.log(prosekCut);
+                for (let i = 0; i < prosekCut; i++){
+                    let zvezdica = document.createElement("i");
+                    zvezdica.setAttribute("class", "bi bi-star-fill");
+                    zvezdica.setAttribute("id", "zvezdap");
+                    divZvezdice.appendChild(zvezdica);
+                    console.log(i);
+                }
+                for (let i = 0; i < 5 - prosekCut; i++){
+                    let zvezdica = document.createElement("i");
+                    zvezdica.setAttribute("class", "bi bi-star");
+                    zvezdica.setAttribute("id", "zvezdap");
+                    divZvezdice.appendChild(zvezdica);
+                    console.log(i);
+                }
+                divZvezdice.appendChild(prosecnaOcena);
+
 
                 // Popunjavanje carousela
                 let carouselSlike = document.querySelector(".carousel-inner");

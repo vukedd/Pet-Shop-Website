@@ -13,6 +13,10 @@ body {
     z-index: 100;
 }
 
+#nav1{
+    height: 75px;
+}
+
 #sbar {
     border-radius: 20px;
     width: 29em;
@@ -52,7 +56,7 @@ body {
     color: white;
     padding-top: 0.1%;
     padding-left: 1%;
-    font-size: 100%;
+    font-size: 120%;
 
 }
 
@@ -84,12 +88,12 @@ body {
 }
     
 #carouselExampleIndicators {
-    max-height: 550px;
+    max-height: 600px;
     min-height: 100px;
 }
 
 #slikacar {
-    max-height: 550px;
+    max-height: 600px;
     min-height: 100px;
 }
 
@@ -523,6 +527,7 @@ padding-top: 1.5%
     width: 20%;
     min-width: 200px;
     margin-right: 1%;
+    margin-bottom: 20px;
 }
 
 .cart {
@@ -963,7 +968,7 @@ color: black;
 #sviproizvodi {
     display: grid;
     grid-template-columns: repeat(6, 1fr); 
-    grid-template-rows: repeat(3, 1fr);    
+    grid-template-rows: repeat(2, 1fr);    
     gap: 2px;
     margin-left: 3%;
     margin-top: 3%;
@@ -1067,7 +1072,7 @@ color: black;
     color: red;
 }
 
-#upozorenjeTip, #upozorenjeNaziv, #upozorenjeCena, #upozorenjeKopis, #upozorenjeDopis {
+#upozorenjeTip, #upozorenjeNaziv, #upozorenjeCena, #zupozorenjeKopis, #upozorenjeDopis {
     color:red;
 }
 
@@ -1081,15 +1086,15 @@ color: black;
     padding-left: 2px;
 }
 
-#zvezdap1, #zvezdap2, #zvezdap3, #zvezdap4, #zvezdap5 {
+#zvezdap {
     color: orange;
-    font-size: 30px;
+    font-size: 32px;
     padding-left: 2px;
 }
 
 #zvezdag1, #zvezdag2, #zvezdag3, #zvezdag4, #zvezdag5 {
     color: orange;
-    font-size: 120%;
+    font-size: 100%;
     padding-left: 2px;  
 }
 
