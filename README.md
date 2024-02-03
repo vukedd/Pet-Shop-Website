@@ -1,5 +1,5 @@
 ## Pet Shop Website
-#### "Web Design" class project first semester
+#### "Web Design" class project, first semester
 
 ### Website that contains:
  - Main page where all products are displayed

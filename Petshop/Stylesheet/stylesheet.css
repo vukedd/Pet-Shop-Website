@@ -301,8 +301,8 @@ padding-top: 1.5%
 
 .productatc:hover {
     background-color: white;
-    border: 1px solid red;
-    color: red;
+    border: 1px solid #0275d8;
+    color: #0275d8;
     transition: .4s;
 }
 
@@ -328,8 +328,8 @@ padding-top: 1.5%
 }
 
 #cartbut:hover {
-    border: 1px solid red;
-    color: red;
+    border: 1px solid #0275d8;
+    color: #0275d8;
     transition: .5s;
 }
 
@@ -349,7 +349,7 @@ padding-top: 1.5%
 
 .logofoot1:hover {
     text-decoration: none;
-    color: rgb(255, 0, 0);
+    color: #0275d8;
     transition: 1s;
 }
 
@@ -357,19 +357,19 @@ padding-top: 1.5%
     display: flex;
     justify-content: end;
     margin-right: 5%;   
-    color: red;
+    color: #292b2c;
     font-size: 250%;
     padding: 0;
 }
 
 #vrhbut:hover {
-    color: rgb(163, 0, 0);
+    color: #0275d8;
     transition: 1s;
     text-decoration: none;
 }
 
 .modal-header {
-    background-color: red;
+    background-color: #0275d8;
     color: white;
     border: none;
 }
@@ -383,7 +383,7 @@ padding-top: 1.5%
     margin-top: 5%;
     margin-bottom: 10%;
     color: white;
-    background-color: red;
+    background-color: #0275d8;
     border-radius: 5px;
     border: 0px;
     padding: 1% 2% 1% 2%;
@@ -436,7 +436,7 @@ padding-top: 1.5%
 }
 
 #hzp:hover {
-    color:red;
+    color:#0275d8;
 }
 
 #viseop:hover {
@@ -549,9 +549,9 @@ padding-top: 1.5%
 }
 
 .naslovi {
-    background-color: red;
+    background-color: #0275d8;
     color: white;
-    border: .5px solid red;
+    border: .5px solid #0275d8;
 }
 
 #slikakorpa {
@@ -573,7 +573,7 @@ padding-top: 1.5%
 }
 
 #ukloni {
-    color:red;
+    color:#0275d8;
     text-decoration: none;
 }
 
@@ -605,7 +605,7 @@ padding-top: 1.5%
 
 .totalcina {
     border: 0;
-    border-top: 2px solid red;
+    border-top: 2px solid #292b2c;
     margin-right: 5.2%;
 }
 
@@ -637,7 +637,7 @@ padding-top: 1.5%
 }
 
 #dosta {
-    background-color: red;
+    background-color: #292b2c;
     color: white;
     border-radius: 5px;
     padding: 10px;
@@ -658,12 +658,12 @@ padding-top: 1.5%
 }
 
 #ukloni {
-    color: red;
+    color: black;
     padding: 5px;
 }
 
 #ukloni:hover {
-    color: red;
+    color: #0275d8;
 }
 
 #uredi {
@@ -714,17 +714,19 @@ padding-top: 1.5%
 
 #korisnicitbod {
     text-align: center;
-    color: black;
+    color: #292b2c;
     font-weight: 450;
     background-color: white;
 }
 
 #headkorisnicirow {
-    background-color: red;
-    border: red;
+    background-color: #292b2c;
+    border: #292b2c;
+    color: white;
 }
 
 #headkorisicni1 {
+    color: white;
     text-align: center;
     width: fit-content;
 }
@@ -758,11 +760,11 @@ padding-top: 1.5%
 }
 
 #usernamelink {
-    color: red;
+    color: #0275d8;
 }
 
 .profilhead {
-    background-color: red;
+    background-color: #0275d8;
     height: 20%;
     display: flex;
     justify-content: center;
@@ -919,8 +921,8 @@ padding-top: 1.5%
 }
 
 #iiii {
-padding-left: 5px;
-color: black;
+    padding-left: 5px;
+    color: black;
 }
 
 #footerdole {
@@ -943,7 +945,7 @@ color: black;
 }
 
 #uklonitabla:hover {
-    color:darkRed;
+    color: red;
 }
 
 #edituserhead {
@@ -959,7 +961,7 @@ color: black;
 
 #submitedit {
     color: white;
-    background-color: red;
+    background-color: #0275d8;
     padding: 5px;
     border-radius: 10px;
     margin-top: 10px;
@@ -1072,7 +1074,7 @@ color: black;
     color: red;
 }
 
-#upozorenjeTip, #upozorenjeNaziv, #upozorenjeCena, #zupozorenjeKopis, #upozorenjeDopis {
+#upozorenjeTip, #upozorenjeNaziv, #upozorenjeCena, #upozorenjeKopis, #upozorenjeDopis {
     color:red;
 }
 
